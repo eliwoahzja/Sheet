@@ -16,6 +16,174 @@
   {
     "lang": "css",
     "cat": "Animation",
+    "shortcut": "animation-delay",
+    "desc": "Sets a wait time before an animation starts.",
+    "example": "animation-delay: 0.5s;",
+    "whatItDoes": "Sets a wait time before an animation starts.",
+    "syntax": "animation-delay: 0.5s;",
+    "useCase": "Sets a wait time before an animation starts.",
+    "shortcuts": {
+      "vscode": "Start typing `animation-delay` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `animation-delay` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "animation-direction",
+    "desc": "Sets whether an animation plays forward, backward, or alternates.",
+    "example": "animation-direction: alternate;",
+    "whatItDoes": "Sets whether an animation plays forward, backward, or alternates.",
+    "syntax": "animation-direction: alternate;",
+    "useCase": "Sets whether an animation plays forward, backward, or alternates.",
+    "shortcuts": {
+      "vscode": "Start typing `animation-direction` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `animation-direction` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "animation-duration",
+    "desc": "Sets how long one animation cycle takes.",
+    "example": "animation-duration: 2s;",
+    "whatItDoes": "Sets how long one animation cycle takes.",
+    "syntax": "animation-duration: 2s;",
+    "useCase": "Sets how long one animation cycle takes.",
+    "shortcuts": {
+      "vscode": "Start typing `animation-duration` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `animation-duration` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "animation-fill-mode",
+    "desc": "Controls the styles applied before/after an animation runs.",
+    "example": "animation-fill-mode: forwards;",
+    "whatItDoes": "Controls the styles applied before/after an animation runs.",
+    "syntax": "animation-fill-mode: forwards;",
+    "useCase": "Controls the styles applied before/after an animation runs.",
+    "shortcuts": {
+      "vscode": "Start typing `animation-fill-mode` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `animation-fill-mode` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "animation-iteration-count",
+    "desc": "Sets how many times an animation repeats (or infinite).",
+    "example": "animation-iteration-count: infinite;",
+    "whatItDoes": "Sets how many times an animation repeats (or infinite).",
+    "syntax": "animation-iteration-count: infinite;",
+    "useCase": "Sets how many times an animation repeats (or infinite).",
+    "shortcuts": {
+      "vscode": "Start typing `animation-iteration-count` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `animation-iteration-count` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "animation-play-state",
+    "desc": "Pauses or resumes a running animation.",
+    "example": "animation-play-state: paused;",
+    "whatItDoes": "Pauses or resumes a running animation.",
+    "syntax": "animation-play-state: paused;",
+    "useCase": "Pauses or resumes a running animation.",
+    "shortcuts": {
+      "vscode": "Start typing `animation-play-state` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `animation-play-state` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "animation-timing-function",
+    "desc": "Sets the animation's acceleration curve (ease, linear, cubic-bezier...).",
+    "example": "animation-timing-function: ease-in-out;",
+    "whatItDoes": "Sets the animation's acceleration curve (ease, linear, cubic-bezier...).",
+    "syntax": "animation-timing-function: ease-in-out;",
+    "useCase": "Sets the animation's acceleration curve (ease, linear, cubic-bezier...).",
+    "shortcuts": {
+      "vscode": "Start typing `animation-timing-function` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `animation-timing-function` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "matrix()",
+    "desc": "Applies a 2D transformation directly via a 6-value transformation matrix.",
+    "example": "transform: matrix(1, 0, 0, 1, 20, 10);",
+    "whatItDoes": "Applies a 2D transformation directly via a 6-value transformation matrix.",
+    "syntax": "transform: matrix(1, 0, 0, 1, 20, 10);",
+    "useCase": "Applies a 2D transformation directly via a 6-value transformation matrix.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `matrix()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `matrix()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "perspective()",
+    "desc": "Sets the distance from the viewer, affecting how 3D transforms appear.",
+    "example": "transform: perspective(500px) rotateY(20deg);",
+    "whatItDoes": "Sets the distance from the viewer, affecting how 3D transforms appear.",
+    "syntax": "transform: perspective(500px) rotateY(20deg);",
+    "useCase": "Sets the distance from the viewer, affecting how 3D transforms appear.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `perspective()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `perspective()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "rotate3d()",
+    "desc": "Rotates an element in 3D space around an arbitrary axis.",
+    "example": "transform: rotate3d(1, 1, 0, 45deg);",
+    "whatItDoes": "Rotates an element in 3D space around an arbitrary axis.",
+    "syntax": "transform: rotate3d(1, 1, 0, 45deg);",
+    "useCase": "Rotates an element in 3D space around an arbitrary axis.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `rotate3d()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `rotate3d()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "scale3d()",
+    "desc": "Scales an element independently on the x, y, and z axes.",
+    "example": "transform: scale3d(1.2, 1.2, 1);",
+    "whatItDoes": "Scales an element independently on the x, y, and z axes.",
+    "syntax": "transform: scale3d(1.2, 1.2, 1);",
+    "useCase": "Scales an element independently on the x, y, and z axes.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `scale3d()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `scale3d()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "skew()",
+    "desc": "Skews (shears) an element along the X and/or Y axis.",
+    "example": "transform: skew(10deg, 2deg);",
+    "whatItDoes": "Skews (shears) an element along the X and/or Y axis.",
+    "syntax": "transform: skew(10deg, 2deg);",
+    "useCase": "Skews (shears) an element along the X and/or Y axis.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `skew()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `skew()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
     "shortcut": "transform",
     "desc": "Scale, rotate, translate elements.",
     "example": "transform: scale(1.05) translateY(-4px);",
@@ -39,6 +207,76 @@
     "shortcuts": {
       "vscode": "Type the Emmet abbreviation `trs` in a CSS rule and press Tab/Enter to expand it to `transition: ;` with the cursor ready for a value, or just start typing `transition` and accept VS Code's native CSS IntelliSense suggestion.",
       "notepadpp": "With the Emmet plugin installed and its Expand Abbreviation key mapped (no default binding), type `trs` and press that key to expand it to `transition: ;`. Otherwise type the property manually -- Notepad++ has no native CSS property IntelliSense."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "transition-delay",
+    "desc": "Sets a wait time before a transition starts.",
+    "example": "transition-delay: 0.2s;",
+    "whatItDoes": "Sets a wait time before a transition starts.",
+    "syntax": "transition-delay: 0.2s;",
+    "useCase": "Sets a wait time before a transition starts.",
+    "shortcuts": {
+      "vscode": "Start typing `transition-delay` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `transition-delay` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "transition-property",
+    "desc": "Sets which CSS property(ies) a transition applies to.",
+    "example": "transition-property: transform, opacity;",
+    "whatItDoes": "Sets which CSS property(ies) a transition applies to.",
+    "syntax": "transition-property: transform, opacity;",
+    "useCase": "Sets which CSS property(ies) a transition applies to.",
+    "shortcuts": {
+      "vscode": "Start typing `transition-property` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `transition-property` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "translate3d()",
+    "desc": "Moves an element in 3D space; often GPU-accelerated for smoother animation.",
+    "example": "transform: translate3d(0, -10px, 0);",
+    "whatItDoes": "Moves an element in 3D space; often GPU-accelerated for smoother animation.",
+    "syntax": "transform: translate3d(0, -10px, 0);",
+    "useCase": "Moves an element in 3D space; often GPU-accelerated for smoother animation.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `translate3d()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `translate3d()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "will-change",
+    "desc": "Hints to the browser which property will change, to optimize rendering ahead of time.",
+    "example": "will-change: transform, opacity;",
+    "whatItDoes": "Hints to the browser which property will change, to optimize rendering ahead of time.",
+    "syntax": "will-change: transform, opacity;",
+    "useCase": "Hints to the browser which property will change, to optimize rendering ahead of time.",
+    "shortcuts": {
+      "vscode": "Start typing `will-change` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `will-change` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Box Model",
+    "shortcut": "all",
+    "desc": "Resets every property on an element to a given value (initial/inherit/unset).",
+    "example": "all: unset;",
+    "whatItDoes": "Resets every property on an element to a given value (initial/inherit/unset).",
+    "syntax": "all: unset;",
+    "useCase": "Resets every property on an element to a given value (initial/inherit/unset).",
+    "shortcuts": {
+      "vscode": "Start typing `all` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `all` manually."
     }
   },
   {
@@ -268,6 +506,20 @@
   {
     "lang": "css",
     "cat": "Effects",
+    "shortcut": "blur()",
+    "desc": "Applies a Gaussian blur to an element.",
+    "example": "filter: blur(4px);",
+    "whatItDoes": "Applies a Gaussian blur to an element.",
+    "syntax": "filter: blur(4px);",
+    "useCase": "Applies a Gaussian blur to an element.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `blur()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `blur()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
     "shortcut": "box-shadow",
     "desc": "Adds a drop shadow.",
     "example": "box-shadow: 0 4px 8px rgba(0,0,0,.1);",
@@ -282,6 +534,20 @@
   {
     "lang": "css",
     "cat": "Effects",
+    "shortcut": "brightness()",
+    "desc": "Adjusts the brightness of an element (1 = normal, 0 = black).",
+    "example": "filter: brightness(1.2);",
+    "whatItDoes": "Adjusts the brightness of an element (1 = normal, 0 = black).",
+    "syntax": "filter: brightness(1.2);",
+    "useCase": "Adjusts the brightness of an element (1 = normal, 0 = black).",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `brightness()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `brightness()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
     "shortcut": "clip-path",
     "desc": "Clips into a custom shape.",
     "example": "clip-path: circle(50%);",
@@ -291,6 +557,104 @@
     "shortcuts": {
       "vscode": "Start typing `clip-path` in a CSS rule -- VS Code's native CSS IntelliSense will suggest the property; press Enter/Tab to accept it (Ctrl+Space to force the suggestion list).",
       "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `clip-path` manually, or use Word Completion (Ctrl+Enter) once it has appeared earlier in the document."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "contrast()",
+    "desc": "Adjusts the contrast of an element.",
+    "example": "filter: contrast(1.4);",
+    "whatItDoes": "Adjusts the contrast of an element.",
+    "syntax": "filter: contrast(1.4);",
+    "useCase": "Adjusts the contrast of an element.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `contrast()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `contrast()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "drop-shadow()",
+    "desc": "Applies a shadow that follows an element's alpha shape (unlike box-shadow).",
+    "example": "filter: drop-shadow(0 4px 6px rgba(0,0,0,.3));",
+    "whatItDoes": "Applies a shadow that follows an element's alpha shape (unlike box-shadow).",
+    "syntax": "filter: drop-shadow(0 4px 6px rgba(0,0,0,.3));",
+    "useCase": "Applies a shadow that follows an element's alpha shape (unlike box-shadow).",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `drop-shadow()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `drop-shadow()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "grayscale()",
+    "desc": "Converts an element to grayscale (0 = normal, 1 = fully gray).",
+    "example": "filter: grayscale(1);",
+    "whatItDoes": "Converts an element to grayscale (0 = normal, 1 = fully gray).",
+    "syntax": "filter: grayscale(1);",
+    "useCase": "Converts an element to grayscale (0 = normal, 1 = fully gray).",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `grayscale()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `grayscale()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "hue-rotate()",
+    "desc": "Rotates the hues of an element's colors around the color wheel.",
+    "example": "filter: hue-rotate(90deg);",
+    "whatItDoes": "Rotates the hues of an element's colors around the color wheel.",
+    "syntax": "filter: hue-rotate(90deg);",
+    "useCase": "Rotates the hues of an element's colors around the color wheel.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `hue-rotate()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `hue-rotate()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "invert()",
+    "desc": "Inverts the colors of an element.",
+    "example": "filter: invert(1);",
+    "whatItDoes": "Inverts the colors of an element.",
+    "syntax": "filter: invert(1);",
+    "useCase": "Inverts the colors of an element.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `invert()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `invert()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "saturate()",
+    "desc": "Adjusts color saturation of an element.",
+    "example": "filter: saturate(1.8);",
+    "whatItDoes": "Adjusts color saturation of an element.",
+    "syntax": "filter: saturate(1.8);",
+    "useCase": "Adjusts color saturation of an element.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `saturate()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `saturate()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "sepia()",
+    "desc": "Applies a sepia (vintage brown) tone to an element.",
+    "example": "filter: sepia(0.6);",
+    "whatItDoes": "Applies a sepia (vintage brown) tone to an element.",
+    "syntax": "filter: sepia(0.6);",
+    "useCase": "Applies a sepia (vintage brown) tone to an element.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `sepia()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `sepia()` manually inside the property value."
     }
   },
   {
@@ -841,6 +1205,34 @@
   },
   {
     "lang": "css",
+    "cat": "Grid",
+    "shortcut": "subgrid",
+    "desc": "Lets a nested grid inherit the row/column tracks of its parent grid.",
+    "example": "grid-template-columns: subgrid;",
+    "whatItDoes": "Lets a nested grid inherit the row/column tracks of its parent grid.",
+    "syntax": "grid-template-columns: subgrid;",
+    "useCase": "Lets a nested grid inherit the row/column tracks of its parent grid.",
+    "shortcuts": {
+      "vscode": "Start typing `subgrid` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `subgrid` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "@container",
+    "desc": "Defines a container query context so children can respond to the container's size.",
+    "example": "@container (min-width: 400px) {\n  .card { flex-direction: row; }\n}",
+    "whatItDoes": "Defines a container query context so children can respond to the container's size.",
+    "syntax": "@container (min-width: 400px) {",
+    "useCase": "Defines a container query context so children can respond to the container's size.",
+    "shortcuts": {
+      "vscode": "Type `@container` at the top level of a stylesheet -- VS Code's CSS language service recognizes at-rules and will suggest them; press Enter/Tab to accept, then Ctrl+Space inside the block for further suggestions.",
+      "notepadpp": "Notepad++ has no CSS at-rule IntelliSense; type `@container { }` manually."
+    }
+  },
+  {
+    "lang": "css",
     "cat": "Layout",
     "shortcut": "aspect-ratio",
     "desc": "Forces a width:height ratio.",
@@ -856,6 +1248,48 @@
   {
     "lang": "css",
     "cat": "Layout",
+    "shortcut": "calc()",
+    "desc": "Performs calculations mixing different units, e.g. percentages and pixels.",
+    "example": "width: calc(100% - 40px);",
+    "whatItDoes": "Performs calculations mixing different units, e.g. percentages and pixels.",
+    "syntax": "width: calc(100% - 40px);",
+    "useCase": "Performs calculations mixing different units, e.g. percentages and pixels.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `calc()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `calc()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "clamp()",
+    "desc": "Clamps a value between a minimum and maximum, scaling with a preferred value.",
+    "example": "font-size: clamp(1rem, 2vw, 1.5rem);",
+    "whatItDoes": "Clamps a value between a minimum and maximum, scaling with a preferred value.",
+    "syntax": "font-size: clamp(1rem, 2vw, 1.5rem);",
+    "useCase": "Clamps a value between a minimum and maximum, scaling with a preferred value.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `clamp()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `clamp()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "container-type",
+    "desc": "Opts an element in as a query container for @container rules.",
+    "example": "container-type: inline-size;",
+    "whatItDoes": "Opts an element in as a query container for @container rules.",
+    "syntax": "container-type: inline-size;",
+    "useCase": "Opts an element in as a query container for @container rules.",
+    "shortcuts": {
+      "vscode": "Start typing `container-type` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `container-type` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
     "shortcut": "display: grid",
     "desc": "2D layout system.",
     "example": "display: grid;\ngrid-template-columns: repeat(3, 1fr);\ngap: 20px;",
@@ -865,6 +1299,34 @@
     "shortcuts": {
       "vscode": "Type the Emmet abbreviation `d` in a CSS rule and press Tab/Enter to expand it to `display: ;` with the cursor ready for a value, or just start typing `display` and accept VS Code's native CSS IntelliSense suggestion.",
       "notepadpp": "With the Emmet plugin installed and its Expand Abbreviation key mapped (no default binding), type `d` and press that key to expand it to `display: ;`. Otherwise type the property manually -- Notepad++ has no native CSS property IntelliSense."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "max()",
+    "desc": "Uses the largest of a list of values.",
+    "example": "padding: max(16px, 5%);",
+    "whatItDoes": "Uses the largest of a list of values.",
+    "syntax": "padding: max(16px, 5%);",
+    "useCase": "Uses the largest of a list of values.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `max()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `max()` manually inside the property value."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "min()",
+    "desc": "Uses the smallest of a list of values.",
+    "example": "width: min(90%, 600px);",
+    "whatItDoes": "Uses the smallest of a list of values.",
+    "syntax": "width: min(90%, 600px);",
+    "useCase": "Uses the smallest of a list of values.",
+    "shortcuts": {
+      "vscode": "Inside a property value, start typing `min()` -- VS Code's CSS IntelliSense will suggest it as a value completion; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS value IntelliSense; type `min()` manually inside the property value."
     }
   },
   {
@@ -893,6 +1355,48 @@
     "shortcuts": {
       "vscode": "Type the Emmet abbreviation `pos` in a CSS rule and press Tab/Enter to expand it to `position: ;` with the cursor ready for a value, or just start typing `position` and accept VS Code's native CSS IntelliSense suggestion.",
       "notepadpp": "With the Emmet plugin installed and its Expand Abbreviation key mapped (no default binding), type `pos` and press that key to expand it to `position: ;`. Otherwise type the property manually -- Notepad++ has no native CSS property IntelliSense."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "scroll-snap-align",
+    "desc": "Sets where a child snaps to within its scroll-snap container.",
+    "example": "scroll-snap-align: center;",
+    "whatItDoes": "Sets where a child snaps to within its scroll-snap container.",
+    "syntax": "scroll-snap-align: center;",
+    "useCase": "Sets where a child snaps to within its scroll-snap container.",
+    "shortcuts": {
+      "vscode": "Start typing `scroll-snap-align` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `scroll-snap-align` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "scroll-snap-type",
+    "desc": "Enables scroll snapping on a scroll container along an axis.",
+    "example": "scroll-snap-type: x mandatory;",
+    "whatItDoes": "Enables scroll snapping on a scroll container along an axis.",
+    "syntax": "scroll-snap-type: x mandatory;",
+    "useCase": "Enables scroll snapping on a scroll container along an axis.",
+    "shortcuts": {
+      "vscode": "Start typing `scroll-snap-type` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `scroll-snap-type` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "writing-mode",
+    "desc": "Sets whether text flows horizontally or vertically.",
+    "example": "writing-mode: vertical-rl;",
+    "whatItDoes": "Sets whether text flows horizontally or vertically.",
+    "syntax": "writing-mode: vertical-rl;",
+    "useCase": "Sets whether text flows horizontally or vertically.",
+    "shortcuts": {
+      "vscode": "Start typing `writing-mode` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `writing-mode` manually."
     }
   },
   {
@@ -1079,6 +1583,20 @@
   },
   {
     "lang": "css",
+    "cat": "Responsive",
+    "shortcut": "@supports",
+    "desc": "Applies CSS rules only if the browser supports a given feature.",
+    "example": "@supports (display: grid) {\n  .layout { display: grid; }\n}",
+    "whatItDoes": "Applies CSS rules only if the browser supports a given feature.",
+    "syntax": "@supports (display: grid) {",
+    "useCase": "Applies CSS rules only if the browser supports a given feature.",
+    "shortcuts": {
+      "vscode": "Type `@supports` at the top level of a stylesheet -- VS Code's CSS language service recognizes at-rules and will suggest them; press Enter/Tab to accept, then Ctrl+Space inside the block for further suggestions.",
+      "notepadpp": "Notepad++ has no CSS at-rule IntelliSense; type `@supports { }` manually."
+    }
+  },
+  {
+    "lang": "css",
     "cat": "Scrollbar",
     "shortcut": "::-webkit-scrollbar",
     "desc": "Custom scrollbar styling.",
@@ -1178,6 +1696,48 @@
   {
     "lang": "css",
     "cat": "Selectors",
+    "shortcut": ":checked",
+    "desc": "Matches a checkbox, radio, or option that is currently checked/selected.",
+    "example": "input:checked + label { font-weight: bold; }",
+    "whatItDoes": "Matches a checkbox, radio, or option that is currently checked/selected.",
+    "syntax": "input:checked + label { font-weight: bold; }",
+    "useCase": "Matches a checkbox, radio, or option that is currently checked/selected.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS language service lists `:checked` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
+      "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:checked` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
+    "shortcut": ":disabled",
+    "desc": "Matches form elements that are currently disabled.",
+    "example": "input:disabled { opacity: 0.5; }",
+    "whatItDoes": "Matches form elements that are currently disabled.",
+    "syntax": "input:disabled { opacity: 0.5; }",
+    "useCase": "Matches form elements that are currently disabled.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS language service lists `:disabled` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
+      "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:disabled` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
+    "shortcut": ":empty",
+    "desc": "Matches elements that have no children (including no text).",
+    "example": "p:empty { display: none; }",
+    "whatItDoes": "Matches elements that have no children (including no text).",
+    "syntax": "p:empty { display: none; }",
+    "useCase": "Matches elements that have no children (including no text).",
+    "shortcuts": {
+      "vscode": "VS Code's CSS language service lists `:empty` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
+      "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:empty` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
     "shortcut": ":first-child",
     "desc": "Matches an element that is the first child of its parent.",
     "example": "li:first-child { font-weight: bold; }",
@@ -1220,6 +1780,20 @@
   {
     "lang": "css",
     "cat": "Selectors",
+    "shortcut": ":has()",
+    "desc": "Matches an element only if it contains a descendant matching the given selector.",
+    "example": "card:has(img) { padding-top: 0; }",
+    "whatItDoes": "Matches an element only if it contains a descendant matching the given selector.",
+    "syntax": "card:has(img) { padding-top: 0; }",
+    "useCase": "Matches an element only if it contains a descendant matching the given selector.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS language service lists `:has()` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
+      "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:has()` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
     "shortcut": ":hover",
     "desc": "Matches an element while the pointer is hovering over it.",
     "example": "a:hover { color: red; }",
@@ -1229,6 +1803,20 @@
     "shortcuts": {
       "vscode": "VS Code's CSS language service lists `:hover` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
       "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:hover` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
+    "shortcut": ":is()",
+    "desc": "Matches any selector in a list, reducing repetition in complex selectors.",
+    "example": "is(header, footer) a { color: teal; }",
+    "whatItDoes": "Matches any selector in a list, reducing repetition in complex selectors.",
+    "syntax": "is(header, footer) a { color: teal; }",
+    "useCase": "Matches any selector in a list, reducing repetition in complex selectors.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS language service lists `:is()` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
+      "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:is()` manually."
     }
   },
   {
@@ -1285,6 +1873,34 @@
     "shortcuts": {
       "vscode": "VS Code's CSS language service lists `:nth-of-type()` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
       "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:nth-of-type()` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
+    "shortcut": ":target",
+    "desc": "Matches the element whose id matches the URL's current fragment (#id).",
+    "example": "#section1:target { background: yellow; }",
+    "whatItDoes": "Matches the element whose id matches the URL's current fragment (#id).",
+    "syntax": "#section1:target { background: yellow; }",
+    "useCase": "Matches the element whose id matches the URL's current fragment (#id).",
+    "shortcuts": {
+      "vscode": "VS Code's CSS language service lists `:target` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
+      "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:target` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
+    "shortcut": ":where()",
+    "desc": "Like :is(), but always contributes zero specificity -- easy to override.",
+    "example": "where(.card, .panel) p { margin: 0; }",
+    "whatItDoes": "Like :is(), but always contributes zero specificity -- easy to override.",
+    "syntax": "where(.card, .panel) p { margin: 0; }",
+    "useCase": "Like :is(), but always contributes zero specificity -- easy to override.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS language service lists `:where()` in the completion popup as you type inside a stylesheet; select it and press Enter. There is no Emmet shortcut for pseudo-selectors -- they are typed directly.",
+      "notepadpp": "Notepad++ has no CSS selector autocomplete; type `:where()` manually."
     }
   },
   {
@@ -1388,6 +2004,20 @@
   {
     "lang": "css",
     "cat": "Typography",
+    "shortcut": "hyphens",
+    "desc": "Enables automatic hyphenation of text at line breaks.",
+    "example": "hyphens: auto;",
+    "whatItDoes": "Enables automatic hyphenation of text at line breaks.",
+    "syntax": "hyphens: auto;",
+    "useCase": "Enables automatic hyphenation of text at line breaks.",
+    "shortcuts": {
+      "vscode": "Start typing `hyphens` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `hyphens` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Typography",
     "shortcut": "letter-spacing",
     "desc": "Adjusts spacing between characters.",
     "example": "letter-spacing: 0.05em;",
@@ -1486,6 +2116,20 @@
   {
     "lang": "css",
     "cat": "Typography",
+    "shortcut": "text-wrap",
+    "desc": "Controls text wrapping behavior, e.g. balance for even line lengths in headings.",
+    "example": "text-wrap: balance;",
+    "whatItDoes": "Controls text wrapping behavior, e.g. balance for even line lengths in headings.",
+    "syntax": "text-wrap: balance;",
+    "useCase": "Controls text wrapping behavior, e.g. balance for even line lengths in headings.",
+    "shortcuts": {
+      "vscode": "Start typing `text-wrap` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `text-wrap` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Typography",
     "shortcut": "vertical-align",
     "desc": "Aligns inline/table-cell content vertically.",
     "example": "vertical-align: middle;",
@@ -1523,6 +2167,174 @@
     "shortcuts": {
       "vscode": "Start typing `--custom-prop` in a CSS rule -- VS Code's native CSS IntelliSense will suggest the property; press Enter/Tab to accept it (Ctrl+Space to force the suggestion list).",
       "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `--custom-prop` manually, or use Word Completion (Ctrl+Enter) once it has appeared earlier in the document."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Variables",
+    "shortcut": "@property",
+    "desc": "Registers a custom property with a type, initial value, and inheritance behavior.",
+    "example": "@property --angle {\n  syntax: '<angle>';\n  initial-value: 0deg;\n  inherits: false;\n}",
+    "whatItDoes": "Registers a custom property with a type, initial value, and inheritance behavior.",
+    "syntax": "@property --angle {",
+    "useCase": "Registers a custom property with a type, initial value, and inheritance behavior.",
+    "shortcuts": {
+      "vscode": "Type `@property` at the top level of a stylesheet -- VS Code's CSS language service recognizes at-rules and will suggest them; press Enter/Tab to accept, then Ctrl+Space inside the block for further suggestions.",
+      "notepadpp": "Notepad++ has no CSS at-rule IntelliSense; type `@property { }` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-moz-appearance",
+    "desc": "Firefox-prefixed way to remove native styling from form controls.",
+    "example": "-moz-appearance: none;",
+    "whatItDoes": "Firefox-prefixed way to remove native styling from form controls.",
+    "syntax": "-moz-appearance: none;",
+    "useCase": "`-moz-appearance` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-moz-appearance` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-moz-appearance` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-ms-overflow-style",
+    "desc": "Legacy Internet Explorer/Edge property to hide the scrollbar.",
+    "example": "-ms-overflow-style: none;",
+    "whatItDoes": "Legacy Internet Explorer/Edge property to hide the scrollbar.",
+    "syntax": "-ms-overflow-style: none;",
+    "useCase": "`-ms-overflow-style` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-ms-overflow-style` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-ms-overflow-style` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-appearance",
+    "desc": "Removes/customizes native OS styling of form controls in WebKit/Blink browsers.",
+    "example": "-webkit-appearance: none;",
+    "whatItDoes": "Removes/customizes native OS styling of form controls in WebKit/Blink browsers.",
+    "syntax": "-webkit-appearance: none;",
+    "useCase": "`-webkit-appearance` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-appearance` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-appearance` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-backdrop-filter",
+    "desc": "WebKit/Safari-specific prefix required for backdrop-filter to work on older Safari.",
+    "example": "-webkit-backdrop-filter: blur(10px);\nbackdrop-filter: blur(10px);",
+    "whatItDoes": "WebKit/Safari-specific prefix required for backdrop-filter to work on older Safari.",
+    "syntax": "-webkit-backdrop-filter: blur(10px);",
+    "useCase": "`-webkit-backdrop-filter` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-backdrop-filter` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-backdrop-filter` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-line-clamp",
+    "desc": "Truncates multi-line text with an ellipsis; requires display:-webkit-box in WebKit/Blink.",
+    "example": "display: -webkit-box;\n-webkit-line-clamp: 3;\n-webkit-box-orient: vertical;\noverflow: hidden;",
+    "whatItDoes": "Truncates multi-line text with an ellipsis; requires display:-webkit-box in WebKit/Blink.",
+    "syntax": "display: -webkit-box;",
+    "useCase": "`-webkit-line-clamp` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-line-clamp` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-line-clamp` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-mask",
+    "desc": "Applies a WebKit-prefixed mask image/gradient to an element (needed for older Safari).",
+    "example": "-webkit-mask-image: linear-gradient(black, transparent);",
+    "whatItDoes": "Applies a WebKit-prefixed mask image/gradient to an element (needed for older Safari).",
+    "syntax": "-webkit-mask-image: linear-gradient(black, transparent);",
+    "useCase": "`-webkit-mask` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-mask` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-mask` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-overflow-scrolling",
+    "desc": "Enables momentum (inertial) scrolling on older iOS Safari.",
+    "example": "-webkit-overflow-scrolling: touch;",
+    "whatItDoes": "Enables momentum (inertial) scrolling on older iOS Safari.",
+    "syntax": "-webkit-overflow-scrolling: touch;",
+    "useCase": "`-webkit-overflow-scrolling` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-overflow-scrolling` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-overflow-scrolling` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-tap-highlight-color",
+    "desc": "Removes/customizes the gray flash shown when tapping links on mobile WebKit.",
+    "example": "-webkit-tap-highlight-color: transparent;",
+    "whatItDoes": "Removes/customizes the gray flash shown when tapping links on mobile WebKit.",
+    "syntax": "-webkit-tap-highlight-color: transparent;",
+    "useCase": "`-webkit-tap-highlight-color` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-tap-highlight-color` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-tap-highlight-color` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-text-fill-color",
+    "desc": "Sets the fill color of text, often combined with background-clip:text for gradient text.",
+    "example": "background: linear-gradient(90deg,#f06,#4af);\n-webkit-background-clip: text;\n-webkit-text-fill-color: transparent;",
+    "whatItDoes": "Sets the fill color of text, often combined with background-clip:text for gradient text.",
+    "syntax": "background: linear-gradient(90deg,#f06,#4af);",
+    "useCase": "`-webkit-text-fill-color` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-text-fill-color` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-text-fill-color` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Vendor Prefixes",
+    "shortcut": "-webkit-user-select",
+    "desc": "WebKit-prefixed way to disable/enable text selection (needed for older Safari/iOS).",
+    "example": "-webkit-user-select: none;\nuser-select: none;",
+    "whatItDoes": "WebKit-prefixed way to disable/enable text selection (needed for older Safari/iOS).",
+    "syntax": "-webkit-user-select: none;",
+    "useCase": "`-webkit-user-select` is needed for consistent behavior across older WebKit/Blink/Gecko browsers before a CSS feature became fully standardized -- modern build tools like Autoprefixer usually add these automatically from the standard property.",
+    "shortcuts": {
+      "vscode": "VS Code's CSS IntelliSense lists vendor-prefixed properties like `-webkit-user-select` in the completion popup alongside the unprefixed version -- start typing and select it, or use an Autoprefixer/PostCSS build step so you only have to write the standard property.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense, vendor-prefixed or otherwise. Type `-webkit-user-select` manually (Word Completion via Ctrl+Enter can finish it once it has appeared earlier in the document)."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Visual",
+    "shortcut": "accent-color",
+    "desc": "Sets the accent color used by native form controls (checkboxes, radios, etc.).",
+    "example": "accent-color: #7c5cff;",
+    "whatItDoes": "Sets the accent color used by native form controls (checkboxes, radios, etc.).",
+    "syntax": "accent-color: #7c5cff;",
+    "useCase": "Sets the accent color used by native form controls (checkboxes, radios, etc.).",
+    "shortcuts": {
+      "vscode": "Start typing `accent-color` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `accent-color` manually."
     }
   },
   {
@@ -1626,6 +2438,20 @@
   {
     "lang": "css",
     "cat": "Visual",
+    "shortcut": "caret-color",
+    "desc": "Sets the color of the text input cursor (caret).",
+    "example": "caret-color: #ff5f56;",
+    "whatItDoes": "Sets the color of the text input cursor (caret).",
+    "syntax": "caret-color: #ff5f56;",
+    "useCase": "Sets the color of the text input cursor (caret).",
+    "shortcuts": {
+      "vscode": "Start typing `caret-color` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `caret-color` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Visual",
     "shortcut": "color",
     "desc": "Sets the text (foreground) color.",
     "example": "color: #1a1a1a;",
@@ -1663,6 +2489,34 @@
     "shortcuts": {
       "vscode": "Start typing `filter` in a CSS rule -- VS Code's native CSS IntelliSense will suggest the property; press Enter/Tab to accept it (Ctrl+Space to force the suggestion list).",
       "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `filter` manually, or use Word Completion (Ctrl+Enter) once it has appeared earlier in the document."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Visual",
+    "shortcut": "isolation",
+    "desc": "Creates a new stacking context, isolating blend modes to within an element.",
+    "example": "isolation: isolate;",
+    "whatItDoes": "Creates a new stacking context, isolating blend modes to within an element.",
+    "syntax": "isolation: isolate;",
+    "useCase": "Creates a new stacking context, isolating blend modes to within an element.",
+    "shortcuts": {
+      "vscode": "Start typing `isolation` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `isolation` manually."
+    }
+  },
+  {
+    "lang": "css",
+    "cat": "Visual",
+    "shortcut": "mix-blend-mode",
+    "desc": "Sets how an element's content blends with content behind it.",
+    "example": "mix-blend-mode: multiply;",
+    "whatItDoes": "Sets how an element's content blends with content behind it.",
+    "syntax": "mix-blend-mode: multiply;",
+    "useCase": "Sets how an element's content blends with content behind it.",
+    "shortcuts": {
+      "vscode": "Start typing `mix-blend-mode` in a CSS rule -- VS Code's native CSS IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no CSS property IntelliSense. Type `mix-blend-mode` manually."
     }
   },
   {
@@ -1906,6 +2760,34 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "allow",
+    "desc": "Grants an <iframe> permission to use browser features like camera or fullscreen.",
+    "example": "<iframe allow=\"fullscreen\" src=\"video.html\"></iframe>",
+    "whatItDoes": "Grants an <iframe> permission to use browser features like camera or fullscreen.",
+    "syntax": "<iframe allow=\"fullscreen\" src=\"video.html\"></iframe>",
+    "useCase": "Grants an <iframe> permission to use browser features like camera or fullscreen.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `allow` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `allow=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[allow]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "allowfullscreen",
+    "desc": "Lets an embedded <iframe> request fullscreen mode.",
+    "example": "<iframe allowfullscreen src=\"player.html\"></iframe>",
+    "whatItDoes": "Lets an embedded <iframe> request fullscreen mode.",
+    "syntax": "<iframe allowfullscreen src=\"player.html\"></iframe>",
+    "useCase": "Lets an embedded <iframe> request fullscreen mode.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `allowfullscreen` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `allowfullscreen=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[allowfullscreen]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "alt",
     "desc": "Alternative text describing an image, for accessibility and fallback.",
     "example": "<img src=\"cat.jpg\" alt=\"A sleeping cat\">",
@@ -1920,6 +2802,76 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "aria-checked",
+    "desc": "Indicates the checked state of a checkbox/radio/switch-like widget.",
+    "example": "<div role=\"checkbox\" aria-checked=\"true\"></div>",
+    "whatItDoes": "Indicates the checked state of a checkbox/radio/switch-like widget.",
+    "syntax": "<div role=\"checkbox\" aria-checked=\"true\"></div>",
+    "useCase": "Indicates the checked state of a checkbox/radio/switch-like widget.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `aria-checked` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `aria-checked=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[aria-checked]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "aria-current",
+    "desc": "Marks the current item within a set, e.g. the active page in navigation.",
+    "example": "<a href=\"/\" aria-current=\"page\">Home</a>",
+    "whatItDoes": "Marks the current item within a set, e.g. the active page in navigation.",
+    "syntax": "<a href=\"/\" aria-current=\"page\">Home</a>",
+    "useCase": "Marks the current item within a set, e.g. the active page in navigation.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `aria-current` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `aria-current=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[aria-current]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "aria-describedby",
+    "desc": "Points to the id of an element that provides extra descriptive text.",
+    "example": "<input aria-describedby=\"hint\">\n<span id=\"hint\">8+ characters</span>",
+    "whatItDoes": "Points to the id of an element that provides extra descriptive text.",
+    "syntax": "<input aria-describedby=\"hint\">",
+    "useCase": "Points to the id of an element that provides extra descriptive text.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `aria-describedby` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `aria-describedby=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[aria-describedby]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "aria-expanded",
+    "desc": "Indicates whether a collapsible element (menu, accordion) is currently expanded.",
+    "example": "<button aria-expanded=\"false\">Menu</button>",
+    "whatItDoes": "Indicates whether a collapsible element (menu, accordion) is currently expanded.",
+    "syntax": "<button aria-expanded=\"false\">Menu</button>",
+    "useCase": "Indicates whether a collapsible element (menu, accordion) is currently expanded.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `aria-expanded` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `aria-expanded=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[aria-expanded]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "aria-hidden",
+    "desc": "Hides decorative/duplicate content from assistive technology while keeping it visible.",
+    "example": "<i class=\"icon\" aria-hidden=\"true\"></i>",
+    "whatItDoes": "Hides decorative/duplicate content from assistive technology while keeping it visible.",
+    "syntax": "<i class=\"icon\" aria-hidden=\"true\"></i>",
+    "useCase": "Hides decorative/duplicate content from assistive technology while keeping it visible.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `aria-hidden` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `aria-hidden=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[aria-hidden]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "aria-label",
     "desc": "Provides an accessible name when visible text isn't sufficient.",
     "example": "<button aria-label=\"Close\">&times;</button>",
@@ -1929,6 +2881,20 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `aria-label` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `aria-label=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[aria-label]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "aria-live",
+    "desc": "Announces dynamic content changes to screen readers without moving focus.",
+    "example": "<div aria-live=\"polite\">3 new messages</div>",
+    "whatItDoes": "Announces dynamic content changes to screen readers without moving focus.",
+    "syntax": "<div aria-live=\"polite\">3 new messages</div>",
+    "useCase": "Announces dynamic content changes to screen readers without moving focus.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `aria-live` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `aria-live=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[aria-live]` and press that key to insert it."
     }
   },
   {
@@ -1971,6 +2937,20 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `autofocus` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `autofocus=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[autofocus]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "autoplay",
+    "desc": "Starts audio/video playback automatically as soon as possible.",
+    "example": "<video autoplay muted src=\"loop.mp4\"></video>",
+    "whatItDoes": "Starts audio/video playback automatically as soon as possible.",
+    "syntax": "<video autoplay muted src=\"loop.mp4\"></video>",
+    "useCase": "Starts audio/video playback automatically as soon as possible.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `autoplay` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `autoplay=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[autoplay]` and press that key to insert it."
     }
   },
   {
@@ -2060,6 +3040,20 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "controls",
+    "desc": "Shows the browser's built-in playback controls for audio/video.",
+    "example": "<video controls src=\"movie.mp4\"></video>",
+    "whatItDoes": "Shows the browser's built-in playback controls for audio/video.",
+    "syntax": "<video controls src=\"movie.mp4\"></video>",
+    "useCase": "Shows the browser's built-in playback controls for audio/video.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `controls` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `controls=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[controls]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "crossorigin",
     "desc": "Configures CORS requests for the element's fetched resource.",
     "example": "<script crossorigin src=\"cdn.js\"></script>",
@@ -2083,6 +3077,34 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `data-*` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `data-*=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[data-*]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "datetime",
+    "desc": "Machine-readable date/time value for <time>, <ins>, or <del>.",
+    "example": "<time datetime=\"2026-07-11\">July 11</time>",
+    "whatItDoes": "Machine-readable date/time value for <time>, <ins>, or <del>.",
+    "syntax": "<time datetime=\"2026-07-11\">July 11</time>",
+    "useCase": "Machine-readable date/time value for <time>, <ins>, or <del>.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `datetime` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `datetime=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[datetime]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "decoding",
+    "desc": "Hints whether an image should decode synchronously or asynchronously.",
+    "example": "<img decoding=\"async\" src=\"photo.jpg\">",
+    "whatItDoes": "Hints whether an image should decode synchronously or asynchronously.",
+    "syntax": "<img decoding=\"async\" src=\"photo.jpg\">",
+    "useCase": "Hints whether an image should decode synchronously or asynchronously.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `decoding` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `decoding=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[decoding]` and press that key to insert it."
     }
   },
   {
@@ -2172,6 +3194,34 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "enterkeyhint",
+    "desc": "Hints what label/icon to show on a virtual keyboard's Enter key.",
+    "example": "<input enterkeyhint=\"send\">",
+    "whatItDoes": "Hints what label/icon to show on a virtual keyboard's Enter key.",
+    "syntax": "<input enterkeyhint=\"send\">",
+    "useCase": "Hints what label/icon to show on a virtual keyboard's Enter key.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `enterkeyhint` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `enterkeyhint=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[enterkeyhint]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "fetchpriority",
+    "desc": "Hints the relative loading priority of an image/script/link.",
+    "example": "<img fetchpriority=\"high\" src=\"hero.jpg\">",
+    "whatItDoes": "Hints the relative loading priority of an image/script/link.",
+    "syntax": "<img fetchpriority=\"high\" src=\"hero.jpg\">",
+    "useCase": "Hints the relative loading priority of an image/script/link.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `fetchpriority` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `fetchpriority=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[fetchpriority]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "for",
     "desc": "Associates a <label> with a form control by id.",
     "example": "<label for=\"email\">Email</label>",
@@ -2181,6 +3231,20 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `for` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `for=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[for]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "formaction",
+    "desc": "Overrides a submit button's form action URL for that click only.",
+    "example": "<button formaction=\"/preview\">Preview</button>",
+    "whatItDoes": "Overrides a submit button's form action URL for that click only.",
+    "syntax": "<button formaction=\"/preview\">Preview</button>",
+    "useCase": "Overrides a submit button's form action URL for that click only.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `formaction` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `formaction=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[formaction]` and press that key to insert it."
     }
   },
   {
@@ -2242,6 +3306,34 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "inert",
+    "desc": "Makes an element (and its subtree) non-interactive and unfocusable.",
+    "example": "<div inert>Background content</div>",
+    "whatItDoes": "Makes an element (and its subtree) non-interactive and unfocusable.",
+    "syntax": "<div inert>Background content</div>",
+    "useCase": "Makes an element (and its subtree) non-interactive and unfocusable.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `inert` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `inert=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[inert]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "inputmode",
+    "desc": "Hints which virtual keyboard to show for a text input (e.g. numeric, email).",
+    "example": "<input inputmode=\"numeric\">",
+    "whatItDoes": "Hints which virtual keyboard to show for a text input (e.g. numeric, email).",
+    "syntax": "<input inputmode=\"numeric\">",
+    "useCase": "Hints which virtual keyboard to show for a text input (e.g. numeric, email).",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `inputmode` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `inputmode=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[inputmode]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "integrity",
     "desc": "Provides a Subresource Integrity hash to verify a fetched resource.",
     "example": "<script integrity=\"sha384-...\" src=\"cdn.js\"></script>",
@@ -2270,6 +3362,20 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "list",
+    "desc": "Associates an <input> with a <datalist> of suggested values.",
+    "example": "<input list=\"browsers\">\n<datalist id=\"browsers\"><option value=\"Chrome\"></datalist>",
+    "whatItDoes": "Associates an <input> with a <datalist> of suggested values.",
+    "syntax": "<input list=\"browsers\">",
+    "useCase": "Associates an <input> with a <datalist> of suggested values.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `list` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `list=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[list]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "loading",
     "desc": "Controls whether an image/iframe loads lazily or eagerly.",
     "example": "<img src=\"x.jpg\" loading=\"lazy\">",
@@ -2279,6 +3385,20 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `loading` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `loading=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[loading]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "loop",
+    "desc": "Restarts audio/video playback from the start when it finishes.",
+    "example": "<audio loop src=\"song.mp3\"></audio>",
+    "whatItDoes": "Restarts audio/video playback from the start when it finishes.",
+    "syntax": "<audio loop src=\"song.mp3\"></audio>",
+    "useCase": "Restarts audio/video playback from the start when it finishes.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `loop` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `loop=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[loop]` and press that key to insert it."
     }
   },
   {
@@ -2354,6 +3474,20 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "muted",
+    "desc": "Silences audio/video by default on page load.",
+    "example": "<video muted autoplay src=\"bg.mp4\"></video>",
+    "whatItDoes": "Silences audio/video by default on page load.",
+    "syntax": "<video muted autoplay src=\"bg.mp4\"></video>",
+    "useCase": "Silences audio/video by default on page load.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `muted` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `muted=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[muted]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "name",
     "desc": "Identifies form controls when submitted, or names a frame/window.",
     "example": "<input type=\"text\" name=\"username\">",
@@ -2424,6 +3558,48 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "popover",
+    "desc": "Marks an element as a native popover, shown/hidden via the Popover API.",
+    "example": "<div popover id=\"tip\">Hello</div>",
+    "whatItDoes": "Marks an element as a native popover, shown/hidden via the Popover API.",
+    "syntax": "<div popover id=\"tip\">Hello</div>",
+    "useCase": "Marks an element as a native popover, shown/hidden via the Popover API.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `popover` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `popover=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[popover]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "poster",
+    "desc": "An image shown before a video starts playing.",
+    "example": "<video poster=\"thumb.jpg\" src=\"movie.mp4\"></video>",
+    "whatItDoes": "An image shown before a video starts playing.",
+    "syntax": "<video poster=\"thumb.jpg\" src=\"movie.mp4\"></video>",
+    "useCase": "An image shown before a video starts playing.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `poster` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `poster=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[poster]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "preload",
+    "desc": "Hints how much of a media file to preload: none, metadata, or auto.",
+    "example": "<video preload=\"metadata\" src=\"movie.mp4\"></video>",
+    "whatItDoes": "Hints how much of a media file to preload: none, metadata, or auto.",
+    "syntax": "<video preload=\"metadata\" src=\"movie.mp4\"></video>",
+    "useCase": "Hints how much of a media file to preload: none, metadata, or auto.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `preload` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `preload=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[preload]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "readonly",
     "desc": "Makes an input/textarea non-editable but still submittable.",
     "example": "<input readonly value=\"Fixed\">",
@@ -2433,6 +3609,20 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `readonly` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `readonly=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[readonly]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "referrerpolicy",
+    "desc": "Controls how much referrer information is sent when fetching a resource.",
+    "example": "<img referrerpolicy=\"no-referrer\" src=\"x.jpg\">",
+    "whatItDoes": "Controls how much referrer information is sent when fetching a resource.",
+    "syntax": "<img referrerpolicy=\"no-referrer\" src=\"x.jpg\">",
+    "useCase": "Controls how much referrer information is sent when fetching a resource.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `referrerpolicy` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `referrerpolicy=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[referrerpolicy]` and press that key to insert it."
     }
   },
   {
@@ -2466,6 +3656,20 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "reversed",
+    "desc": "Displays an ordered list in descending order.",
+    "example": "<ol reversed><li>Third</li><li>Second</li><li>First</li></ol>",
+    "whatItDoes": "Displays an ordered list in descending order.",
+    "syntax": "<ol reversed><li>Third</li><li>Second</li><li>First</li></ol>",
+    "useCase": "Displays an ordered list in descending order.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `reversed` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `reversed=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[reversed]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "role",
     "desc": "Defines an explicit ARIA role for assistive technologies.",
     "example": "<div role=\"button\">Click</div>",
@@ -2489,6 +3693,34 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `rowspan` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `rowspan=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[rowspan]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "sandbox",
+    "desc": "Restricts what an embedded <iframe> is allowed to do.",
+    "example": "<iframe sandbox=\"allow-scripts\" src=\"widget.html\"></iframe>",
+    "whatItDoes": "Restricts what an embedded <iframe> is allowed to do.",
+    "syntax": "<iframe sandbox=\"allow-scripts\" src=\"widget.html\"></iframe>",
+    "useCase": "Restricts what an embedded <iframe> is allowed to do.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `sandbox` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `sandbox=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[sandbox]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "scope",
+    "desc": "On a <th>, defines whether it headers a row, column, or group of cells.",
+    "example": "<th scope=\"col\">Name</th>",
+    "whatItDoes": "On a <th>, defines whether it headers a row, column, or group of cells.",
+    "syntax": "<th scope=\"col\">Name</th>",
+    "useCase": "On a <th>, defines whether it headers a row, column, or group of cells.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `scope` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `scope=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[scope]` and press that key to insert it."
     }
   },
   {
@@ -2545,6 +3777,20 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, type the Emmet snippet `img:srcset` and press Tab/Enter to insert the `srcset` attribute with its expected values pre-filled, or just type `srcset` and accept it from VS Code's native HTML attribute IntelliSense.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `srcset=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[srcset]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "start",
+    "desc": "Sets the starting number of an ordered list.",
+    "example": "<ol start=\"5\"><li>Five</li><li>Six</li></ol>",
+    "whatItDoes": "Sets the starting number of an ordered list.",
+    "syntax": "<ol start=\"5\"><li>Five</li><li>Six</li></ol>",
+    "useCase": "Sets the starting number of an ordered list.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `start` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `start=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[start]` and press that key to insert it."
     }
   },
   {
@@ -2634,6 +3880,20 @@
   {
     "lang": "html",
     "cat": "Attributes",
+    "shortcut": "usemap",
+    "desc": "Associates an <img> with a <map> of clickable areas.",
+    "example": "<img src=\"map.png\" usemap=\"#worldmap\">",
+    "whatItDoes": "Associates an <img> with a <map> of clickable areas.",
+    "syntax": "<img src=\"map.png\" usemap=\"#worldmap\">",
+    "useCase": "Associates an <img> with a <map> of clickable areas.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `usemap` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `usemap=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[usemap]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
     "shortcut": "value",
     "desc": "Sets the default/current value of a form control.",
     "example": "<input type=\"text\" value=\"Hello\">",
@@ -2657,6 +3917,20 @@
     "shortcuts": {
       "vscode": "Inside an opening tag, start typing `width` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
       "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `width=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[width]` and press that key to insert it."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "wrap",
+    "desc": "Controls whether a <textarea>'s text wraps when submitted: soft or hard.",
+    "example": "<textarea wrap=\"hard\"></textarea>",
+    "whatItDoes": "Controls whether a <textarea>'s text wraps when submitted: soft or hard.",
+    "syntax": "<textarea wrap=\"hard\"></textarea>",
+    "useCase": "Controls whether a <textarea>'s text wraps when submitted: soft or hard.",
+    "shortcuts": {
+      "vscode": "Inside an opening tag, start typing `wrap` -- VS Code's built-in HTML IntelliSense will suggest it; press Enter/Tab to accept.",
+      "notepadpp": "Notepad++ has no built-in HTML attribute IntelliSense. Type `wrap=\"\"` manually, or (with the Emmet plugin installed and an Expand Abbreviation key mapped) type `tag[wrap]` and press that key to insert it."
     }
   },
   {
@@ -3343,6 +4617,20 @@
     "shortcuts": {
       "vscode": "Type `leg` (the Emmet alias) or the full tag name `legend`, then press Tab (with the VS Code setting \"emmet.triggerExpansionOnTab\": true) -- or pick the Emmet suggestion from the completion list and press Enter -- to expand it to `<legend></legend>`.",
       "notepadpp": "Notepad++ has no HTML IntelliSense by default. Install the third-party \"Emmet\" plugin (Plugins > Plugin Manager), then map a key to its \"Expand Abbreviation\" command under Settings > Shortcut Mapper > Plugin Commands (it has no default shortcut -- Ctrl+Alt+Enter or a remapped Tab are common choices). Type `leg or legend` and press that key to expand it to `<legend></legend>`."
+    }
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<li>",
+    "desc": "A single item within an <ol>, <ul>, or <menu> list.",
+    "example": "<ul>\n  <li>First item</li>\n  <li>Second item</li>\n</ul>",
+    "whatItDoes": "A single item within an <ol>, <ul>, or <menu> list.",
+    "syntax": "<ul>",
+    "useCase": "A single item within an <ol>, <ul>, or <menu> list.",
+    "shortcuts": {
+      "vscode": "Type `li`, then press Tab (with \"emmet.triggerExpansionOnTab\": true enabled) or select the Emmet suggestion from the IntelliSense list and press Enter/Tab to expand it to `<li></li>`.",
+      "notepadpp": "Notepad++ has no HTML IntelliSense by default. Install the third-party \"Emmet\" plugin (Plugins > Plugin Manager), then map a key to its \"Expand Abbreviation\" command under Settings > Shortcut Mapper > Plugin Commands (it has no default shortcut -- Ctrl+Alt+Enter or a remapped Tab are common choices). Type `li` and press that key to expand it to `<li></li>`."
     }
   },
   {
@@ -5736,6 +7024,90 @@
   },
   {
     "lang": "js",
+    "cat": "Advanced Objects",
+    "shortcut": "Object.defineProperty()",
+    "desc": "Precisely defines a new property or modifies an existing one on an object.",
+    "example": "Object.defineProperty(obj, 'id', { value: 1, writable: false });",
+    "whatItDoes": "Precisely defines a new property or modifies an existing one on an object.",
+    "syntax": "Object.defineProperty(obj, 'id', { value: 1, writable: false });",
+    "useCase": "Precisely defines a new property or modifies an existing one on an object.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `Object.defineProperty()`. In VS Code, type the object/value followed by `.`, then choose `Object.defineProperty()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `Object.defineProperty()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Advanced Objects",
+    "shortcut": "Object.getPrototypeOf()",
+    "desc": "Returns the prototype (internal [[Prototype]]) of an object.",
+    "example": "Object.getPrototypeOf([]) === Array.prototype;",
+    "whatItDoes": "Returns the prototype (internal [[Prototype]]) of an object.",
+    "syntax": "Object.getPrototypeOf([]) === Array.prototype;",
+    "useCase": "Returns the prototype (internal [[Prototype]]) of an object.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `Object.getPrototypeOf()`. In VS Code, type the object/value followed by `.`, then choose `Object.getPrototypeOf()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `Object.getPrototypeOf()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Advanced Objects",
+    "shortcut": "Reflect.get()",
+    "desc": "Performs a default object operation (like get) in a way that pairs with Proxy traps.",
+    "example": "Reflect.get(obj, 'name');",
+    "whatItDoes": "Performs a default object operation (like get) in a way that pairs with Proxy traps.",
+    "syntax": "Reflect.get(obj, 'name');",
+    "useCase": "Performs a default object operation (like get) in a way that pairs with Proxy traps.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `Reflect.get()`. In VS Code, type the object/value followed by `.`, then choose `Reflect.get()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `Reflect.get()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Advanced Objects",
+    "shortcut": "new Proxy()",
+    "desc": "Wraps an object to intercept and customize fundamental operations like get/set.",
+    "example": "const p = new Proxy(target, {\n  get(obj, key) { return key in obj ? obj[key] : 'N/A'; }\n});",
+    "whatItDoes": "Wraps an object to intercept and customize fundamental operations like get/set.",
+    "syntax": "const p = new Proxy(target, {",
+    "useCase": "Wraps an object to intercept and customize fundamental operations like get/set.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `new` and press Tab/Enter on the suggestion to expand it into a full `new Proxy()` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `new Proxy()` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Advanced Objects",
+    "shortcut": "new WeakMap()",
+    "desc": "A Map whose keys must be objects and are garbage-collected when unreferenced.",
+    "example": "const cache = new WeakMap();\ncache.set(el, data);",
+    "whatItDoes": "A Map whose keys must be objects and are garbage-collected when unreferenced.",
+    "syntax": "const cache = new WeakMap();",
+    "useCase": "A Map whose keys must be objects and are garbage-collected when unreferenced.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `new` and press Tab/Enter on the suggestion to expand it into a full `new WeakMap()` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `new WeakMap()` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Advanced Objects",
+    "shortcut": "new WeakSet()",
+    "desc": "A Set of objects that doesn't prevent its members from being garbage-collected.",
+    "example": "const seen = new WeakSet();\nseen.add(el);",
+    "whatItDoes": "A Set of objects that doesn't prevent its members from being garbage-collected.",
+    "syntax": "const seen = new WeakSet();",
+    "useCase": "A Set of objects that doesn't prevent its members from being garbage-collected.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `new` and press Tab/Enter on the suggestion to expand it into a full `new WeakSet()` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `new WeakSet()` construct manually."
+    }
+  },
+  {
+    "lang": "js",
     "cat": "Arrays",
     "shortcut": "Array.from()",
     "desc": "Creates an array from an iterable or array-like value.",
@@ -6226,6 +7598,202 @@
   },
   {
     "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "Date.now()",
+    "desc": "Returns the current time as milliseconds since the Unix epoch.",
+    "example": "const start = Date.now();",
+    "whatItDoes": "Returns the current time as milliseconds since the Unix epoch.",
+    "syntax": "const start = Date.now();",
+    "useCase": "Returns the current time as milliseconds since the Unix epoch.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `Date.now()`. In VS Code, type the object/value followed by `.`, then choose `Date.now()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `Date.now()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "import() (dynamic)",
+    "desc": "Loads a module asynchronously at runtime, returning a Promise.",
+    "example": "const mod = await import('./chart.js');",
+    "whatItDoes": "Loads a module asynchronously at runtime, returning a Promise.",
+    "syntax": "const mod = await import('./chart.js');",
+    "useCase": "Loads a module asynchronously at runtime, returning a Promise.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `import` and press Tab/Enter on the suggestion to expand it into a full `import() (dynamic)` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `import() (dynamic)` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "new Date().toISOString()",
+    "desc": "Formats a Date as an ISO 8601 string, useful for APIs and storage.",
+    "example": "new Date().toISOString(); // '2026-07-11T12:00:00.000Z'",
+    "whatItDoes": "Formats a Date as an ISO 8601 string, useful for APIs and storage.",
+    "syntax": "new Date().toISOString(); // '2026-07-11T12:00:00.000Z'",
+    "useCase": "Formats a Date as an ISO 8601 string, useful for APIs and storage.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `new` and press Tab/Enter on the suggestion to expand it into a full `new Date().toISOString()` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `new Date().toISOString()` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "new URL()",
+    "desc": "Parses a URL string into its component parts (host, pathname, searchParams...).",
+    "example": "const u = new URL('https://example.com/p?x=1');\nu.searchParams.get('x'); // '1'",
+    "whatItDoes": "Parses a URL string into its component parts (host, pathname, searchParams...).",
+    "syntax": "const u = new URL('https://example.com/p?x=1');",
+    "useCase": "Parses a URL string into its component parts (host, pathname, searchParams...).",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `new` and press Tab/Enter on the suggestion to expand it into a full `new URL()` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `new URL()` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "new URLSearchParams()",
+    "desc": "Parses and builds URL query strings.",
+    "example": "const params = new URLSearchParams('a=1&b=2');\nparams.get('a'); // '1'",
+    "whatItDoes": "Parses and builds URL query strings.",
+    "syntax": "const params = new URLSearchParams('a=1&b=2');",
+    "useCase": "Parses and builds URL query strings.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `new` and press Tab/Enter on the suggestion to expand it into a full `new URLSearchParams()` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `new URLSearchParams()` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "queueMicrotask()",
+    "desc": "Schedules a callback to run in the microtask queue, before the next event loop tick.",
+    "example": "queueMicrotask(() => console.log('after current task'));",
+    "whatItDoes": "Schedules a callback to run in the microtask queue, before the next event loop tick.",
+    "syntax": "queueMicrotask(() => console.log('after current task'));",
+    "useCase": "Schedules a callback to run in the microtask queue, before the next event loop tick.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `queueMicrotask()`. In VS Code, type the object/value followed by `.`, then choose `queueMicrotask()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `queueMicrotask()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "regex.exec()",
+    "desc": "Executes a regex search and returns match details, or null.",
+    "example": "/(\\d+)-(\\d+)/.exec('10-20'); // ['10-20','10','20']",
+    "whatItDoes": "Executes a regex search and returns match details, or null.",
+    "syntax": "/(\\d+)-(\\d+)/.exec('10-20'); // ['10-20','10','20']",
+    "useCase": "Executes a regex search and returns match details, or null.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `regex.exec()`. In VS Code, type the object/value followed by `.`, then choose `regex.exec()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `regex.exec()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "regex.test()",
+    "desc": "Checks whether a string matches a regular expression, returning true/false.",
+    "example": "/^\\d+$/.test('123'); // true",
+    "whatItDoes": "Checks whether a string matches a regular expression, returning true/false.",
+    "syntax": "/^\\d+$/.test('123'); // true",
+    "useCase": "Checks whether a string matches a regular expression, returning true/false.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `regex.test()`. In VS Code, type the object/value followed by `.`, then choose `regex.test()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `regex.test()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "requestAnimationFrame()",
+    "desc": "Schedules a callback to run before the browser's next repaint.",
+    "example": "requestAnimationFrame(() => { el.style.left = pos + 'px'; });",
+    "whatItDoes": "Schedules a callback to run before the browser's next repaint.",
+    "syntax": "requestAnimationFrame(() => { el.style.left = pos + 'px'; });",
+    "useCase": "Schedules a callback to run before the browser's next repaint.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `requestAnimationFrame()`. In VS Code, type the object/value followed by `.`, then choose `requestAnimationFrame()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `requestAnimationFrame()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Built-ins",
+    "shortcut": "sessionStorage",
+    "desc": "Stores key-value data in the browser for the duration of the page session.",
+    "example": "sessionStorage.setItem('draft', text);",
+    "whatItDoes": "Stores key-value data in the browser for the duration of the page session.",
+    "syntax": "sessionStorage.setItem('draft', text);",
+    "useCase": "Stores key-value data in the browser for the duration of the page session.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `sessionStorage`. In VS Code, type the object/value followed by `.`, then choose `sessionStorage` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `sessionStorage` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Classes",
+    "shortcut": "class getter/setter",
+    "desc": "Defines computed properties on a class using get/set accessor methods.",
+    "example": "class Circle {\n  get area() { return Math.PI * this.r ** 2; }\n}",
+    "whatItDoes": "Defines computed properties on a class using get/set accessor methods.",
+    "syntax": "class Circle {",
+    "useCase": "Defines computed properties on a class using get/set accessor methods.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `class` and press Tab/Enter on the suggestion to expand it into a full `class getter/setter` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `class getter/setter` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Classes",
+    "shortcut": "extends / super",
+    "desc": "Creates a subclass and calls the parent class's constructor/methods.",
+    "example": "class Dog extends Animal {\n  constructor(name) { super(name); }\n}",
+    "whatItDoes": "Creates a subclass and calls the parent class's constructor/methods.",
+    "syntax": "class Dog extends Animal {",
+    "useCase": "Creates a subclass and calls the parent class's constructor/methods.",
+    "shortcuts": {
+      "vscode": "VS Code doesn't ship a single-word Emmet abbreviation for this construct. Start typing it (e.g. the first keyword) and accept the matching suggestion from IntelliSense, or use Insert Snippet (Ctrl+Shift+P > \"Insert Snippet\") if you've defined a custom one.",
+      "notepadpp": "Notepad++ has no JavaScript snippets built in. Type the construct manually, or record it once as a Macro (Macro > Start Recording) and bind that macro to a shortcut for reuse."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Classes",
+    "shortcut": "private field (#field)",
+    "desc": "Declares a class field that is only accessible from within the class.",
+    "example": "class Counter {\n  #count = 0;\n  increment() { this.#count++; }\n}",
+    "whatItDoes": "Declares a class field that is only accessible from within the class.",
+    "syntax": "class Counter {",
+    "useCase": "Declares a class field that is only accessible from within the class.",
+    "shortcuts": {
+      "vscode": "VS Code doesn't ship a single-word Emmet abbreviation for this construct. Start typing it (e.g. the first keyword) and accept the matching suggestion from IntelliSense, or use Insert Snippet (Ctrl+Shift+P > \"Insert Snippet\") if you've defined a custom one.",
+      "notepadpp": "Notepad++ has no JavaScript snippets built in. Type the construct manually, or record it once as a Macro (Macro > Start Recording) and bind that macro to a shortcut for reuse."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Classes",
+    "shortcut": "static method",
+    "desc": "Defines a method that belongs to the class itself, not its instances.",
+    "example": "class MathUtils {\n  static double(n) { return n * 2; }\n}",
+    "whatItDoes": "Defines a method that belongs to the class itself, not its instances.",
+    "syntax": "class MathUtils {",
+    "useCase": "Defines a method that belongs to the class itself, not its instances.",
+    "shortcuts": {
+      "vscode": "VS Code doesn't ship a single-word Emmet abbreviation for this construct. Start typing it (e.g. the first keyword) and accept the matching suggestion from IntelliSense, or use Insert Snippet (Ctrl+Shift+P > \"Insert Snippet\") if you've defined a custom one.",
+      "notepadpp": "Notepad++ has no JavaScript snippets built in. Type the construct manually, or record it once as a Macro (Macro > Start Recording) and bind that macro to a shortcut for reuse."
+    }
+  },
+  {
+    "lang": "js",
     "cat": "Control Flow",
     "shortcut": "do...while",
     "desc": "Runs a block once, then repeats while a condition is true.",
@@ -6619,6 +8187,20 @@
   {
     "lang": "js",
     "cat": "Functions & Classes",
+    "shortcut": "IIFE",
+    "desc": "An Immediately Invoked Function Expression, used to run code in its own scope right away.",
+    "example": "(function () {\n  console.log('runs immediately');\n})();",
+    "whatItDoes": "An Immediately Invoked Function Expression, used to run code in its own scope right away.",
+    "syntax": "(function () {",
+    "useCase": "An Immediately Invoked Function Expression, used to run code in its own scope right away.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `if` and press Tab/Enter on the suggestion to expand it into a full `IIFE` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `IIFE` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Functions & Classes",
     "shortcut": "class",
     "desc": "Defines a blueprint for creating objects with shared behavior.",
     "example": "class User {\n  constructor(name) {\n    this.name = name;\n  }\n}",
@@ -6633,6 +8215,20 @@
   {
     "lang": "js",
     "cat": "Functions & Classes",
+    "shortcut": "closures",
+    "desc": "A function that remembers variables from the scope it was created in.",
+    "example": "function makeCounter() {\n  let count = 0;\n  return () => ++count;\n}",
+    "whatItDoes": "A function that remembers variables from the scope it was created in.",
+    "syntax": "function makeCounter() {",
+    "useCase": "A function that remembers variables from the scope it was created in.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `closures`. In VS Code, type the object/value followed by `.`, then choose `closures` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `closures` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Functions & Classes",
     "shortcut": "constructor",
     "desc": "Special class method run when a new instance is created.",
     "example": "constructor(name) {\n  this.name = name;\n}",
@@ -6642,6 +8238,20 @@
     "shortcuts": {
       "vscode": "Type the built-in VS Code snippet prefix `ctor` and press Tab/Enter on the suggestion to expand it into a full `constructor` block with tab-stops for each part.",
       "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `constructor` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Functions & Classes",
+    "shortcut": "default parameters",
+    "desc": "Assigns a fallback value to a function parameter when no argument is passed.",
+    "example": "function greet(name = 'Guest') {\n  return `Hi ${name}`;\n}",
+    "whatItDoes": "Assigns a fallback value to a function parameter when no argument is passed.",
+    "syntax": "function greet(name = 'Guest') {",
+    "useCase": "Assigns a fallback value to a function parameter when no argument is passed.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `default parameters`. In VS Code, type the object/value followed by `.`, then choose `default parameters` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `default parameters` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
     }
   },
   {
@@ -6689,6 +8299,34 @@
   {
     "lang": "js",
     "cat": "Functions & Classes",
+    "shortcut": "rest parameters",
+    "desc": "Collects any remaining arguments into a real array parameter.",
+    "example": "function sum(...nums) {\n  return nums.reduce((a, b) => a + b, 0);\n}",
+    "whatItDoes": "Collects any remaining arguments into a real array parameter.",
+    "syntax": "function sum(...nums) {",
+    "useCase": "Collects any remaining arguments into a real array parameter.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `rest parameters`. In VS Code, type the object/value followed by `.`, then choose `rest parameters` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `rest parameters` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Functions & Classes",
+    "shortcut": "tagged template",
+    "desc": "Passes a template literal's parts to a custom function for processing.",
+    "example": "function highlight(strings, ...values) {\n  return strings.reduce((acc, s, i) => acc + s + (values[i] ?? ''), '');\n}\nhighlight`Hello ${name}!`;",
+    "whatItDoes": "Passes a template literal's parts to a custom function for processing.",
+    "syntax": "function highlight(strings, ...values) {",
+    "useCase": "Passes a template literal's parts to a custom function for processing.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `tagged template`. In VS Code, type the object/value followed by `.`, then choose `tagged template` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `tagged template` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Functions & Classes",
     "shortcut": "this",
     "desc": "References the current execution context object.",
     "example": "class Timer {\n  start() { this.id = setInterval(...); }\n}",
@@ -6698,6 +8336,62 @@
     "shortcuts": {
       "vscode": "There is no Emmet-style abbreviation for `this`. In VS Code, type the object/value followed by `.`, then choose `this` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
       "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `this` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Generators & Symbols",
+    "shortcut": "Symbol()",
+    "desc": "Creates a unique, immutable primitive value often used as an object key.",
+    "example": "const id = Symbol('id');\nobj[id] = 42;",
+    "whatItDoes": "Creates a unique, immutable primitive value often used as an object key.",
+    "syntax": "const id = Symbol('id');",
+    "useCase": "Creates a unique, immutable primitive value often used as an object key.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `Symbol()`. In VS Code, type the object/value followed by `.`, then choose `Symbol()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `Symbol()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Generators & Symbols",
+    "shortcut": "Symbol.iterator",
+    "desc": "Defines how an object behaves when iterated with for...of or spread.",
+    "example": "obj[Symbol.iterator] = function* () { yield 1; yield 2; };",
+    "whatItDoes": "Defines how an object behaves when iterated with for...of or spread.",
+    "syntax": "obj[Symbol.iterator] = function* () { yield 1; yield 2; };",
+    "useCase": "Defines how an object behaves when iterated with for...of or spread.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `Symbol.iterator`. In VS Code, type the object/value followed by `.`, then choose `Symbol.iterator` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `Symbol.iterator` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Generators & Symbols",
+    "shortcut": "function*()",
+    "desc": "Defines a generator function that can pause/resume execution using yield.",
+    "example": "function* range(n) {\n  for (let i = 0; i < n; i++) yield i;\n}",
+    "whatItDoes": "Defines a generator function that can pause/resume execution using yield.",
+    "syntax": "function* range(n) {",
+    "useCase": "Defines a generator function that can pause/resume execution using yield.",
+    "shortcuts": {
+      "vscode": "Type the built-in VS Code snippet prefix `function` and press Tab/Enter on the suggestion to expand it into a full `function*()` block with tab-stops for each part.",
+      "notepadpp": "Notepad++ ships no snippet for this. You can create your own reusable snippet via Macro > Start/Stop Recording (assign it to a shortcut in the Macro menu), or simply type the `function*()` construct manually."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Generators & Symbols",
+    "shortcut": "yield",
+    "desc": "Pauses a generator function and returns a value to the caller.",
+    "example": "function* gen() {\n  const x = yield 1;\n  yield x + 1;\n}",
+    "whatItDoes": "Pauses a generator function and returns a value to the caller.",
+    "syntax": "function* gen() {",
+    "useCase": "Pauses a generator function and returns a value to the caller.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `yield`. In VS Code, type the object/value followed by `.`, then choose `yield` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `yield` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
     }
   },
   {
@@ -7053,6 +8747,20 @@
   {
     "lang": "js",
     "cat": "Patterns",
+    "shortcut": "computed property names",
+    "desc": "Uses a dynamic expression as an object key when creating an object literal.",
+    "example": "const key = 'score';\nconst obj = { [key]: 100 };",
+    "whatItDoes": "Uses a dynamic expression as an object key when creating an object literal.",
+    "syntax": "const key = 'score';",
+    "useCase": "Uses a dynamic expression as an object key when creating an object literal.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `computed property names`. In VS Code, type the object/value followed by `.`, then choose `computed property names` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `computed property names` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
     "shortcut": "debounce()",
     "desc": "Delay a function until input settles.",
     "example": "function debounce(fn, delay=300){\n  let t;\n  return (...a) => {\n    clearTimeout(t);\n    t = setTimeout(() => fn(...a), delay);\n  };\n}",
@@ -7062,6 +8770,48 @@
     "shortcuts": {
       "vscode": "There is no Emmet-style abbreviation for `debounce()`. In VS Code, type the object/value followed by `.`, then choose `debounce()` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
       "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `debounce()` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
+    "shortcut": "event delegation",
+    "desc": "Attaching one listener to a parent to handle events from its current and future children.",
+    "example": "list.addEventListener('click', (e) => {\n  if (e.target.matches('li')) select(e.target);\n});",
+    "whatItDoes": "Attaching one listener to a parent to handle events from its current and future children.",
+    "syntax": "list.addEventListener('click', (e) => {",
+    "useCase": "Attaching one listener to a parent to handle events from its current and future children.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `event delegation`. In VS Code, type the object/value followed by `.`, then choose `event delegation` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `event delegation` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
+    "shortcut": "hoisting",
+    "desc": "JavaScript's behavior of moving variable/function declarations to the top of their scope.",
+    "example": "console.log(x); // undefined, not an error\nvar x = 5;",
+    "whatItDoes": "JavaScript's behavior of moving variable/function declarations to the top of their scope.",
+    "syntax": "console.log(x); // undefined, not an error",
+    "useCase": "JavaScript's behavior of moving variable/function declarations to the top of their scope.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `hoisting`. In VS Code, type the object/value followed by `.`, then choose `hoisting` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `hoisting` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
+    }
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
+    "shortcut": "nested destructuring",
+    "desc": "Extracts values from nested objects/arrays in a single statement.",
+    "example": "const { user: { name, address: { city } } } = data;",
+    "whatItDoes": "Extracts values from nested objects/arrays in a single statement.",
+    "syntax": "const { user: { name, address: { city } } } = data;",
+    "useCase": "Extracts values from nested objects/arrays in a single statement.",
+    "shortcuts": {
+      "vscode": "There is no Emmet-style abbreviation for `nested destructuring`. In VS Code, type the object/value followed by `.`, then choose `nested destructuring` from the IntelliSense suggestion list (powered by the built-in TypeScript/JavaScript language service) and press Enter/Tab to insert it.",
+      "notepadpp": "Notepad++ has no JavaScript IntelliSense, so `nested destructuring` must be typed out in full. Word Completion (Ctrl+Enter) can finish it automatically once it has already been typed once elsewhere in the open document."
     }
   },
   {

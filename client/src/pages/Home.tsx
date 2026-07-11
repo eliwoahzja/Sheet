@@ -458,22 +458,41 @@ export default function Home() {
               <div className="rounded-2xl border border-border bg-card/50 p-5 space-y-6 overflow-hidden">
                 {/* Timeline entries */}
                 <div className="relative border-l border-border pl-5 ml-2.5 space-y-6">
-                  {/* Item 1 */}
+                  {/* Item 0: Latest */}
                   <div className="relative">
-                    {/* Circle node on the line */}
                     <span className="absolute -left-[27px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent ring-4 ring-background">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent-foreground" />
                     </span>
                     <div className="space-y-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-sm font-bold text-foreground">v1.2.0 (Latest Update)</span>
+                        <span className="text-sm font-bold text-foreground">v1.3.0 (Latest Update)</span>
                         <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-500 text-[10px] font-bold uppercase tracking-wider">New Features</span>
                       </div>
                       <p className="text-[11px] text-muted-foreground">Released on July 11, 2026</p>
                       <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside mt-2 pl-1 leading-relaxed">
                         <li>
-                          <strong className="text-foreground">Live Emmet Simulator:</strong> Built an interactive playground inside docs pages where you can type abbreviations (like <code className="font-mono text-[11px] text-accent font-semibold px-1 py-0.5 bg-accent/5 rounded">ul&gt;li*4</code>) and instantly expand them with <kbd className="font-mono text-[10px] bg-secondary border border-border px-1 rounded font-bold text-foreground">Tab</kbd> or a click to preview code and live renders.
+                          <strong className="text-foreground">Editable Live Preview:</strong> Every example now has a real mini code editor next to a live, sandboxed output pane -- edit the code and watch CSS animations play or JS run instantly. Theme-aware, so the preview stays dark in dark mode.
                         </li>
+                        <li>
+                          <strong className="text-foreground">Library Expansion:</strong> Added vendor-prefixed CSS properties, modern selectors (<code className="font-mono text-[11px] text-accent font-semibold px-1 py-0.5 bg-accent/5 rounded">:is()</code>, <code className="font-mono text-[11px] text-accent font-semibold px-1 py-0.5 bg-accent/5 rounded">:has()</code>), container/supports queries, generators, private class fields, and dozens more JS/HTML/CSS entries.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Item 1 */}
+                  <div className="relative">
+                    {/* Circle node on the line */}
+                    <span className="absolute -left-[27px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-muted border border-border ring-4 ring-background">
+                      <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground" />
+                    </span>
+                    <div className="space-y-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-sm font-bold text-foreground">v1.2.0</span>
+                        <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-500 text-[10px] font-bold uppercase tracking-wider">New Features</span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground">Released on July 11, 2026</p>
+                      <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside mt-2 pl-1 leading-relaxed">
                         <li>
                           <strong className="text-foreground">Difficulty Sorting:</strong> Sort elements in the sidebar from <span className="font-semibold text-emerald-500">Easiest to Hardest</span> or <span className="font-semibold text-rose-500">Hardest to Easiest</span>, simplifying structured learning pathways.
                         </li>

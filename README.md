@@ -7,24 +7,28 @@ A sophisticated, multi-language web developer documentation site covering HTML, 
 ### Core Functionality
 - **Sidebar Navigation** - Language tabs (HTML, CSS, JS) with collapsible categories for easy browsing
 - **Global Search** - Cross-language search functionality to find any element, property, or method instantly
-- **Individual Doc Pages** - Comprehensive documentation for each reference with six dedicated sections:
-  1. **Brief Summary** - Quick overview of the element/property/method
+- **Individual Doc Pages** - Comprehensive documentation for each reference with dedicated sections:
+  1. **Where to put it** - Which file type and location the code belongs in
   2. **What it does** - Detailed explanation of functionality
   3. **Syntax & Usage** - Code syntax with highlighting
-  4. **Example** - Full code example with one-click copy button
-  5. **Real-world Use Case** - Practical application scenarios
-  6. **Editor Shortcuts** - How to trigger/expand the item in both **VS Code** and **Notepad++**
+  4. **Static Example Reference** - Full code example with one-click copy button
+  5. **Live Preview** - An editable mini code editor (CodeMirror, VS Code theme) next to a sandboxed output pane -- CSS animations/transitions actually play, JS snippets actually run, and edits update the preview instantly
+  6. **Real-world Use Case** - Practical application scenarios
+  7. **Step-by-Step Integration Guide** - Numbered instructions for adding it to a real project
+  8. **Limitations & Pitfalls** - Common mistakes and gotchas
+  9. **Editor Shortcuts** - How to trigger/expand the item in both **VS Code** and **Notepad++**
 - **Syntax Highlighting** - Professional code highlighting using Prism.js
 - **Copy Buttons** - One-click copy functionality on all code blocks
-- **Theme Toggle** - Dark/light mode support
+- **Theme Toggle** - Dark/light mode support, and the Live Preview output pane matches the current theme
+- **Difficulty Ratings** - Easy/Medium/Hard badges and sidebar sorting by difficulty
 - **On-this-page Navigation** - Anchor links to all sections for easy navigation on long pages
 - **Responsive Design** - Mobile-first design with collapsible sidebar for small screens
 
 ### Content
-- **520 Total References**
-  - 287 HTML elements, attributes, entities, Emmet shortcuts, and plugin guides
-  - 121 CSS properties, selectors, tricks, and Emmet abbreviations
-  - 112 JavaScript methods, ES6+ features, control flow, and DOM manipulation techniques
+- **645 Total References**
+  - HTML: elements (incl. `<li>`), global/ARIA/media/iframe/form attributes, entities, Emmet shortcuts, and plugin guides
+  - CSS: properties, vendor-prefixed properties (`-webkit-`/`-moz-`/`-ms-`), animation sub-properties, transform/filter functions, modern selectors (`:is()`, `:has()`, `:where()`), `@container`/`@supports`, and Emmet abbreviations
+  - JS: array/string/object/math/DOM methods, control flow, generators & symbols, private class fields, closures & other core patterns, Date/RegExp/URL basics, and more
 - **Enriched Content** - Each reference includes detailed descriptions, syntax examples, real-world use cases, and per-editor shortcut guidance
 - **Plugin Install Guides** - Step-by-step "Plugins" category walking through installing editor plugins (e.g. Emmet for Notepad++) with zero installer and zero admin rights, for users on locked-down machines
 - **Searchable** - All content is fully searchable across all three languages
@@ -165,6 +169,14 @@ set, additional CSS properties/selectors, additional JS built-ins, and the
 per-entry `shortcuts` (VS Code + Notepad++) field to every reference. Re-run it
 after adding new curated tables at the top of that file if you want to extend
 coverage further; it's idempotent and won't duplicate existing entries.
+
+`expand_content_v2.py` is a second-pass expansion that closed further gaps
+(vendor-prefixed CSS properties, animation sub-properties, transform/filter
+functions, modern selectors and layout features, the missing `<li>` element,
+more HTML attributes, and JS generators/symbols/private fields/patterns). It
+imports and reuses `expand_content.py`'s shortcut-generating helpers, and is
+also idempotent -- add new tables to it (or a `expand_content_v3.py` following
+the same pattern) and re-run to extend coverage even further.
 
 ### Changing Colors
 
