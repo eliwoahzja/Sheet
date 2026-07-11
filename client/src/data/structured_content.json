@@ -5657,6 +5657,43 @@
   },
   {
     "lang": "html",
+    "cat": "Plugins",
+    "shortcut": "Install Emmet in Notepad++ (No Installer, No Admin)",
+    "desc": "A step-by-step way to get Emmet-style abbreviation expansion working in Notepad++ using only ZIP downloads -- no .exe installer and no administrator password required.",
+    "example": "notepadpp-portable/\n  notepad++.exe\n  plugins/\n    EmmetNPP/\n      EmmetNPP.dll\n      _PyV8.pyd\n      PyV8.py\n      editor.js\n      npp_emmet.py\n      emmet/",
+    "whatItDoes": "Walks through downloading a portable (ZIP) build of Notepad++ plus the Emmet plugin's files directly, and placing them in the correct folder structure by hand -- entirely without running an installer or needing admin/local-admin rights on the machine.",
+    "syntax": "notepadpp-portable/",
+    "useCase": "This is exactly what you need on a locked-down work or school computer where you can't run installers or don't have the admin password, but you still want Emmet-style HTML/CSS abbreviation expansion while coding in Notepad++.",
+    "shortcuts": {
+      "vscode": "Not applicable -- VS Code ships Emmet built in, so none of this manual plugin installation is needed there.",
+      "notepadpp": "Follow the step-by-step guide above: download the portable Notepad++ ZIP and the emmet-npp.zip plugin package, extract both, and drop the plugin's DLL and companion files into plugins\\EmmetNPP\\ inside your portable Notepad++ folder."
+    },
+    "guide": [
+      {
+        "title": "Download a portable build of Notepad++ (skip this if you already use one)",
+        "detail": "Go to the official downloads page at https://notepad-plus-plus.org/downloads/ and choose \"Portable (zip)\" for your architecture (x64 is correct for almost all modern PCs). This is a plain ZIP archive, not an installer -- right-click it and choose \"Extract All\" to any folder you own (Desktop, Documents, or even a USB stick). No admin rights are needed because you're not writing to Program Files."
+      },
+      {
+        "title": "Download the Emmet plugin files as a plain ZIP",
+        "detail": "Skip Notepad++'s built-in Plugins Admin -- it installs into the program's own folder and can fail without write access there. Instead, download \"emmet-npp.zip\" directly from https://sourceforge.net/projects/npp-plugins/files/Emmet/emmet-npp.zip/download (this is the exact file referenced by the community's own official installation guide on the Notepad++ forum). Extract it to your Desktop -- it contains EmmetNPP.dll plus a few companion files."
+      },
+      {
+        "title": "Create the plugin's subfolder and copy the files in",
+        "detail": "Since Notepad++ v7.6.3, every plugin must live in its own subfolder named exactly after its DLL. Inside your portable Notepad++ folder, open plugins\\ and create a new folder called EmmetNPP. Copy EmmetNPP.dll into it, then copy the remaining companion files from the extracted emmet-npp.zip -- _PyV8.pyd, PyV8.py, editor.js, npp_emmet.py, and the emmet folder -- into that same EmmetNPP folder."
+      },
+      {
+        "title": "Launch your portable Notepad++ and confirm the plugin loaded",
+        "detail": "Double-click notepad++.exe inside your portable folder (not any Start Menu shortcut, which may point at a different, admin-only installed copy). Open the Plugins menu -- you should now see an Emmet entry. If it's missing, double-check the folder name and file placement from step 3 match exactly."
+      },
+      {
+        "title": "Map a keyboard shortcut for Expand Abbreviation",
+        "detail": "The Emmet plugin ships with no default keybinding for its \"Expand Abbreviation\" command. Go to Settings > Shortcut Mapper > Plugin Commands tab, find \"Expand Abbreviation\", and assign a key combination (Ctrl+Alt+Enter is a safe choice that won't conflict with normal typing; some people remap Tab, but that also affects normal indentation)."
+      }
+    ],
+    "guideNote": "This legacy Emmet plugin bundles an old embedded PyV8 JavaScript engine and hasn't been updated in years, so it may not load on the very newest Notepad++ builds -- make sure you download the ZIP that matches your Notepad++ bit-width (32-bit vs 64-bit). If it refuses to load at all, the same no-installer, drop-a-DLL-in-a-folder approach works for actively maintained snippet/tag-expansion plugins listed in Notepad++'s official Plugin List (for example WebEdit or FingerText2) -- download their ZIP release from GitHub, and repeat steps 3-5 with that plugin's own DLL and folder name instead."
+  },
+  {
+    "lang": "html",
     "cat": "VS Code",
     "shortcut": "! + Tab",
     "desc": "Emmet HTML5 boilerplate.",
