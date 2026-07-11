@@ -11,11 +11,11 @@ export default function DocsLayout({ sidebar, header, children }: DocsLayoutProp
     <div className="flex h-screen flex-col bg-background text-foreground">
       {header}
       <div className="flex flex-1 overflow-hidden">
-        <aside className="hidden md:flex md:w-64 md:flex-col md:border-r md:border-border md:overflow-y-auto">
-          {sidebar}
-        </aside>
-        <main className="flex-1 overflow-y-auto flex">
-          <div className="flex-1 px-4 py-8 sm:px-6 lg:px-8">
+        {/* Sidebar manages its own responsive behavior:
+            fixed slide-in drawer on mobile, static column on desktop */}
+        {sidebar}
+        <main className="flex-1 overflow-y-auto scroll-smooth">
+          <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
             {children}
           </div>
         </main>
