@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { useLocation } from "wouter";
 import {
   Search,
+  Filter,
   Menu,
   X,
   Moon,
@@ -22,6 +23,14 @@ import DocsLayout from "@/components/DocsLayout";
 import Sidebar from "@/components/Sidebar";
 import DocPage from "@/components/DocPage";
 import DisclaimerModal from "@/components/DisclaimerModal";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuCheckboxItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator
+} from "@/components/ui/dropdown-menu";
 import rawStructuredContent from "@/data/structured_content.json";
 import { getDifficultyRating } from "@/utils/difficulty";
 
@@ -304,24 +313,41 @@ export default function Home() {
                   className="w-full rounded-lg border border-input bg-background/70 py-2 pl-10 pr-3 text-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
-              <div className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-muted-foreground mr-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                <label className="flex items-center gap-1 cursor-pointer hover:text-foreground">
-                  <input type="checkbox" checked={searchFilters.html} onChange={e => setSearchFilters(prev => ({...prev, html: e.target.checked}))} className="rounded border-input bg-background/50 accent-accent" />
-                  HTML
-                </label>
-                <label className="flex items-center gap-1 cursor-pointer hover:text-foreground">
-                  <input type="checkbox" checked={searchFilters.css} onChange={e => setSearchFilters(prev => ({...prev, css: e.target.checked}))} className="rounded border-input bg-background/50 accent-accent" />
-                  CSS
-                </label>
-                <label className="flex items-center gap-1 cursor-pointer hover:text-foreground">
-                  <input type="checkbox" checked={searchFilters.js} onChange={e => setSearchFilters(prev => ({...prev, js: e.target.checked}))} className="rounded border-input bg-background/50 accent-accent" />
-                  JS
-                </label>
-                <label className="flex items-center gap-1 cursor-pointer hover:text-foreground">
-                  <input type="checkbox" checked={searchFilters.templates} onChange={e => setSearchFilters(prev => ({...prev, templates: e.target.checked}))} className="rounded border-input bg-background/50 accent-accent" />
-                  Templates
-                </label>
-              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center justify-center flex-shrink-0 rounded-lg p-2 text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground active:scale-95" aria-label="Filter Search" title="Filter Search">
+                    <Filter size={18} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuLabel>Filter Results</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuCheckboxItem 
+                    checked={searchFilters.html} 
+                    onCheckedChange={(checked) => setSearchFilters(prev => ({...prev, html: checked}))}
+                  >
+                    HTML
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem 
+                    checked={searchFilters.css} 
+                    onCheckedChange={(checked) => setSearchFilters(prev => ({...prev, css: checked}))}
+                  >
+                    CSS
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem 
+                    checked={searchFilters.js} 
+                    onCheckedChange={(checked) => setSearchFilters(prev => ({...prev, js: checked}))}
+                  >
+                    JavaScript
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem 
+                    checked={searchFilters.templates} 
+                    onCheckedChange={(checked) => setSearchFilters(prev => ({...prev, templates: checked}))}
+                  >
+                    Templates
+                  </DropdownMenuCheckboxItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <button
                 onClick={() => setShowDisclaimer(true)}
                 className="flex-shrink-0 rounded-lg p-2 text-foreground transition-colors hover:bg-accent/10 active:scale-95"
