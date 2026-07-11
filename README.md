@@ -21,11 +21,12 @@ A sophisticated, multi-language web developer documentation site covering HTML, 
 - **Responsive Design** - Mobile-first design with collapsible sidebar for small screens
 
 ### Content
-- **519 Total References**
-  - 286 HTML elements, attributes, entities, and Emmet shortcuts
+- **520 Total References**
+  - 287 HTML elements, attributes, entities, Emmet shortcuts, and plugin guides
   - 121 CSS properties, selectors, tricks, and Emmet abbreviations
   - 112 JavaScript methods, ES6+ features, control flow, and DOM manipulation techniques
 - **Enriched Content** - Each reference includes detailed descriptions, syntax examples, real-world use cases, and per-editor shortcut guidance
+- **Plugin Install Guides** - Step-by-step "Plugins" category walking through installing editor plugins (e.g. Emmet for Notepad++) with zero installer and zero admin rights, for users on locked-down machines
 - **Searchable** - All content is fully searchable across all three languages
 
 ### Design
@@ -138,6 +139,7 @@ Each documentation page includes:
 | **Example** | Full, practical code example |
 | **Real-world Use Case** | Practical application scenario in web development |
 | **Editor Shortcuts** | How to type/expand the reference in VS Code (Emmet, IntelliSense, built-in snippets) and in Notepad++ (Emmet plugin, Word Completion, or manual entry) |
+| **Step-by-Step Guide** (Plugins category only) | Numbered install steps for getting editor plugins working, including no-installer/no-admin-rights instructions |
 
 ## Technologies Used
 

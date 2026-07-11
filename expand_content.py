@@ -968,14 +968,193 @@ def html_builtin_fallback(shortcut):
     return {"vscode": vscode, "notepadpp": notepadpp}
 
 
+# 8) PLUGINS -- step-by-step, no-installer / no-admin-password guides
+# ---------------------------------------------------------------------------
+# Facts used here (not fabricated):
+# - Notepad++ official downloads page offers "Portable (zip)" / "Portable (7z)"
+#   / "Mini-portable (7z)" builds for x64/x86/ARM64 alongside the Installer
+#   (exe)/MSI -- these are plain archives, no installer executable, extractable
+#   anywhere the user has write access. Source: notepad-plus-plus.org/downloads
+# - Since Notepad++ v7.6.3, each plugin's DLL must live in its own subfolder:
+#   <install-or-portable-dir>\plugins\<PluginName>\<PluginName>.dll (companion
+#   files/folders go alongside it in that same subfolder).
+#   Source: npp-usermanual (notepad-plus-plus/npp-usermanual) "plugins.md",
+#   and community guide https://community.notepad-plus-plus.org/topic/17366
+# - The community's own historical install guide for the Emmet plugin says to
+#   download "emmet-npp.zip" (hosted on the npp-plugins SourceForge project),
+#   create a "EmmetNPP" folder inside plugins, and copy EmmetNPP.dll plus its
+#   companion files (_PyV8.pyd, PyV8.py, editor.js, npp_emmet.py, and an
+#   "emmet" folder) into it -- this is a legacy plugin built on PythonScript's
+#   bundled PyV8 JS engine, not the standalone Plugin-Manager-listed "Emmet"
+#   entry. Source: community.notepad-plus-plus.org/topic/17366
+# - The current, actively-maintained "Emmet" entry in the official Plugin List
+#   (chcg/npp, formerly emmetio/npp) is normally installed via the built-in
+#   Plugins Admin; as of this writing chcg/npp's GitHub Releases page has no
+#   published release assets, so manual/offline installation of that specific
+#   fork cannot be reliably instructed here -- the legacy emmet-npp.zip path
+#   above is the one with a real, documented direct-download URL.
+# - Expand Abbreviation has no default keybinding in the Emmet plugin; it must
+#   be mapped manually under Settings > Shortcut Mapper > Plugin Commands.
+#   Source: github.com/AncientIs/npp (Emmet plugin for Notepad++ README)
+# - Plugins Admin (the built-in installer/updater) always writes into the
+#   Notepad++ install directory and therefore needs write access to that
+#   folder; running the portable ZIP/7z build side-steps this because the
+#   user owns the entire extracted folder, including its plugins subfolder.
+#   Source: community.notepad-plus-plus.org discussions on "Plugins Admin and
+#   Notepad++ Portable" and superuser.com/questions/1262311
+# - doLocalConf.xml / allowAppDataPlugins.xml are documented, real mechanisms
+#   for redirecting where Notepad++ loads user plugins from when the install
+#   directory itself isn't writable without admin rights.
+#   Source: superuser.com/questions/1262311
+
+PLUGIN_GUIDES = [
+    {
+        "lang": "html",
+        "cat": "Plugins",
+        "shortcut": "Install Emmet in Notepad++ (No Installer, No Admin)",
+        "desc": (
+            "A step-by-step way to get Emmet-style abbreviation expansion working "
+            "in Notepad++ using only ZIP downloads -- no .exe installer and no "
+            "administrator password required."
+        ),
+        "example": (
+            "notepadpp-portable/\n"
+            "  notepad++.exe\n"
+            "  plugins/\n"
+            "    EmmetNPP/\n"
+            "      EmmetNPP.dll\n"
+            "      _PyV8.pyd\n"
+            "      PyV8.py\n"
+            "      editor.js\n"
+            "      npp_emmet.py\n"
+            "      emmet/"
+        ),
+        "what_it_does": (
+            "Walks through downloading a portable (ZIP) build of Notepad++ plus "
+            "the Emmet plugin's files directly, and placing them in the correct "
+            "folder structure by hand -- entirely without running an installer "
+            "or needing admin/local-admin rights on the machine."
+        ),
+        "use_case": (
+            "This is exactly what you need on a locked-down work or school "
+            "computer where you can't run installers or don't have the admin "
+            "password, but you still want Emmet-style HTML/CSS abbreviation "
+            "expansion while coding in Notepad++."
+        ),
+        "guide": [
+            {
+                "title": "Download a portable build of Notepad++ (skip this if you already use one)",
+                "detail": (
+                    "Go to the official downloads page at "
+                    "https://notepad-plus-plus.org/downloads/ and choose \"Portable "
+                    "(zip)\" for your architecture (x64 is correct for almost all "
+                    "modern PCs). This is a plain ZIP archive, not an installer -- "
+                    "right-click it and choose \"Extract All\" to any folder you own "
+                    "(Desktop, Documents, or even a USB stick). No admin rights are "
+                    "needed because you're not writing to Program Files."
+                ),
+            },
+            {
+                "title": "Download the Emmet plugin files as a plain ZIP",
+                "detail": (
+                    "Skip Notepad++'s built-in Plugins Admin -- it installs into the "
+                    "program's own folder and can fail without write access there. "
+                    "Instead, download \"emmet-npp.zip\" directly from "
+                    "https://sourceforge.net/projects/npp-plugins/files/Emmet/emmet-npp.zip/download "
+                    "(this is the exact file referenced by the community's own "
+                    "official installation guide on the Notepad++ forum). Extract it "
+                    "to your Desktop -- it contains EmmetNPP.dll plus a few "
+                    "companion files."
+                ),
+            },
+            {
+                "title": "Create the plugin's subfolder and copy the files in",
+                "detail": (
+                    "Since Notepad++ v7.6.3, every plugin must live in its own "
+                    "subfolder named exactly after its DLL. Inside your portable "
+                    "Notepad++ folder, open plugins\\ and create a new folder called "
+                    "EmmetNPP. Copy EmmetNPP.dll into it, then copy the remaining "
+                    "companion files from the extracted emmet-npp.zip -- _PyV8.pyd, "
+                    "PyV8.py, editor.js, npp_emmet.py, and the emmet folder -- into "
+                    "that same EmmetNPP folder."
+                ),
+            },
+            {
+                "title": "Launch your portable Notepad++ and confirm the plugin loaded",
+                "detail": (
+                    "Double-click notepad++.exe inside your portable folder (not any "
+                    "Start Menu shortcut, which may point at a different, admin-only "
+                    "installed copy). Open the Plugins menu -- you should now see an "
+                    "Emmet entry. If it's missing, double-check the folder name and "
+                    "file placement from step 3 match exactly."
+                ),
+            },
+            {
+                "title": "Map a keyboard shortcut for Expand Abbreviation",
+                "detail": (
+                    "The Emmet plugin ships with no default keybinding for its "
+                    "\"Expand Abbreviation\" command. Go to Settings > Shortcut "
+                    "Mapper > Plugin Commands tab, find \"Expand Abbreviation\", and "
+                    "assign a key combination (Ctrl+Alt+Enter is a safe choice that "
+                    "won't conflict with normal typing; some people remap Tab, but "
+                    "that also affects normal indentation)."
+                ),
+            },
+        ],
+        "guideNote": (
+            "This legacy Emmet plugin bundles an old embedded PyV8 JavaScript "
+            "engine and hasn't been updated in years, so it may not load on the "
+            "very newest Notepad++ builds -- make sure you download the ZIP that "
+            "matches your Notepad++ bit-width (32-bit vs 64-bit). If it refuses to "
+            "load at all, the same no-installer, drop-a-DLL-in-a-folder approach "
+            "works for actively maintained snippet/tag-expansion plugins listed in "
+            "Notepad++'s official Plugin List (for example WebEdit or FingerText2) "
+            "-- download their ZIP release from GitHub, and repeat steps 3-5 with "
+            "that plugin's own DLL and folder name instead."
+        ),
+        "shortcuts": {
+            "vscode": (
+                "Not applicable -- VS Code ships Emmet built in, so none of this "
+                "manual plugin installation is needed there."
+            ),
+            "notepadpp": (
+                "Follow the step-by-step guide above: download the portable "
+                "Notepad++ ZIP and the emmet-npp.zip plugin package, extract both, "
+                "and drop the plugin's DLL and companion files into "
+                "plugins\\EmmetNPP\\ inside your portable Notepad++ folder."
+            ),
+        },
+    },
+]
+
+
+def build_plugin_guide_items(existing_keys):
+    items = []
+    for g in PLUGIN_GUIDES:
+        key = (g["lang"], g["cat"], g["shortcut"])
+        if key in existing_keys:
+            continue
+        item = make_item(
+            g["lang"], g["cat"], g["shortcut"], g["desc"], g["example"],
+            what_it_does=g["what_it_does"],
+            use_case=g["use_case"],
+            shortcuts=g.get("shortcuts"),
+        )
+        item["guide"] = g["guide"]
+        if g.get("guideNote"):
+            item["guideNote"] = g["guideNote"]
+        items.append(item)
+        existing_keys.add(key)
+    return items
 def main():
     existing = load_existing()
     existing_keys = set(key_of(i) for i in existing)
 
     existing = attach_shortcuts_to_existing(existing)
     new_items = build_new_items(existing_keys)
+    plugin_items = build_plugin_guide_items(existing_keys)
 
-    all_items = existing + new_items
+    all_items = existing + new_items + plugin_items
     all_items.sort(key=lambda x: (x["lang"], x["cat"], x["shortcut"]))
 
     with open(DATA_PATH, "w") as f:
@@ -984,8 +1163,13 @@ def main():
 
     print(f"Existing entries: {len(existing)}")
     print(f"New entries added: {len(new_items)}")
+    print(f"Plugin guide entries added: {len(plugin_items)}")
     print(f"Total entries: {len(all_items)}")
 
 
 if __name__ == "__main__":
     main()
+
+
+
+# ---------------------------------------------------------------------------
