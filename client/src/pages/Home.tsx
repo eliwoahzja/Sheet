@@ -69,6 +69,36 @@ const structuredContent = (() => {
   });
 })();
 
+const SPECIAL_SHORTCUT_MAP: Record<string, string> = {
+  "&": "ampersand",
+  "<": "less-than",
+  ">": "greater-than",
+  "=== / !==": "strict-equality",
+  "&&  /  ||": "logical-operators",
+  "?? nullish coalescing": "nullish-coalescing",
+  "&copy;": "copy",
+  "&nbsp;": "nbsp",
+  "&rarr;": "rarr",
+};
+
+export function getCategorySlug(cat: string): string {
+  return cat.toLowerCase()
+    .replace(/\s*\(.*?\)\s*/g, "") // remove parentheticals
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getShortcutSlug(shortcut: string): string {
+  let s = shortcut.replace(/`/g, "").trim();
+  if (SPECIAL_SHORTCUT_MAP[s]) return SPECIAL_SHORTCUT_MAP[s];
+  return s.toLowerCase()
+    .replace(/[<>` &;()]/g, "")
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 const LANG_META: Record<
   string,
   { label: string; icon: typeof Code2; blurb: string; accent: string; ring: string }
@@ -106,9 +136,19 @@ export default function Home() {
   useEffect(() => {
     const pathParts = location.split("/").filter(Boolean);
     if (pathParts.length === 3) {
-      const [lang, cat, shortcut] = pathParts;
-      setSelectedItem(`${lang}-${cat}-${decodeURIComponent(shortcut)}`);
-      setCurrentLang(lang as "html" | "css" | "js");
+      const [lang, catSlug, shortcutSlug] = pathParts;
+      const found = structuredContent.find(
+        (item) =>
+          item.lang === lang &&
+          getCategorySlug(item.cat) === catSlug &&
+          getShortcutSlug(item.shortcut) === shortcutSlug
+      );
+      if (found) {
+        setSelectedItem(`${found.lang}-${found.cat}-${found.shortcut}`);
+        setCurrentLang(lang as "html" | "css" | "js");
+      } else {
+        setSelectedItem(null);
+      }
     } else if (pathParts.length === 1) {
       setCurrentLang(pathParts[0] as "html" | "css" | "js");
       setSelectedItem(null);
@@ -168,8 +208,14 @@ export default function Home() {
           groupedContent={groupedContent}
           selectedItem={selectedItem}
           onSelectItem={(id: string) => {
-            const [lang, cat, shortcut] = id.split("-");
-            setLocation(`/${lang}/${cat}/${encodeURIComponent(shortcut)}`);
+            const found = structuredContent.find(
+              (item: any) => `${item.lang}-${item.cat}-${item.shortcut}` === id
+            );
+            if (found) {
+              const catSlug = getCategorySlug(found.cat);
+              const shortcutSlug = getShortcutSlug(found.shortcut);
+              setLocation(`/${found.lang}/${catSlug}/${shortcutSlug}`);
+            }
             setSidebarOpen(false);
           }}
           sidebarOpen={sidebarOpen}
