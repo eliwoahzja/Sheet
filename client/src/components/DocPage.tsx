@@ -13,6 +13,15 @@ interface DocPageProps {
     syntax?: string;
     whatItDoes?: string;
     useCase?: string;
+    shortcuts?: {
+      vscode: string;
+      notepadpp: string;
+    };
+    guide?: {
+      title: string;
+      detail: string;
+    }[];
+    guideNote?: string;
   };
 }
 
@@ -129,6 +138,59 @@ export default function DocPage({ content }: DocPageProps) {
           </p>
         </div>
       </div>
+
+      {/* Step-by-step Guide */}
+      {content.guide && content.guide.length > 0 && (
+        <>
+          <div className="divider-line" />
+          <div className="space-y-3">
+            <h2 id="step-by-step-guide" className="text-2xl font-bold">Step-by-Step Guide</h2>
+            <ol className="space-y-4">
+              {content.guide.map((step, i) => (
+                <li key={i} className="flex gap-4 p-4 rounded-lg border border-border bg-secondary/30">
+                  <span className="flex-none flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-sm font-bold">
+                    {i + 1}
+                  </span>
+                  <div className="space-y-1">
+                    <p className="font-semibold">{step.title}</p>
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{step.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            {content.guideNote && (
+              <div className="p-4 rounded-lg border border-border bg-accent/10 text-sm leading-relaxed">
+                <span className="font-semibold">Note: </span>
+                {content.guideNote}
+              </div>
+            )}
+          </div>
+        </>
+      )}
+
+      {/* Editor Shortcuts */}
+      {content.shortcuts && (
+        <div className="space-y-3">
+          <h2 id="editor-shortcuts" className="text-2xl font-bold">Editor Shortcuts</h2>
+          <p className="text-muted-foreground">
+            How to trigger or expand <code className="font-mono">{content.shortcut}</code> in popular code editors.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="p-5 rounded-lg border border-border bg-secondary/30 space-y-2">
+              <h3 id="vs-code" className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">
+                VS Code
+              </h3>
+              <p className="text-base leading-relaxed">{content.shortcuts.vscode}</p>
+            </div>
+            <div className="p-5 rounded-lg border border-border bg-secondary/30 space-y-2">
+              <h3 id="notepad" className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">
+                Notepad++
+              </h3>
+              <p className="text-base leading-relaxed">{content.shortcuts.notepadpp}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="divider-line" />
 

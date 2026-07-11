@@ -98,7 +98,7 @@ export default function Home() {
               >
                 {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
-              <h1 className="text-xl font-bold tracking-tight whitespace-nowrap">Dev Docs</h1>
+              <h1 className="text-xl font-bold tracking-tight whitespace-nowrap">Eli Shh Docs</h1>
             </div>
             <div className="flex items-center gap-2 sm:gap-4 flex-1 sm:flex-none">
               <div className="relative flex-1 sm:flex-none sm:w-64">
@@ -169,7 +169,7 @@ export default function Home() {
       ) : (
         <div className="space-y-12 max-w-4xl">
           <div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-balance">Welcome to Dev Docs</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-balance">Welcome to Eli Shh Docs</h2>
             <p className="text-xl text-muted-foreground">
               A comprehensive reference for HTML, CSS, and JavaScript. Explore the sidebar or search to get started.
             </p>
