@@ -1,0 +1,1662 @@
+[
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "@keyframes",
+    "desc": "Defines multi-step animations.",
+    "example": "@keyframes slideIn {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}",
+    "whatItDoes": "The `@keyframes` property is used to defines multi-step animations.",
+    "syntax": "@keyframes slideIn {",
+    "useCase": "CSS animations, often defined with `@keyframes`, bring dynamic and interactive elements to web interfaces. They enhance user experience by providing visual feedback and engaging transitions without relying on JavaScript."
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "transform",
+    "desc": "Scale, rotate, translate elements.",
+    "example": "transform: scale(1.05) translateY(-4px);",
+    "whatItDoes": "The `transform` property is used to scale, rotate, translate elements.",
+    "syntax": "transform: scale(1.05) translateY(-4px);",
+    "useCase": "CSS animations, often defined with `transform`, bring dynamic and interactive elements to web interfaces. They enhance user experience by providing visual feedback and engaging transitions without relying on JavaScript."
+  },
+  {
+    "lang": "css",
+    "cat": "Animation",
+    "shortcut": "transition",
+    "desc": "Smooth property changes.",
+    "example": "transition: transform 0.3s ease;",
+    "whatItDoes": "The `transition` property is used to smooth property changes.",
+    "syntax": "transition: transform 0.3s ease;",
+    "useCase": "CSS animations, often defined with `transition`, bring dynamic and interactive elements to web interfaces. They enhance user experience by providing visual feedback and engaging transitions without relying on JavaScript."
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "backdrop-filter",
+    "desc": "Glassmorphism blur effect.",
+    "example": "backdrop-filter: blur(10px);",
+    "whatItDoes": "The `backdrop-filter` property is used to glassmorphism blur effect.",
+    "syntax": "backdrop-filter: blur(10px);",
+    "useCase": "In a real-world application, you would use backdrop-filter when you need to implement glassmorphism blur effect.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "box-shadow",
+    "desc": "Adds a drop shadow.",
+    "example": "box-shadow: 0 4px 8px rgba(0,0,0,.1);",
+    "whatItDoes": "The `box-shadow` property is used to adds a drop shadow.",
+    "syntax": "box-shadow: 0 4px 8px rgba(0,0,0,.1);",
+    "useCase": "In a real-world application, you would use box-shadow when you need to implement adds a drop shadow.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Effects",
+    "shortcut": "clip-path",
+    "desc": "Clips into a custom shape.",
+    "example": "clip-path: circle(50%);",
+    "whatItDoes": "The `clip-path` property is used to clips into a custom shape.",
+    "syntax": "clip-path: circle(50%);",
+    "useCase": "In a real-world application, you would use clip-path when you need to implement clips into a custom shape.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "ai:c",
+    "desc": "align-items: center;",
+    "example": "align-items: center;",
+    "whatItDoes": "The `ai:c` property is used to align-items: center;.",
+    "syntax": "align-items: center;",
+    "useCase": "Emmet for CSS, such as `ai:c`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "br:50p",
+    "desc": "border-radius: 50%; (circle)",
+    "example": "border-radius: 50%;",
+    "whatItDoes": "The `br:50p` property is used to border-radius: 50%; (circle).",
+    "syntax": "border-radius: 50%;",
+    "useCase": "Emmet for CSS, such as `br:50p`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "bxsh:r",
+    "desc": "Red box shadow shorthand.",
+    "example": "box-shadow: 0 0 0 red;",
+    "whatItDoes": "The `bxsh:r` property is used to red box shadow shorthand.",
+    "syntax": "box-shadow: 0 0 0 red;",
+    "useCase": "Emmet for CSS, such as `bxsh:r`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "cur:p",
+    "desc": "cursor: pointer;",
+    "example": "cursor: pointer;",
+    "whatItDoes": "The `cur:p` property is used to cursor: pointer;.",
+    "syntax": "cursor: pointer;",
+    "useCase": "Emmet for CSS, such as `cur:p`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "df",
+    "desc": "display: flex;",
+    "example": "display: flex;",
+    "whatItDoes": "The `df` property is used to display: flex;.",
+    "syntax": "display: flex;",
+    "useCase": "Emmet for CSS, such as `df`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "dg",
+    "desc": "display: grid;",
+    "example": "display: grid;",
+    "whatItDoes": "The `dg` property is used to display: grid;.",
+    "syntax": "display: grid;",
+    "useCase": "Emmet for CSS, such as `dg`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "jc:c",
+    "desc": "justify-content: center;",
+    "example": "justify-content: center;",
+    "whatItDoes": "The `jc:c` property is used to justify-content: center;.",
+    "syntax": "justify-content: center;",
+    "useCase": "Emmet for CSS, such as `jc:c`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "m10a",
+    "desc": "Auto margin shorthand.",
+    "example": "margin: 10px auto;",
+    "whatItDoes": "The `m10a` property is used to auto margin shorthand.",
+    "syntax": "margin: 10px auto;",
+    "useCase": "Emmet for CSS, such as `m10a`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "ov:h",
+    "desc": "overflow: hidden;",
+    "example": "overflow: hidden;",
+    "whatItDoes": "The `ov:h` property is used to overflow: hidden;.",
+    "syntax": "overflow: hidden;",
+    "useCase": "Emmet for CSS, such as `ov:h`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "posa",
+    "desc": "position: absolute;",
+    "example": "position: absolute;",
+    "whatItDoes": "The `posa` property is used to position: absolute;.",
+    "syntax": "position: absolute;",
+    "useCase": "Emmet for CSS, such as `posa`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Emmet",
+    "shortcut": "tt:u",
+    "desc": "text-transform: uppercase;",
+    "example": "text-transform: uppercase;",
+    "whatItDoes": "The `tt:u` property is used to text-transform: uppercase;.",
+    "syntax": "text-transform: uppercase;",
+    "useCase": "Emmet for CSS, such as `tt:u`, streamlines the process of writing CSS rules. By expanding short abbreviations into full property-value pairs, it helps developers write stylesheets more efficiently and with fewer errors."
+  },
+  {
+    "lang": "css",
+    "cat": "Flexbox",
+    "shortcut": "flex: 1",
+    "desc": "Grow to fill available space.",
+    "example": "flex: 1;",
+    "whatItDoes": "The `flex: 1` property is used to grow to fill available space.",
+    "syntax": "flex: 1;",
+    "useCase": "In a real-world application, you would use flex: 1 when you need to implement grow to fill available space.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Flexbox",
+    "shortcut": "gap: 1rem",
+    "desc": "Space between flex/grid children.",
+    "example": "display: flex;\ngap: 1rem;",
+    "whatItDoes": "The `gap: 1rem` property is used to space between flex/grid children.",
+    "syntax": "display: flex;",
+    "useCase": "In a real-world application, you would use gap: 1rem when you need to implement space between flex/grid children.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "aspect-ratio",
+    "desc": "Forces a width:height ratio.",
+    "example": "aspect-ratio: 16 / 9;",
+    "whatItDoes": "The `aspect-ratio` property is used to forces a width:height ratio.",
+    "syntax": "aspect-ratio: 16 / 9;",
+    "useCase": "Using `aspect-ratio` is fundamental for controlling the positioning and arrangement of elements on a webpage. For example, `display: flex;` or `display: grid;` are used to create responsive and complex layouts."
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "display: grid",
+    "desc": "2D layout system.",
+    "example": "display: grid;\ngrid-template-columns: repeat(3, 1fr);\ngap: 20px;",
+    "whatItDoes": "The `display: grid` property is used to 2d layout system.",
+    "syntax": "display: grid;",
+    "useCase": "Using `display: grid` is fundamental for controlling the positioning and arrangement of elements on a webpage. For example, `display: flex;` or `display: grid;` are used to create responsive and complex layouts."
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "place-items: center",
+    "desc": "Centers content in a grid.",
+    "example": "display: grid;\nplace-items: center;",
+    "whatItDoes": "The `place-items: center` property is used to centers content in a grid.",
+    "syntax": "display: grid;",
+    "useCase": "Using `place-items: center` is fundamental for controlling the positioning and arrangement of elements on a webpage. For example, `display: flex;` or `display: grid;` are used to create responsive and complex layouts."
+  },
+  {
+    "lang": "css",
+    "cat": "Layout",
+    "shortcut": "position: sticky",
+    "desc": "Sticks while scrolling within parent.",
+    "example": "position: sticky;\ntop: 0;",
+    "whatItDoes": "The `position: sticky` property is used to sticks while scrolling within parent.",
+    "syntax": "position: sticky;",
+    "useCase": "Using `position: sticky` is fundamental for controlling the positioning and arrangement of elements on a webpage. For example, `display: flex;` or `display: grid;` are used to create responsive and complex layouts."
+  },
+  {
+    "lang": "css",
+    "cat": "Responsive",
+    "shortcut": "@media",
+    "desc": "Conditional styles by viewport.",
+    "example": "@media (max-width: 768px) {\n  .sidebar { display: none; }\n}",
+    "whatItDoes": "The `@media` property is used to conditional styles by viewport.",
+    "syntax": "@media (max-width: 768px) {",
+    "useCase": "Media queries, using `@media`, are the cornerstone of responsive web design. They allow styles to be applied conditionally based on device characteristics like screen width, ensuring optimal viewing across a wide range of devices."
+  },
+  {
+    "lang": "css",
+    "cat": "Scrollbar",
+    "shortcut": "::-webkit-scrollbar",
+    "desc": "Custom scrollbar styling.",
+    "example": "::-webkit-scrollbar { width: 10px; }\n::-webkit-scrollbar-thumb { background: #888; }",
+    "whatItDoes": "The `::-webkit-scrollbar` property is used to custom scrollbar styling.",
+    "syntax": "::-webkit-scrollbar { width: 10px; }",
+    "useCase": "In a real-world application, you would use ::-webkit-scrollbar when you need to implement custom scrollbar styling.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
+    "shortcut": "&:hover (SCSS)",
+    "desc": "Nested pseudo-class in Sass.",
+    "example": ".btn {\n  &:hover { background: darkblue; }\n}",
+    "whatItDoes": "The `&:hover (SCSS)` property is used to nested pseudo-class in sass.",
+    "syntax": ".btn {",
+    "useCase": "In a real-world application, you would use &:hover (SCSS) when you need to implement nested pseudo-class in sass.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Selectors",
+    "shortcut": ":nth-child(odd)",
+    "desc": "Targets alternating elements.",
+    "example": "li:nth-child(odd) { background: #f5f5f5; }",
+    "whatItDoes": "The `:nth-child(odd)` property is used to targets alternating elements.",
+    "syntax": "li:nth-child(odd) { background: #f5f5f5; }",
+    "useCase": "In a real-world application, you would use :nth-child(odd) when you need to implement targets alternating elements.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "css",
+    "cat": "Typography",
+    "shortcut": "line-clamp",
+    "desc": "Truncates to N lines.",
+    "example": "display: -webkit-box;\n-webkit-line-clamp: 3;\n-webkit-box-orient: vertical;\noverflow: hidden;",
+    "whatItDoes": "The `line-clamp` property is used to truncates to n lines.",
+    "syntax": "display: -webkit-box;",
+    "useCase": "Typography properties like `line-clamp` are used to style text, controlling its appearance, size, and flow. This is vital for readability and maintaining a consistent visual hierarchy across the site."
+  },
+  {
+    "lang": "css",
+    "cat": "Typography",
+    "shortcut": "text-overflow: ellipsis",
+    "desc": "Truncates overflowing text.",
+    "example": "overflow: hidden;\nwhite-space: nowrap;\ntext-overflow: ellipsis;",
+    "whatItDoes": "The `text-overflow: ellipsis` property is used to truncates overflowing text.",
+    "syntax": "overflow: hidden;",
+    "useCase": "Typography properties like `text-overflow: ellipsis` are used to style text, controlling its appearance, size, and flow. This is vital for readability and maintaining a consistent visual hierarchy across the site."
+  },
+  {
+    "lang": "css",
+    "cat": "Variables",
+    "shortcut": "--custom-prop",
+    "desc": "Reusable CSS custom properties.",
+    "example": ":root { --brand: #6c5ce7; }\n.btn { color: var(--brand); }",
+    "whatItDoes": "The `--custom-prop` property is used to reusable css custom properties.",
+    "syntax": ":root { --brand: #6c5ce7; }",
+    "useCase": "In a real-world application, you would use --custom-prop when you need to implement reusable css custom properties.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`a:link`",
+    "example": "`<a href=\"http://\"></a>`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``a:link`` element is used to html attribute related shortcut.",
+    "syntax": "<a href=\"http://\"></a>",
+    "useCase": "The ``a:link`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`a:mail`",
+    "example": "`<a href=\"mailto:\"></a>`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``a:mail`` element is used to html attribute related shortcut.",
+    "syntax": "<a href=\"mailto:\"></a>",
+    "useCase": "The ``a:mail`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`img:srcset`",
+    "example": "`<img srcset=\"\" src=\"\" alt=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``img:srcset`` element is used to html attribute related shortcut.",
+    "syntax": "<img srcset=\"\" src=\"\" alt=\"\">",
+    "useCase": "The ``img:srcset`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:checkbox`",
+    "example": "`<input type=\"checkbox\" name=\"\" id=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:checkbox`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"checkbox\" name=\"\" id=\"\">",
+    "useCase": "The ``input:checkbox`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:email`",
+    "example": "`<input type=\"email\" name=\"\" id=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:email`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"email\" name=\"\" id=\"\">",
+    "useCase": "The ``input:email`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:number`",
+    "example": "`<input type=\"number\" name=\"\" id=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:number`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"number\" name=\"\" id=\"\">",
+    "useCase": "The ``input:number`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:password`",
+    "example": "`<input type=\"password\" name=\"\" id=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:password`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"password\" name=\"\" id=\"\">",
+    "useCase": "The ``input:password`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:placeholder`",
+    "example": "`<input type=\"text\" placeholder=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:placeholder`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"text\" placeholder=\"\">",
+    "useCase": "The ``input:placeholder`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:radio`",
+    "example": "`<input type=\"radio\" name=\"\" id=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:radio`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"radio\" name=\"\" id=\"\">",
+    "useCase": "The ``input:radio`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:submit`",
+    "example": "`<input type=\"submit\" value=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:submit`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"submit\" value=\"\">",
+    "useCase": "The ``input:submit`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`input:text`",
+    "example": "`<input type=\"text\" name=\"\" id=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``input:text`` element is used to html attribute related shortcut.",
+    "syntax": "<input type=\"text\" name=\"\" id=\"\">",
+    "useCase": "The ``input:text`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`link:css`",
+    "example": "`<link rel=\"stylesheet\" href=\"style.css\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``link:css`` element is used to html attribute related shortcut.",
+    "syntax": "<link rel=\"stylesheet\" href=\"style.css\">",
+    "useCase": "The ``link:css`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Attributes",
+    "shortcut": "`link:favicon`",
+    "example": "`<link rel=\"shortcut icon\" href=\"\">`",
+    "desc": "HTML attribute related shortcut",
+    "whatItDoes": "The ``link:favicon`` element is used to html attribute related shortcut.",
+    "syntax": "<link rel=\"shortcut icon\" href=\"\">",
+    "useCase": "The ``link:favicon`` attribute is crucial for providing additional information or functionality to HTML elements. For instance, `href` for links, `src` for images, or `alt` for accessibility in images."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<article>",
+    "desc": "Independent, self-contained content.",
+    "example": "<article>Blog post</article>",
+    "whatItDoes": "The `<article>` element is used to independent, self-contained content.",
+    "syntax": "<article>",
+    "useCase": "You would use the `<article>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<aside>",
+    "desc": "Sidebar / tangential content.",
+    "example": "<aside>Related links</aside>",
+    "whatItDoes": "The `<aside>` element is used to sidebar / tangential content.",
+    "syntax": "<aside>",
+    "useCase": "You would use the `<aside>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<details>+<summary>",
+    "desc": "Toggleable disclosure widget.",
+    "example": "<details>\n  <summary>More</summary>\n  Hidden content\n</details>",
+    "whatItDoes": "The `<details>+<summary>` element is used to toggleable disclosure widget.",
+    "syntax": "<details>+<summary>",
+    "useCase": "You would use the `<details>+<summary>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<figure>+<figcaption>",
+    "desc": "Media with a caption.",
+    "example": "<figure>\n  <img src=\"cat.jpg\" alt=\"Cat\">\n  <figcaption>A cat</figcaption>\n</figure>",
+    "whatItDoes": "The `<figure>+<figcaption>` element is used to media with a caption.",
+    "syntax": "<figure>+<figcaption>",
+    "useCase": "You would use the `<figure>+<figcaption>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<header>",
+    "desc": "Top section: logo, nav.",
+    "example": "<header>...</header>",
+    "whatItDoes": "The `<header>` element is used to top section: logo, nav.",
+    "syntax": "<header>",
+    "useCase": "You would use the `<header>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<main>",
+    "desc": "Primary content of the page.",
+    "example": "<main>...</main>",
+    "whatItDoes": "The `<main>` element is used to primary content of the page.",
+    "syntax": "<main>",
+    "useCase": "You would use the `<main>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<picture>",
+    "desc": "Responsive image sources.",
+    "example": "<picture>\n  <source srcset=\"img.webp\" type=\"image/webp\">\n  <img src=\"img.jpg\" alt=\"\">\n</picture>",
+    "whatItDoes": "The `<picture>` element is used to responsive image sources.",
+    "syntax": "<picture>",
+    "useCase": "You would use the `<picture>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "<section>",
+    "desc": "Standalone thematic grouping.",
+    "example": "<section id=\"pricing\">...</section>",
+    "whatItDoes": "The `<section>` element is used to standalone thematic grouping.",
+    "syntax": "<section>",
+    "useCase": "You would use the `<section>` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`a`",
+    "example": "`<a href=\"\"></a>`",
+    "desc": "A hyperlink used to link to other pages or websites.",
+    "whatItDoes": "The ``a`` element is used to a hyperlink used to link to other pages or websites.",
+    "syntax": "<a href=\"\"></a>",
+    "useCase": "You would use the ``a`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`body`",
+    "example": "`<body></body>`",
+    "desc": "Contains all the visible content (text, images, links) of the webpage.",
+    "whatItDoes": "The ``body`` element is used to contains all the visible content (text, images, links) of the webpage.",
+    "syntax": "<body></body>",
+    "useCase": "You would use the ``body`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`br`",
+    "example": "`<br>`",
+    "desc": "Forces a line break (like pressing Enter) without starting a new paragraph.",
+    "whatItDoes": "The ``br`` element is used to forces a line break (like pressing enter) without starting a new paragraph.",
+    "syntax": "<br>",
+    "useCase": "You would use the ``br`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`div`",
+    "example": "`<div></div>`",
+    "desc": "A generic container used to group elements together for styling (CSS) or layout.",
+    "whatItDoes": "The ``div`` element is used to a generic container used to group elements together for styling (css) or layout.",
+    "syntax": "<div></div>",
+    "useCase": "You would use the ``div`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`head`",
+    "example": "`<head></head>`",
+    "desc": "Contains invisible meta-information like the page title and CSS links.",
+    "whatItDoes": "The ``head`` element is used to contains invisible meta-information like the page title and css links.",
+    "syntax": "<head></head>",
+    "useCase": "You would use the ``head`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`hr`",
+    "example": "`<hr>`",
+    "desc": "Draws a horizontal line across the page to visually separate sections.",
+    "whatItDoes": "The ``hr`` element is used to draws a horizontal line across the page to visually separate sections.",
+    "syntax": "<hr>",
+    "useCase": "You would use the ``hr`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`html:5`",
+    "example": "Full HTML5 boilerplate",
+    "desc": "Creates the entire base structure required for any standard webpage.",
+    "whatItDoes": "The ``html:5`` element is used to creates the entire base structure required for any standard webpage.",
+    "syntax": "`html:5`",
+    "useCase": "You would use the ``html:5`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`html`",
+    "example": "`<html></html>`",
+    "desc": "The root element that wraps all content on the page.",
+    "whatItDoes": "The ``html`` element is used to the root element that wraps all content on the page.",
+    "syntax": "<html></html>",
+    "useCase": "You would use the ``html`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`img`",
+    "example": "`<img src=\"\" alt=\"\">`",
+    "desc": "Embeds an image into the page.",
+    "whatItDoes": "The ``img`` element is used to embeds an image into the page.",
+    "syntax": "<img src=\"\" alt=\"\">",
+    "useCase": "You would use the ``img`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`input`",
+    "example": "`<input type=\"\">`",
+    "desc": "Creates an interactive field (like a text box) for users to type into.",
+    "whatItDoes": "The ``input`` element is used to creates an interactive field (like a text box) for users to type into.",
+    "syntax": "<input type=\"\">",
+    "useCase": "You would use the ``input`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`link`",
+    "example": "`<link rel=\"stylesheet\" href=\"\">`",
+    "desc": "Links your HTML file to an external CSS stylesheet file.",
+    "whatItDoes": "The ``link`` element is used to links your html file to an external css stylesheet file.",
+    "syntax": "<link rel=\"stylesheet\" href=\"\">",
+    "useCase": "You would use the ``link`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`meta`",
+    "example": "`<meta charset=\"UTF-8\">`",
+    "desc": "Defines data about the document, like the character set or viewport sizing for mobile.",
+    "whatItDoes": "The ``meta`` element is used to defines data about the document, like the character set or viewport sizing for mobile.",
+    "syntax": "<meta charset=\"UTF-8\">",
+    "useCase": "You would use the ``meta`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`p`",
+    "example": "`<p></p>`",
+    "desc": "A standard paragraph for blocks of text.",
+    "whatItDoes": "The ``p`` element is used to a standard paragraph for blocks of text.",
+    "syntax": "<p></p>",
+    "useCase": "You would use the ``p`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`script:src`",
+    "example": "`<script src=\"\"></script>`",
+    "desc": "Links your HTML file to an external JavaScript file.",
+    "whatItDoes": "The ``script:src`` element is used to links your html file to an external javascript file.",
+    "syntax": "<script src=\"\"></script>",
+    "useCase": "You would use the ``script:src`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`span`",
+    "example": "`<span></span>`",
+    "desc": "An inline container used to style or color a small piece of text inside a paragraph.",
+    "whatItDoes": "The ``span`` element is used to an inline container used to style or color a small piece of text inside a paragraph.",
+    "syntax": "<span></span>",
+    "useCase": "You would use the ``span`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Elements",
+    "shortcut": "`style`",
+    "example": "`<style></style>`",
+    "desc": "Allows you to write CSS code directly inside your HTML file.",
+    "whatItDoes": "The ``style`` element is used to allows you to write css code directly inside your html file.",
+    "syntax": "<style></style>",
+    "useCase": "You would use the ``style`` element to structure the main content of your webpage, ensuring semantic correctness and accessibility. For example, a blog post could be wrapped in an `<article>` tag, or a navigation bar in a `<nav>` tag."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "form>input+input+button",
+    "desc": "Form fields chained with +.",
+    "example": "<form>\n  <input type=\"text\">\n  <input type=\"text\">\n  <button></button>\n</form>",
+    "whatItDoes": "The `form>input+input+button` element is used to form fields chained with +.",
+    "syntax": "form>input+input+button",
+    "useCase": "Emmet abbreviations like `form>input+input+button` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "html:5",
+    "desc": "Full HTML5 boilerplate.",
+    "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>...</head>\n<body>...</body>\n</html>",
+    "whatItDoes": "The `html:5` element is used to full html5 boilerplate.",
+    "syntax": "html:5",
+    "useCase": "Emmet abbreviations like `html:5` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "li{Item $}*5",
+    "desc": "Numbered list items.",
+    "example": "<li>Item 1</li>\n<li>Item 2</li>\n...\n<li>Item 5</li>",
+    "whatItDoes": "The `li{Item $}*5` element is used to numbered list items.",
+    "syntax": "li{Item $}*5",
+    "useCase": "Emmet abbreviations like `li{Item $}*5` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "nav>ul>li*3>a",
+    "desc": "Nav with 3 links.",
+    "example": "<nav>\n  <ul>\n    <li><a href=\"\"></a></li>\n    <li><a href=\"\"></a></li>\n    <li><a href=\"\"></a></li>\n  </ul>\n</nav>",
+    "whatItDoes": "The `nav>ul>li*3>a` element is used to nav with 3 links.",
+    "syntax": "nav>ul>li*3>a",
+    "useCase": "Emmet abbreviations like `nav>ul>li*3>a` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "p>lorem10",
+    "desc": "10 words of Lorem Ipsum.",
+    "example": "<p>Lorem ipsum dolor sit amet...</p>",
+    "whatItDoes": "The `p>lorem10` element is used to 10 words of lorem ipsum.",
+    "syntax": "p>lorem10",
+    "useCase": "Emmet abbreviations like `p>lorem10` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "p{Hello World}",
+    "desc": "Element with inner text.",
+    "example": "<p>Hello World</p>",
+    "whatItDoes": "The `p{Hello World}` element is used to element with inner text.",
+    "syntax": "p{Hello World}",
+    "useCase": "Emmet abbreviations like `p{Hello World}` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "table>tr*3>td*4",
+    "desc": "Table with 3 rows, 4 columns.",
+    "example": "<table>\n  <tr><td></td><td></td><td></td><td></td></tr>\n  ...\n</table>",
+    "whatItDoes": "The `table>tr*3>td*4` element is used to table with 3 rows, 4 columns.",
+    "syntax": "table>tr*3>td*4",
+    "useCase": "Emmet abbreviations like `table>tr*3>td*4` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet",
+    "shortcut": "ul>li*5",
+    "desc": "5 nested list items.",
+    "example": "<ul>\n  <li></li>\n  <li></li>\n  <li></li>\n  <li></li>\n  <li></li>\n</ul>",
+    "whatItDoes": "The `ul>li*5` element is used to 5 nested list items.",
+    "syntax": "ul>li*5",
+    "useCase": "Emmet abbreviations like `ul>li*5` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Examples",
+    "shortcut": "`form>input+input+button`",
+    "example": "Form fields",
+    "desc": "Complete Emmet examples",
+    "whatItDoes": "The ``form>input+input+button`` element is used to complete emmet examples.",
+    "syntax": "`form>input+input+button`",
+    "useCase": "Emmet abbreviations like ``form>input+input+button`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Examples",
+    "shortcut": "`header.logo+nav>ul>li*4>a`",
+    "example": "Header + nav",
+    "desc": "Complete Emmet examples",
+    "whatItDoes": "The ``header.logo+nav>ul>li*4>a`` element is used to complete emmet examples.",
+    "syntax": "`header.logo+nav>ul>li*4>a`",
+    "useCase": "Emmet abbreviations like ``header.logo+nav>ul>li*4>a`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Examples",
+    "shortcut": "`header>(nav>ul>li*4>a)+button`",
+    "example": "Header with nav and button",
+    "desc": "Complete Emmet examples",
+    "whatItDoes": "The ``header>(nav>ul>li*4>a)+button`` element is used to complete emmet examples.",
+    "syntax": "`header>(nav>ul>li*4>a)+button`",
+    "useCase": "Emmet abbreviations like ``header>(nav>ul>li*4>a)+button`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Examples",
+    "shortcut": "`nav>ul>li*3>a`",
+    "example": "Navigation with 3 links",
+    "desc": "Complete Emmet examples",
+    "whatItDoes": "The ``nav>ul>li*3>a`` element is used to complete emmet examples.",
+    "syntax": "`nav>ul>li*3>a`",
+    "useCase": "Emmet abbreviations like ``nav>ul>li*3>a`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Examples",
+    "shortcut": "`select>option*5`",
+    "example": "Dropdown with 5 options",
+    "desc": "Complete Emmet examples",
+    "whatItDoes": "The ``select>option*5`` element is used to complete emmet examples.",
+    "syntax": "`select>option*5`",
+    "useCase": "Emmet abbreviations like ``select>option*5`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Examples",
+    "shortcut": "`table>tr*3>td*4`",
+    "example": "Table with 3 rows, 4 columns",
+    "desc": "Complete Emmet examples",
+    "whatItDoes": "The ``table>tr*3>td*4`` element is used to complete emmet examples.",
+    "syntax": "`table>tr*3>td*4`",
+    "useCase": "Emmet abbreviations like ``table>tr*3>td*4`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Grouping",
+    "shortcut": "`(div.container>header+main)+footer`",
+    "example": "Grouped structure",
+    "desc": "Emmet grouping operators",
+    "whatItDoes": "The ``(div.container>header+main)+footer`` element is used to emmet grouping operators.",
+    "syntax": "`(div.container>header+main)+footer`",
+    "useCase": "Emmet abbreviations like ``(div.container>header+main)+footer`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Grouping",
+    "shortcut": "`(header>nav)+main+footer`",
+    "example": "Full page structure",
+    "desc": "Emmet grouping operators",
+    "whatItDoes": "The ``(header>nav)+main+footer`` element is used to emmet grouping operators.",
+    "syntax": "`(header>nav)+main+footer`",
+    "useCase": "Emmet abbreviations like ``(header>nav)+main+footer`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Grouping",
+    "shortcut": "`(parent>child)+sibling`",
+    "example": "Group with sibling",
+    "desc": "Emmet grouping operators",
+    "whatItDoes": "The ``(parent>child)+sibling`` element is used to emmet grouping operators.",
+    "syntax": "`(parent>child)+sibling`",
+    "useCase": "Emmet abbreviations like ``(parent>child)+sibling`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet ID/Class",
+    "shortcut": "`#header`",
+    "example": "`<div id=\"header\"></div>`",
+    "desc": "Emmet ID and Class attributes",
+    "whatItDoes": "The ``#header`` element is used to emmet id and class attributes.",
+    "syntax": "<div id=\"header\"></div>",
+    "useCase": "Emmet abbreviations like ``#header`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet ID/Class",
+    "shortcut": "`.container`",
+    "example": "`<div class=\"container\"></div>`",
+    "desc": "Emmet ID and Class attributes",
+    "whatItDoes": "The ``.container`` element is used to emmet id and class attributes.",
+    "syntax": "<div class=\"container\"></div>",
+    "useCase": "Emmet abbreviations like ``.container`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet ID/Class",
+    "shortcut": "`div#app`",
+    "example": "`<div id=\"app\"></div>`",
+    "desc": "Emmet ID and Class attributes",
+    "whatItDoes": "The ``div#app`` element is used to emmet id and class attributes.",
+    "syntax": "<div id=\"app\"></div>",
+    "useCase": "Emmet abbreviations like ``div#app`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet ID/Class",
+    "shortcut": "`div.wrapper.main`",
+    "example": "`<div class=\"wrapper main\"></div>`",
+    "desc": "Emmet ID and Class attributes",
+    "whatItDoes": "The ``div.wrapper.main`` element is used to emmet id and class attributes.",
+    "syntax": "<div class=\"wrapper main\"></div>",
+    "useCase": "Emmet abbreviations like ``div.wrapper.main`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet ID/Class",
+    "shortcut": "`header#top.nav`",
+    "example": "`<header id=\"top\" class=\"nav\"></header>`",
+    "desc": "Emmet ID and Class attributes",
+    "whatItDoes": "The ``header#top.nav`` element is used to emmet id and class attributes.",
+    "syntax": "<header id=\"top\" class=\"nav\"></header>",
+    "useCase": "Emmet abbreviations like ``header#top.nav`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Multiplication",
+    "shortcut": "`div.item*4`",
+    "example": "4 divs with class",
+    "desc": "Emmet multiplication and numbering",
+    "whatItDoes": "The ``div.item*4`` element is used to emmet multiplication and numbering.",
+    "syntax": "`div.item*4`",
+    "useCase": "Emmet abbreviations like ``div.item*4`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Multiplication",
+    "shortcut": "`li${Item $}*5`",
+    "example": "`Item 1, Item 2, Item 3...`",
+    "desc": "Emmet multiplication and numbering",
+    "whatItDoes": "The ``li${Item $}*5`` element is used to emmet multiplication and numbering.",
+    "syntax": "`li${Item $}*5`",
+    "useCase": "Emmet abbreviations like ``li${Item $}*5`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Multiplication",
+    "shortcut": "`li{Count $}*5`",
+    "example": "`Count 1, Count 2...`",
+    "desc": "Emmet multiplication and numbering",
+    "whatItDoes": "The ``li{Count $}*5`` element is used to emmet multiplication and numbering.",
+    "syntax": "`li{Count $}*5`",
+    "useCase": "Emmet abbreviations like ``li{Count $}*5`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Multiplication",
+    "shortcut": "`p.class${$}*3`",
+    "example": "3 paragraphs with numbered classes",
+    "desc": "Emmet multiplication and numbering",
+    "whatItDoes": "The ``p.class${$}*3`` element is used to emmet multiplication and numbering.",
+    "syntax": "`p.class${$}*3`",
+    "useCase": "Emmet abbreviations like ``p.class${$}*3`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Multiplication",
+    "shortcut": "`ul>li*3`",
+    "example": "3 `<li>` items",
+    "desc": "Emmet multiplication and numbering",
+    "whatItDoes": "The ``ul>li*3`` element is used to emmet multiplication and numbering.",
+    "syntax": "`ul>li*3`",
+    "useCase": "Emmet abbreviations like ``ul>li*3`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Multiplication",
+    "shortcut": "`ul>li*5`",
+    "example": "5 `<li>` items",
+    "desc": "Emmet multiplication and numbering",
+    "whatItDoes": "The ``ul>li*5`` element is used to emmet multiplication and numbering.",
+    "syntax": "`ul>li*5`",
+    "useCase": "Emmet abbreviations like ``ul>li*5`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Operators",
+    "shortcut": "`div+p`",
+    "example": "`<div></div><p></p>`",
+    "desc": "Emmet child or sibling operator",
+    "whatItDoes": "The ``div+p`` element is used to emmet child or sibling operator.",
+    "syntax": "<div></div><p></p>",
+    "useCase": "Emmet abbreviations like ``div+p`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Operators",
+    "shortcut": "`div>p>span`",
+    "example": "`<div><p><span></span></p></div>`",
+    "desc": "Emmet child or sibling operator",
+    "whatItDoes": "The ``div>p>span`` element is used to emmet child or sibling operator.",
+    "syntax": "<div><p><span></span></p></div>",
+    "useCase": "Emmet abbreviations like ``div>p>span`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Operators",
+    "shortcut": "`div>p`",
+    "example": "`<div><p></p></div>`",
+    "desc": "Emmet child or sibling operator",
+    "whatItDoes": "The ``div>p`` element is used to emmet child or sibling operator.",
+    "syntax": "<div><p></p></div>",
+    "useCase": "Emmet abbreviations like ``div>p`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Operators",
+    "shortcut": "`header+main+footer`",
+    "example": "Multiple siblings",
+    "desc": "Emmet child or sibling operator",
+    "whatItDoes": "The ``header+main+footer`` element is used to emmet child or sibling operator.",
+    "syntax": "`header+main+footer`",
+    "useCase": "Emmet abbreviations like ``header+main+footer`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Operators",
+    "shortcut": "`parent>child`",
+    "example": "Nested elements",
+    "desc": "Emmet child or sibling operator",
+    "whatItDoes": "The ``parent>child`` element is used to emmet child or sibling operator.",
+    "syntax": "`parent>child`",
+    "useCase": "Emmet abbreviations like ``parent>child`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Operators",
+    "shortcut": "`sibling+sibling`",
+    "example": "Adjacent elements",
+    "desc": "Emmet child or sibling operator",
+    "whatItDoes": "The ``sibling+sibling`` element is used to emmet child or sibling operator.",
+    "syntax": "`sibling+sibling`",
+    "useCase": "Emmet abbreviations like ``sibling+sibling`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Operators",
+    "shortcut": "`ul>li*5`",
+    "example": "5 list items",
+    "desc": "Emmet child or sibling operator",
+    "whatItDoes": "The ``ul>li*5`` element is used to emmet child or sibling operator.",
+    "syntax": "`ul>li*5`",
+    "useCase": "Emmet abbreviations like ``ul>li*5`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Text Content",
+    "shortcut": "`a{Click here}`",
+    "example": "`<a href=\"\">Click here</a>`",
+    "desc": "Emmet text content generation",
+    "whatItDoes": "The ``a{Click here}`` element is used to emmet text content generation.",
+    "syntax": "<a href=\"\">Click here</a>",
+    "useCase": "Emmet abbreviations like ``a{Click here}`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Text Content",
+    "shortcut": "`div{Click me}`",
+    "example": "`<div>Click me</div>`",
+    "desc": "Emmet text content generation",
+    "whatItDoes": "The ``div{Click me}`` element is used to emmet text content generation.",
+    "syntax": "<div>Click me</div>",
+    "useCase": "Emmet abbreviations like ``div{Click me}`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Text Content",
+    "shortcut": "`p>lorem100`",
+    "example": "100 words of Lorem",
+    "desc": "Emmet text content generation",
+    "whatItDoes": "The ``p>lorem100`` element is used to emmet text content generation.",
+    "syntax": "`p>lorem100`",
+    "useCase": "Emmet abbreviations like ``p>lorem100`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Text Content",
+    "shortcut": "`p>lorem10`",
+    "example": "10 words of Lorem",
+    "desc": "Emmet text content generation",
+    "whatItDoes": "The ``p>lorem10`` element is used to emmet text content generation.",
+    "syntax": "`p>lorem10`",
+    "useCase": "Emmet abbreviations like ``p>lorem10`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Text Content",
+    "shortcut": "`p>lorem`",
+    "example": "Paragraph with Lorem Ipsum",
+    "desc": "Emmet text content generation",
+    "whatItDoes": "The ``p>lorem`` element is used to emmet text content generation.",
+    "syntax": "`p>lorem`",
+    "useCase": "Emmet abbreviations like ``p>lorem`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Emmet Text Content",
+    "shortcut": "`p{Hello World}`",
+    "example": "`<p>Hello World</p>`",
+    "desc": "Emmet text content generation",
+    "whatItDoes": "The ``p{Hello World}`` element is used to emmet text content generation.",
+    "syntax": "<p>Hello World</p>",
+    "useCase": "Emmet abbreviations like ``p{Hello World}`` are incredibly useful for rapidly writing HTML boilerplate. They allow developers to type short, CSS-like expressions that expand into full HTML snippets, significantly speeding up development time."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "&copy;",
+    "desc": "Copyright symbol.",
+    "example": "\u00a9 2025",
+    "whatItDoes": "The `&copy;` element is used to copyright symbol.",
+    "syntax": "&copy;",
+    "useCase": "HTML entities like `&copy;` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "&nbsp;",
+    "desc": "Non-breaking space.",
+    "example": "Prevents line break between words",
+    "whatItDoes": "The `&nbsp;` element is used to non-breaking space.",
+    "syntax": "&nbsp;",
+    "useCase": "HTML entities like `&nbsp;` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "&rarr;",
+    "desc": "Right arrow.",
+    "example": "\u2192",
+    "whatItDoes": "The `&rarr;` element is used to right arrow.",
+    "syntax": "&rarr;",
+    "useCase": "HTML entities like `&rarr;` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`\"`",
+    "example": "Quote `\"`",
+    "desc": "In attributes",
+    "whatItDoes": "The ``\"`` element is used to in attributes.",
+    "syntax": "`\"`",
+    "useCase": "HTML entities like ``\"`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&`",
+    "example": "Ampersand `&`",
+    "desc": "In text",
+    "whatItDoes": "The ``&`` element is used to in text.",
+    "syntax": "`&`",
+    "useCase": "HTML entities like ``&`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&bull;`",
+    "example": "Bullet \u2022",
+    "desc": "List items",
+    "whatItDoes": "The ``&bull;`` element is used to list items.",
+    "syntax": "`&bull;`",
+    "useCase": "HTML entities like ``&bull;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&copy;`",
+    "example": "Copyright \u00a9",
+    "desc": "Copyright symbol",
+    "whatItDoes": "The ``&copy;`` element is used to copyright symbol.",
+    "syntax": "`&copy;`",
+    "useCase": "HTML entities like ``&copy;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&darr;`",
+    "example": "Down arrow \u2193",
+    "desc": "Scroll indicator",
+    "whatItDoes": "The ``&darr;`` element is used to scroll indicator.",
+    "syntax": "`&darr;`",
+    "useCase": "HTML entities like ``&darr;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&deg;`",
+    "example": "Degree \u00b0",
+    "desc": "Temperature/angles",
+    "whatItDoes": "The ``&deg;`` element is used to temperature/angles.",
+    "syntax": "`&deg;`",
+    "useCase": "HTML entities like ``&deg;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&divide;`",
+    "example": "Divide \u00f7",
+    "desc": "Mathematical",
+    "whatItDoes": "The ``&divide;`` element is used to mathematical.",
+    "syntax": "`&divide;`",
+    "useCase": "HTML entities like ``&divide;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&dollar;`",
+    "example": "Dollar $",
+    "desc": "Currency",
+    "whatItDoes": "The ``&dollar;`` element is used to currency.",
+    "syntax": "`&dollar;`",
+    "useCase": "HTML entities like ``&dollar;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&euro;`",
+    "example": "Euro \u20ac",
+    "desc": "Currency",
+    "whatItDoes": "The ``&euro;`` element is used to currency.",
+    "syntax": "`&euro;`",
+    "useCase": "HTML entities like ``&euro;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&hellip;`",
+    "example": "Ellipsis \u2026",
+    "desc": "Omissions",
+    "whatItDoes": "The ``&hellip;`` element is used to omissions.",
+    "syntax": "`&hellip;`",
+    "useCase": "HTML entities like ``&hellip;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&larr;`",
+    "example": "Left arrow \u2190",
+    "desc": "Navigation",
+    "whatItDoes": "The ``&larr;`` element is used to navigation.",
+    "syntax": "`&larr;`",
+    "useCase": "HTML entities like ``&larr;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&nbsp;`",
+    "example": "Non-breaking space",
+    "desc": "Prevent line break",
+    "whatItDoes": "The ``&nbsp;`` element is used to prevent line break.",
+    "syntax": "`&nbsp;`",
+    "useCase": "HTML entities like ``&nbsp;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&para;`",
+    "example": "Paragraph \u00b6",
+    "desc": "Document markers",
+    "whatItDoes": "The ``&para;`` element is used to document markers.",
+    "syntax": "`&para;`",
+    "useCase": "HTML entities like ``&para;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&pound;`",
+    "example": "Pound \u00a3",
+    "desc": "Currency",
+    "whatItDoes": "The ``&pound;`` element is used to currency.",
+    "syntax": "`&pound;`",
+    "useCase": "HTML entities like ``&pound;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&rarr;`",
+    "example": "Right arrow \u2192",
+    "desc": "Navigation",
+    "whatItDoes": "The ``&rarr;`` element is used to navigation.",
+    "syntax": "`&rarr;`",
+    "useCase": "HTML entities like ``&rarr;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&reg;`",
+    "example": "Registered \u00ae",
+    "desc": "Trademark",
+    "whatItDoes": "The ``&reg;`` element is used to trademark.",
+    "syntax": "`&reg;`",
+    "useCase": "HTML entities like ``&reg;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&sect;`",
+    "example": "Section \u00a7",
+    "desc": "Legal/technical",
+    "whatItDoes": "The ``&sect;`` element is used to legal/technical.",
+    "syntax": "`&sect;`",
+    "useCase": "HTML entities like ``&sect;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&times;`",
+    "example": "Multiply \u00d7",
+    "desc": "Close buttons",
+    "whatItDoes": "The ``&times;`` element is used to close buttons.",
+    "syntax": "`&times;`",
+    "useCase": "HTML entities like ``&times;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&trade;`",
+    "example": "Trademark \u2122",
+    "desc": "TM symbol",
+    "whatItDoes": "The ``&trade;`` element is used to tm symbol.",
+    "syntax": "`&trade;`",
+    "useCase": "HTML entities like ``&trade;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&uarr;`",
+    "example": "Up arrow \u2191",
+    "desc": "Scroll indicator",
+    "whatItDoes": "The ``&uarr;`` element is used to scroll indicator.",
+    "syntax": "`&uarr;`",
+    "useCase": "HTML entities like ``&uarr;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`&yen;`",
+    "example": "Yen \u00a5",
+    "desc": "Currency",
+    "whatItDoes": "The ``&yen;`` element is used to currency.",
+    "syntax": "`&yen;`",
+    "useCase": "HTML entities like ``&yen;`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`<`",
+    "example": "Less than `<`",
+    "desc": "In code display",
+    "whatItDoes": "The ``<`` element is used to in code display.",
+    "syntax": "`<`",
+    "useCase": "HTML entities like ``<`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Entities",
+    "shortcut": "`>`",
+    "example": "Greater than `>`",
+    "desc": "In code display",
+    "whatItDoes": "The ``>`` element is used to in code display.",
+    "syntax": "`>`",
+    "useCase": "HTML entities like ``>`` are essential for displaying special characters that might otherwise be interpreted as HTML code or are not easily typed on a keyboard. For example, `&amp;nbsp;` for a non-breaking space or `&amp;copy;` for the copyright symbol."
+  },
+  {
+    "lang": "html",
+    "cat": "Notepad++",
+    "shortcut": "Ctrl+D",
+    "desc": "Duplicate current line.",
+    "example": "Copies line directly below",
+    "whatItDoes": "The `Ctrl+D` element is used to duplicate current line.",
+    "syntax": "Ctrl+D",
+    "useCase": "In a real-world application, you would use Ctrl+D when you need to implement duplicate current line.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "html",
+    "cat": "Notepad++",
+    "shortcut": "Ctrl+Shift+C",
+    "desc": "Comment out selection.",
+    "example": "<!-- selected text -->",
+    "whatItDoes": "The `Ctrl+Shift+C` element is used to comment out selection.",
+    "syntax": "Ctrl+Shift+C",
+    "useCase": "In a real-world application, you would use Ctrl+Shift+C when you need to implement comment out selection.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "html",
+    "cat": "VS Code",
+    "shortcut": "! + Tab",
+    "desc": "Emmet HTML5 boilerplate.",
+    "example": "Expands to full document structure",
+    "whatItDoes": "The `! + Tab` element is used to emmet html5 boilerplate.",
+    "syntax": "! + Tab",
+    "useCase": "In a real-world application, you would use ! + Tab when you need to implement emmet html5 boilerplate.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "html",
+    "cat": "VS Code",
+    "shortcut": "Alt+Shift+F",
+    "desc": "Format the whole document.",
+    "example": "Pretty-prints your HTML",
+    "whatItDoes": "The `Alt+Shift+F` element is used to format the whole document.",
+    "syntax": "Alt+Shift+F",
+    "useCase": "In a real-world application, you would use Alt+Shift+F when you need to implement format the whole document.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "html",
+    "cat": "VS Code",
+    "shortcut": "Ctrl+Shift+'",
+    "desc": "Wrap selection with abbreviation.",
+    "example": "Wraps selected text in a tag",
+    "whatItDoes": "The `Ctrl+Shift+'` element is used to wrap selection with abbreviation.",
+    "syntax": "Ctrl+Shift+'",
+    "useCase": "In a real-world application, you would use Ctrl+Shift+' when you need to implement wrap selection with abbreviation.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Arrays",
+    "shortcut": "[...new Set(arr)]",
+    "desc": "De-duplicate an array.",
+    "example": "const unique = [...new Set([1,1,2,3])];\n// [1, 2, 3]",
+    "whatItDoes": "The `[...new Set(arr)]` method/feature is used to de-duplicate an array.",
+    "syntax": "[...new Set(arr)]",
+    "useCase": "In a real-world application, you would use [...new Set(arr)] when you need to implement de-duplicate an array.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Arrays",
+    "shortcut": "arr.filter()",
+    "desc": "Keep only matching items.",
+    "example": "const evens = [1,2,3,4].filter(n => n % 2 === 0);\n// [2, 4]",
+    "whatItDoes": "The `arr.filter()` method/feature is used to keep only matching items.",
+    "syntax": "arr.filter()",
+    "useCase": "In a real-world application, you would use arr.filter() when you need to implement keep only matching items.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Arrays",
+    "shortcut": "arr.find()",
+    "desc": "Get the first matching item.",
+    "example": "const user = users.find(u => u.id === 2);",
+    "whatItDoes": "The `arr.find()` method/feature is used to get the first matching item.",
+    "syntax": "arr.find()",
+    "useCase": "In a real-world application, you would use arr.find() when you need to implement get the first matching item.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Arrays",
+    "shortcut": "arr.map()",
+    "desc": "Transform each item into a new array.",
+    "example": "const doubled = [1,2,3].map(n => n * 2);\n// [2, 4, 6]",
+    "whatItDoes": "The `arr.map()` method/feature is used to transform each item into a new array.",
+    "syntax": "arr.map()",
+    "useCase": "In a real-world application, you would use arr.map() when you need to implement transform each item into a new array.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Arrays",
+    "shortcut": "arr.reduce()",
+    "desc": "Accumulate to a single value.",
+    "example": "const sum = [1,2,3].reduce((a,b) => a + b, 0);\n// 6",
+    "whatItDoes": "The `arr.reduce()` method/feature is used to accumulate to a single value.",
+    "syntax": "arr.reduce()",
+    "useCase": "In a real-world application, you would use arr.reduce() when you need to implement accumulate to a single value.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Arrays",
+    "shortcut": "arr.some() / every()",
+    "desc": "Test if some/all items match.",
+    "example": "const hasEven = nums.some(n => n % 2 === 0);",
+    "whatItDoes": "The `arr.some() / every()` method/feature is used to test if some/all items match.",
+    "syntax": "arr.some() / every()",
+    "useCase": "In a real-world application, you would use arr.some() / every() when you need to implement test if some/all items match.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Async",
+    "shortcut": "Promise.all()",
+    "desc": "Wait for multiple promises.",
+    "example": "const [a, b] = await Promise.all([p1, p2]);",
+    "whatItDoes": "The `Promise.all()` method/feature is used to wait for multiple promises.",
+    "syntax": "Promise.all()",
+    "useCase": "In a real-world application, you would use Promise.all() when you need to implement wait for multiple promises.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Async",
+    "shortcut": "async / await",
+    "desc": "Write promises like sync code.",
+    "example": "async function getData() {\n  const res = await fetch(url);\n  return res.json();\n}",
+    "whatItDoes": "The `async / await` method/feature is used to write promises like sync code.",
+    "syntax": "async function getData() {",
+    "useCase": "In a real-world application, you would use async / await when you need to implement write promises like sync code.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "DOM",
+    "shortcut": "addEventListener()",
+    "desc": "Listen for an event.",
+    "example": "btn.addEventListener('click', () => {\n  console.log('clicked!');\n});",
+    "whatItDoes": "The `addEventListener()` method/feature is used to listen for an event.",
+    "syntax": "addEventListener()",
+    "useCase": "In a real-world application, you would use addEventListener() when you need to implement listen for an event.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "DOM",
+    "shortcut": "classList.toggle()",
+    "desc": "Toggle a CSS class.",
+    "example": "el.classList.toggle('active');",
+    "whatItDoes": "The `classList.toggle()` method/feature is used to toggle a css class.",
+    "syntax": "classList.toggle()",
+    "useCase": "In a real-world application, you would use classList.toggle() when you need to implement toggle a css class.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "DOM",
+    "shortcut": "dataset",
+    "desc": "Read data-* attributes.",
+    "example": "<div data-id=\"42\">\nel.dataset.id; // '42'",
+    "whatItDoes": "The `dataset` method/feature is used to read data-* attributes.",
+    "syntax": "dataset()",
+    "useCase": "In a real-world application, you would use dataset when you need to implement read data-* attributes.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "DOM",
+    "shortcut": "querySelector()",
+    "desc": "Select the first matching element.",
+    "example": "const btn = document.querySelector('.btn');",
+    "whatItDoes": "The `querySelector()` method/feature is used to select the first matching element.",
+    "syntax": "querySelector()",
+    "useCase": "In a real-world application, you would use querySelector() when you need to implement select the first matching element.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "ES6+",
+    "shortcut": "arrow fn",
+    "desc": "Concise function syntax.",
+    "example": "const add = (a, b) => a + b;",
+    "whatItDoes": "The `arrow fn` method/feature is used to concise function syntax.",
+    "syntax": "const add = (a, b) => a + b;",
+    "useCase": "ES6+ features like `arrow fn` introduce modern syntax and powerful capabilities to JavaScript, making code more readable, efficient, and maintainable. For example, arrow functions for concise syntax or `async/await` for asynchronous operations."
+  },
+  {
+    "lang": "js",
+    "cat": "ES6+",
+    "shortcut": "destructuring",
+    "desc": "Unpack values from objects/arrays.",
+    "example": "const { name, age = 0 } = user;\nconst [first, ...rest] = arr;",
+    "whatItDoes": "The `destructuring` method/feature is used to unpack values from objects/arrays.",
+    "syntax": "destructuring()",
+    "useCase": "ES6+ features like `destructuring` introduce modern syntax and powerful capabilities to JavaScript, making code more readable, efficient, and maintainable. For example, arrow functions for concise syntax or `async/await` for asynchronous operations."
+  },
+  {
+    "lang": "js",
+    "cat": "ES6+",
+    "shortcut": "let / const",
+    "desc": "Block-scoped variables.",
+    "example": "const name = 'Eli';\nlet age = 22;",
+    "whatItDoes": "The `let / const` method/feature is used to block-scoped variables.",
+    "syntax": "let / const()",
+    "useCase": "ES6+ features like `let / const` introduce modern syntax and powerful capabilities to JavaScript, making code more readable, efficient, and maintainable. For example, arrow functions for concise syntax or `async/await` for asynchronous operations."
+  },
+  {
+    "lang": "js",
+    "cat": "ES6+",
+    "shortcut": "optional chaining",
+    "desc": "Safe nested property access.",
+    "example": "const city = user?.address?.city ?? 'Unknown';",
+    "whatItDoes": "The `optional chaining` method/feature is used to safe nested property access.",
+    "syntax": "optional chaining()",
+    "useCase": "ES6+ features like `optional chaining` introduce modern syntax and powerful capabilities to JavaScript, making code more readable, efficient, and maintainable. For example, arrow functions for concise syntax or `async/await` for asynchronous operations."
+  },
+  {
+    "lang": "js",
+    "cat": "ES6+",
+    "shortcut": "spread / rest",
+    "desc": "Expand or collect values.",
+    "example": "const merged = { ...a, ...b };\nfunction sum(...nums) {}",
+    "whatItDoes": "The `spread / rest` method/feature is used to expand or collect values.",
+    "syntax": "const merged = { ...a, ...b };",
+    "useCase": "ES6+ features like `spread / rest` introduce modern syntax and powerful capabilities to JavaScript, making code more readable, efficient, and maintainable. For example, arrow functions for concise syntax or `async/await` for asynchronous operations."
+  },
+  {
+    "lang": "js",
+    "cat": "ES6+",
+    "shortcut": "template literal",
+    "desc": "String interpolation.",
+    "example": "const msg = `Hello ${name}!`;",
+    "whatItDoes": "The `template literal` method/feature is used to string interpolation.",
+    "syntax": "template literal()",
+    "useCase": "ES6+ features like `template literal` introduce modern syntax and powerful capabilities to JavaScript, making code more readable, efficient, and maintainable. For example, arrow functions for concise syntax or `async/await` for asynchronous operations."
+  },
+  {
+    "lang": "js",
+    "cat": "JSON",
+    "shortcut": "JSON.stringify() / parse()",
+    "desc": "Convert to/from JSON text.",
+    "example": "JSON.stringify({a:1}); // '{\"a\":1}'\nJSON.parse('{\"a\":1}');",
+    "whatItDoes": "The `JSON.stringify() / parse()` method/feature is used to convert to/from json text.",
+    "syntax": "JSON.stringify() / parse()",
+    "useCase": "In a real-world application, you would use JSON.stringify() / parse() when you need to implement convert to/from json text.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Objects",
+    "shortcut": "Object.entries()",
+    "desc": "Get [key, value] pairs.",
+    "example": "Object.entries({a:1,b:2});\n// [['a',1], ['b',2]]",
+    "whatItDoes": "The `Object.entries()` method/feature is used to get [key, value] pairs.",
+    "syntax": "Object.entries()",
+    "useCase": "In a real-world application, you would use Object.entries() when you need to implement get [key, value] pairs.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
+    "shortcut": "?? nullish coalescing",
+    "desc": "Default only for null/undefined.",
+    "example": "const count = input ?? 0;",
+    "whatItDoes": "The `?? nullish coalescing` method/feature is used to default only for null/undefined.",
+    "syntax": "?? nullish coalescing()",
+    "useCase": "In a real-world application, you would use ?? nullish coalescing when you need to implement default only for null/undefined.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
+    "shortcut": "debounce()",
+    "desc": "Delay a function until input settles.",
+    "example": "function debounce(fn, delay=300){\n  let t;\n  return (...a) => {\n    clearTimeout(t);\n    t = setTimeout(() => fn(...a), delay);\n  };\n}",
+    "whatItDoes": "The `debounce()` method/feature is used to delay a function until input settles.",
+    "syntax": "debounce()",
+    "useCase": "In a real-world application, you would use debounce() when you need to implement delay a function until input settles.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
+    "shortcut": "structuredClone()",
+    "desc": "Deep clone any value.",
+    "example": "const copy = structuredClone(original);",
+    "whatItDoes": "The `structuredClone()` method/feature is used to deep clone any value.",
+    "syntax": "structuredClone()",
+    "useCase": "In a real-world application, you would use structuredClone() when you need to implement deep clone any value.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Patterns",
+    "shortcut": "throttle()",
+    "desc": "Limit call frequency.",
+    "example": "function throttle(fn, limit=300){\n  let wait;\n  return (...a) => {\n    if (!wait) { fn(...a); wait = true;\n      setTimeout(() => wait = false, limit); }\n  };\n}",
+    "whatItDoes": "The `throttle()` method/feature is used to limit call frequency.",
+    "syntax": "throttle()",
+    "useCase": "In a real-world application, you would use throttle() when you need to implement limit call frequency.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Strings",
+    "shortcut": "str.includes()",
+    "desc": "Check for a substring.",
+    "example": "'Hello'.includes('ell'); // true",
+    "whatItDoes": "The `str.includes()` method/feature is used to check for a substring.",
+    "syntax": "str.includes()",
+    "useCase": "In a real-world application, you would use str.includes() when you need to implement check for a substring.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Strings",
+    "shortcut": "str.padStart()",
+    "desc": "Pad a string to a length.",
+    "example": "'5'.padStart(3, '0'); // '005'",
+    "whatItDoes": "The `str.padStart()` method/feature is used to pad a string to a length.",
+    "syntax": "str.padStart()",
+    "useCase": "In a real-world application, you would use str.padStart() when you need to implement pad a string to a length.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  },
+  {
+    "lang": "js",
+    "cat": "Strings",
+    "shortcut": "str.replaceAll()",
+    "desc": "Replace every occurrence.",
+    "example": "'a-b-c'.replaceAll('-', '_'); // 'a_b_c'",
+    "whatItDoes": "The `str.replaceAll()` method/feature is used to replace every occurrence.",
+    "syntax": "str.replaceAll()",
+    "useCase": "In a real-world application, you would use str.replaceAll() when you need to implement replace every occurrence.. This is particularly useful in modern web development for creating responsive and accessible user interfaces."
+  }
+]
