@@ -1,5 +1,6 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
+import { getDifficultyRating } from "@/utils/difficulty";
 
 interface SidebarProps {
   currentLang: "html" | "css" | "js";
@@ -9,6 +10,8 @@ interface SidebarProps {
   onSelectItem: (id: string) => void;
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
+  sortBy: "alphabetical" | "easiest" | "hardest";
+  onSortChange: (sortBy: "alphabetical" | "easiest" | "hardest") => void;
 }
 
 const LANG_LABELS = {
@@ -25,6 +28,8 @@ export default function Sidebar({
   onSelectItem,
   sidebarOpen,
   onToggleSidebar,
+  sortBy,
+  onSortChange,
 }: SidebarProps) {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set(Object.keys(groupedContent))
@@ -58,7 +63,7 @@ export default function Sidebar({
       >
         <div className="flex-1 overflow-y-auto p-4">
           {/* Language tabs */}
-          <div className="mb-6 grid grid-cols-3 gap-1.5 rounded-xl bg-secondary/60 p-1.5">
+          <div className="mb-4 grid grid-cols-3 gap-1.5 rounded-xl bg-secondary/60 p-1.5">
             {(["html", "css", "js"] as const).map((lang) => (
               <button
                 key={lang}
@@ -72,6 +77,29 @@ export default function Sidebar({
                 {lang}
               </button>
             ))}
+          </div>
+
+          {/* Sort Selection Dropdown */}
+          <div className="mb-5 px-1">
+            <label className="mb-1.5 block text-[0.65rem] font-bold uppercase tracking-wider text-muted-foreground/70 flex items-center gap-1">
+              <SlidersHorizontal size={10} className="text-accent" />
+              <span>Sort sequence</span>
+            </label>
+            <div className="relative">
+              <select
+                value={sortBy}
+                onChange={(e) => onSortChange(e.target.value as "alphabetical" | "easiest" | "hardest")}
+                className="w-full appearance-none rounded-lg border border-border bg-card px-2.5 py-1.5 pr-8 text-xs font-semibold text-foreground focus:outline-none focus:ring-1 focus:ring-accent cursor-pointer transition-all hover:border-accent/40"
+              >
+                <option value="alphabetical">🔤 Alphabetical (A-Z)</option>
+                <option value="easiest">🌱 Easiest to Hardest</option>
+                <option value="hardest">🔥 Hardest to Easiest</option>
+              </select>
+              <ChevronDown
+                size={14}
+                className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+              />
+            </div>
           </div>
 
           <p className="mb-2 px-3 text-[0.65rem] font-semibold uppercase tracking-wider text-muted-foreground/70">
@@ -101,17 +129,28 @@ export default function Sidebar({
                       {items.map((item) => {
                         const itemId = `${item.lang}-${item.cat}-${item.shortcut}`;
                         const isActive = selectedItem === itemId;
+                        const rating = getDifficultyRating(item);
                         return (
                           <button
                             key={itemId}
                             onClick={() => onSelectItem(itemId)}
-                            className={`flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-xs font-mono transition-all duration-150 ${
+                            className={`flex w-full items-center justify-between gap-2 rounded-md px-3 py-1.5 text-left text-xs font-mono transition-all duration-150 ${
                               isActive
                                 ? "bg-accent text-accent-foreground font-semibold"
                                 : "text-muted-foreground hover:translate-x-0.5 hover:text-foreground hover:bg-accent/10"
                             }`}
                           >
                             <span className="truncate">{item.shortcut}</span>
+                            <span
+                              title={`Difficulty: ${rating.label}`}
+                              className={`h-1.5 w-1.5 flex-shrink-0 rounded-full ${
+                                rating.label === "Easy"
+                                  ? "bg-emerald-500/80"
+                                  : rating.label === "Medium"
+                                    ? "bg-amber-500/80"
+                                    : "bg-rose-500/80"
+                              }`}
+                            />
                           </button>
                         );
                       })}

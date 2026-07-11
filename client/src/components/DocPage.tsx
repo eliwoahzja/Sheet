@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import OnThisPageNav from "@/components/OnThisPageNav";
+import { getDifficultyRating } from "@/utils/difficulty";
 
 interface DocPageProps {
   content: {
@@ -890,6 +891,10 @@ export default function DocPage({ content }: DocPageProps) {
     return getDynamicDetails(content.lang, content.cat, content.shortcut, content.desc);
   }, [content.lang, content.cat, content.shortcut, content.desc]);
 
+  const rating = useMemo(() => {
+    return getDifficultyRating(content);
+  }, [content]);
+
   const steps = content.guide && content.guide.length > 0 ? content.guide : details.guide;
 
   return (
@@ -903,6 +908,16 @@ export default function DocPage({ content }: DocPageProps) {
             </span>
             <span className="inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-semibold">
               {content.cat}
+            </span>
+            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${rating.color}`}>
+              <span className={`h-1.5 w-1.5 rounded-full ${
+                rating.label === "Easy"
+                  ? "bg-emerald-500"
+                  : rating.label === "Medium"
+                    ? "bg-amber-500"
+                    : "bg-rose-500"
+              }`} />
+              <span>{rating.label} Level</span>
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight break-words">

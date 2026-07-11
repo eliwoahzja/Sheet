@@ -14,12 +14,14 @@ import {
   MousePointerClick,
   SunMoon,
   Copy,
+  History,
 } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import DocsLayout from "@/components/DocsLayout";
 import Sidebar from "@/components/Sidebar";
 import DocPage from "@/components/DocPage";
 import rawStructuredContent from "@/data/structured_content.json";
+import { getDifficultyRating } from "@/utils/difficulty";
 
 const VOID_TAGS = new Set([
   "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"
@@ -132,6 +134,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [location, setLocation] = useLocation();
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const [sortBy, setSortBy] = useState<"alphabetical" | "easiest" | "hardest">("alphabetical");
 
   useEffect(() => {
     const pathParts = location.split("/").filter(Boolean);
@@ -171,12 +174,28 @@ export default function Home() {
       if (!groups[item.cat]) groups[item.cat] = [];
       groups[item.cat].push(item);
     });
-    // Sort shortcuts alphabetically inside each category
+    // Sort shortcuts inside each category according to user select option
     Object.keys(groups).forEach((cat) => {
-      groups[cat].sort((a, b) => a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" }));
+      groups[cat].sort((a, b) => {
+        if (sortBy === "alphabetical") {
+          return a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" });
+        } else {
+          const ratingA = getDifficultyRating(a);
+          const ratingB = getDifficultyRating(b);
+          if (sortBy === "easiest") {
+            return ratingA.score !== ratingB.score
+              ? ratingA.score - ratingB.score
+              : a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" });
+          } else {
+            return ratingA.score !== ratingB.score
+              ? ratingB.score - ratingA.score
+              : a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" });
+          }
+        }
+      });
     });
     return groups;
-  }, [langContent]);
+  }, [langContent, sortBy]);
 
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
@@ -220,6 +239,8 @@ export default function Home() {
           }}
           sidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+          sortBy={sortBy}
+          onSortChange={setSortBy}
         />
       }
       header={
@@ -381,44 +402,130 @@ export default function Home() {
             })}
           </div>
 
-          {/* Quick Tips */}
-          <div className="space-y-5">
-            <h3 className="text-2xl font-bold">Quick Tips</h3>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                {
-                  icon: Search,
-                  text: "Use the search bar to find any HTML element, CSS property, or JS method across all languages instantly.",
-                },
-                {
-                  icon: MousePointerClick,
-                  text: "Click any item in the sidebar to open detailed docs with syntax, examples, and editor shortcuts.",
-                },
-                {
-                  icon: SunMoon,
-                  text: "Toggle light/dark mode from the top-right — your preference is saved automatically.",
-                },
-                {
-                  icon: Copy,
-                  text: "Every code example has a one-click copy button so you can grab snippets fast.",
-                },
-              ].map((tip, i) => {
-                const Icon = tip.icon;
-                return (
-                  <div
-                    key={i}
-                    className="flex gap-3 rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:border-accent/40 hover:shadow-sm animate-in fade-in slide-in-from-bottom-2 fill-mode-both"
-                    style={{ animationDelay: `${150 + i * 70}ms` }}
-                  >
-                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                      <Icon size={18} />
+          {/* Bento-style Grid: Quick Tips & Changelogs */}
+          <div className="grid gap-8 lg:grid-cols-12">
+            {/* Quick Tips Column (5/12 cols) */}
+            <div className="space-y-5 lg:col-span-5">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
+                <Sparkles size={20} className="text-accent" />
+                <span>Quick Tips</span>
+              </h3>
+              <div className="grid gap-4">
+                {[
+                  {
+                    icon: Search,
+                    text: "Use the search bar to find any HTML element, CSS property, or JS method across all languages instantly.",
+                  },
+                  {
+                    icon: MousePointerClick,
+                    text: "Click any item in the sidebar to open detailed docs with syntax, examples, and editor shortcuts.",
+                  },
+                  {
+                    icon: SunMoon,
+                    text: "Toggle light/dark mode from the top-right — your preference is saved automatically.",
+                  },
+                  {
+                    icon: Copy,
+                    text: "Every code example has a one-click copy button so you can grab snippets fast.",
+                  },
+                ].map((tip, i) => {
+                  const Icon = tip.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="flex gap-3 rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:border-accent/40 hover:shadow-sm animate-in fade-in slide-in-from-bottom-2 fill-mode-both"
+                      style={{ animationDelay: `${150 + i * 70}ms` }}
+                    >
+                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                        <Icon size={18} />
+                      </span>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {tip.text}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Changelog Column (7/12 cols) */}
+            <div className="space-y-5 lg:col-span-7">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
+                <History size={20} className="text-accent" />
+                <span>What's New & Changelogs</span>
+              </h3>
+              
+              <div className="rounded-2xl border border-border bg-card/50 p-5 space-y-6 overflow-hidden">
+                {/* Timeline entries */}
+                <div className="relative border-l border-border pl-5 ml-2.5 space-y-6">
+                  {/* Item 1 */}
+                  <div className="relative">
+                    {/* Circle node on the line */}
+                    <span className="absolute -left-[27px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent ring-4 ring-background">
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent-foreground" />
                     </span>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {tip.text}
-                    </p>
+                    <div className="space-y-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-sm font-bold text-foreground">v1.2.0 (Latest Update)</span>
+                        <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-500 text-[10px] font-bold uppercase tracking-wider">New Features</span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground">Released on July 11, 2026</p>
+                      <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside mt-2 pl-1 leading-relaxed">
+                        <li>
+                          <strong className="text-foreground">Live Emmet Simulator:</strong> Built an interactive playground inside docs pages where you can type abbreviations (like <code className="font-mono text-[11px] text-accent font-semibold px-1 py-0.5 bg-accent/5 rounded">ul&gt;li*4</code>) and instantly expand them with <kbd className="font-mono text-[10px] bg-secondary border border-border px-1 rounded font-bold text-foreground">Tab</kbd> or a click to preview code and live renders.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">Difficulty Sorting:</strong> Sort elements in the sidebar from <span className="font-semibold text-emerald-500">Easiest to Hardest</span> or <span className="font-semibold text-rose-500">Hardest to Easiest</span>, simplifying structured learning pathways.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">Difficulty Tags:</strong> Dynamic levels (Easy, Medium, Hard) mapped to all HTML tags, CSS rules, and JS concepts.
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                );
-              })}
+
+                  {/* Item 2 */}
+                  <div className="relative">
+                    <span className="absolute -left-[27px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-muted border border-border ring-4 ring-background">
+                      <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground" />
+                    </span>
+                    <div className="space-y-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-sm font-bold text-foreground">v1.1.0</span>
+                        <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-500 text-[10px] font-bold uppercase tracking-wider">Enhancement</span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground">Released on July 11, 2026</p>
+                      <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside mt-2 pl-1 leading-relaxed">
+                        <li>
+                          <strong className="text-foreground">Placement Guidelines:</strong> Highly precise contextual rules detailing where tags, properties, or scripts belong in files.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Item 3 */}
+                  <div className="relative">
+                    <span className="absolute -left-[27px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-muted border border-border ring-4 ring-background">
+                      <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground" />
+                    </span>
+                    <div className="space-y-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-sm font-bold text-foreground">v1.0.0</span>
+                        <span className="px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-500 text-[10px] font-bold uppercase tracking-wider">Initial Release</span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground">Released on July 11, 2026</p>
+                      <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside mt-2 pl-1 leading-relaxed">
+                        <li>
+                          <strong className="text-foreground">Interactive Cheat Sheets:</strong> Fast, searchable cheat sheets for HTML, CSS, and JS.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">Instant Search:</strong> Full-text indexing across tags, titles, methods, and examples.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
