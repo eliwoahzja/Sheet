@@ -125,7 +125,7 @@ export default function Home() {
         />
       }
       header={
-        <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+        <header className="z-40 flex-shrink-0 border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
           <div className="flex items-center gap-2 px-3 py-3 sm:gap-4 sm:px-6 sm:py-4">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
