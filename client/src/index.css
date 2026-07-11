@@ -118,8 +118,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  /* The app shell (h-dvh) is the only scroll owner; keep the page itself from
+     scrolling so the fixed header never slides out of view on mobile. */
   body {
     @apply bg-background text-foreground;
+    overflow: hidden;
+    overscroll-behavior: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
