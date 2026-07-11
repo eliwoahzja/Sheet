@@ -1,4 +1,4 @@
-import { ChevronDown, SlidersHorizontal } from "lucide-react";
+import { ChevronDown, SlidersHorizontal, ArrowUpDown, TrendingUp, Flame } from "lucide-react";
 import { useState } from "react";
 import { getDifficultyRating } from "@/utils/difficulty";
 
@@ -79,26 +79,52 @@ export default function Sidebar({
             ))}
           </div>
 
-          {/* Sort Selection Dropdown */}
+          {/* Sort Selection Custom Segment Controller */}
           <div className="mb-5 px-1">
-            <label className="mb-1.5 block text-[0.65rem] font-bold uppercase tracking-wider text-muted-foreground/70 flex items-center gap-1">
+            <label className="mb-2 block text-[0.65rem] font-bold uppercase tracking-wider text-muted-foreground/70 flex items-center gap-1">
               <SlidersHorizontal size={10} className="text-accent" />
               <span>Sort sequence</span>
             </label>
-            <div className="relative">
-              <select
-                value={sortBy}
-                onChange={(e) => onSortChange(e.target.value as "alphabetical" | "easiest" | "hardest")}
-                className="w-full appearance-none rounded-lg border border-border bg-card px-2.5 py-1.5 pr-8 text-xs font-semibold text-foreground focus:outline-none focus:ring-1 focus:ring-accent cursor-pointer transition-all hover:border-accent/40"
+            <div className="grid grid-cols-3 gap-1 rounded-lg bg-secondary/50 p-1 border border-border/50">
+              <button
+                type="button"
+                onClick={() => onSortChange("alphabetical")}
+                className={`flex flex-col items-center justify-center rounded-md py-2 px-1 text-[9px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer ${
+                  sortBy === "alphabetical"
+                    ? "bg-accent text-accent-foreground shadow-sm scale-[1.02]"
+                    : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
+                }`}
+                title="Sort alphabetically A to Z"
               >
-                <option value="alphabetical">🔤 Alphabetical (A-Z)</option>
-                <option value="easiest">🌱 Easiest to Hardest</option>
-                <option value="hardest">🔥 Hardest to Easiest</option>
-              </select>
-              <ChevronDown
-                size={14}
-                className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
-              />
+                <ArrowUpDown size={13} className="mb-1 opacity-90" />
+                <span>A - Z</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => onSortChange("easiest")}
+                className={`flex flex-col items-center justify-center rounded-md py-2 px-1 text-[9px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer ${
+                  sortBy === "easiest"
+                    ? "bg-emerald-500/15 text-emerald-500 border border-emerald-500/10 shadow-sm scale-[1.02]"
+                    : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
+                }`}
+                title="Sort from easiest to hardest"
+              >
+                <TrendingUp size={13} className="mb-1 opacity-90" />
+                <span>Easy</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => onSortChange("hardest")}
+                className={`flex flex-col items-center justify-center rounded-md py-2 px-1 text-[9px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer ${
+                  sortBy === "hardest"
+                    ? "bg-rose-500/15 text-rose-500 border border-rose-500/10 shadow-sm scale-[1.02]"
+                    : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
+                }`}
+                title="Sort from hardest to easiest"
+              >
+                <Flame size={13} className="mb-1 opacity-90" />
+                <span>Hard</span>
+              </button>
             </div>
           </div>
 
