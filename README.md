@@ -178,6 +178,12 @@ imports and reuses `expand_content.py`'s shortcut-generating helpers, and is
 also idempotent -- add new tables to it (or a `expand_content_v3.py` following
 the same pattern) and re-run to extend coverage even further.
 
+`generate_templates_v3.cjs` adds curated, fully working Templates entries
+(Animations, Buttons, Inputs & Forms, UI Components), each with a detailed
+step-by-step tutorial rendered in the doc page's integration guide section.
+Run it with `node generate_templates_v3.cjs`; it's idempotent — add new
+`addTemplate(...)` calls at the top and re-run to extend the set.
+
 ### Changing Colors
 
 Edit `client/src/index.css` to modify:
