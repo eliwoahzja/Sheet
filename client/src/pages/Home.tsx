@@ -33,7 +33,10 @@ import {
   DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu";
 import rawStructuredContent from "@/data/structured_content.json";
-import { getDifficultyRating } from "@/utils/difficulty";
+import { getDifficultyRating, matchesDifficultyFilter, type DifficultyFilter } from "@/utils/difficulty";
+import { useReadProgress } from "@/hooks/useReadProgress";
+import { useDocScrollProgress } from "@/hooks/useDocScrollProgress";
+import PageLoader from "@/components/PageLoader";
 
 const VOID_TAGS = new Set([
   "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"
@@ -159,8 +162,23 @@ export default function Home() {
   });
   const [location, setLocation] = useLocation();
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
-  const [sortBy, setSortBy] = useState<"alphabetical" | "easiest" | "hardest">("alphabetical");
+  const [sortBy, setSortBy] = useState<DifficultyFilter>("alphabetical");
+  const [highlightDifficulty, setHighlightDifficulty] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
+  const [routeLoading, setRouteLoading] = useState(false);
   const [showDisclaimer, setShowDisclaimer] = useState(true);
+  const { getProgress, setProgress } = useReadProgress();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setPageLoading(false), 450);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    setRouteLoading(true);
+    const timer = setTimeout(() => setRouteLoading(false), 320);
+    return () => clearTimeout(timer);
+  }, [location]);
 
   useEffect(() => {
     const pathParts = location.split("/").filter(Boolean);
@@ -197,28 +215,15 @@ export default function Home() {
   const groupedContent = useMemo(() => {
     const groups: Record<string, typeof structuredContent> = {};
     langContent.forEach((item) => {
+      const rating = getDifficultyRating(item);
+      if (!matchesDifficultyFilter(rating.label, sortBy)) return;
       if (!groups[item.cat]) groups[item.cat] = [];
       groups[item.cat].push(item);
     });
-    // Sort shortcuts inside each category according to user select option
     Object.keys(groups).forEach((cat) => {
-      groups[cat].sort((a, b) => {
-        if (sortBy === "alphabetical") {
-          return a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" });
-        } else {
-          const ratingA = getDifficultyRating(a);
-          const ratingB = getDifficultyRating(b);
-          if (sortBy === "easiest") {
-            return ratingA.score !== ratingB.score
-              ? ratingA.score - ratingB.score
-              : a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" });
-          } else {
-            return ratingA.score !== ratingB.score
-              ? ratingB.score - ratingA.score
-              : a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" });
-          }
-        }
-      });
+      groups[cat].sort((a, b) =>
+        a.shortcut.localeCompare(b.shortcut, undefined, { sensitivity: "base" })
+      );
     });
     return groups;
   }, [langContent, sortBy]);
@@ -248,8 +253,17 @@ export default function Home() {
     );
   }, [selectedItem]);
 
+  useDocScrollProgress(selectedItem, setProgress);
+
+  useEffect(() => {
+    if (selectedItem) {
+      setProgress(selectedItem, 15);
+    }
+  }, [selectedItem, setProgress]);
+
   return (
     <>
+      <PageLoader show={pageLoading || routeLoading} />
       <DocsLayout
       sidebar={
         <Sidebar
@@ -273,8 +287,11 @@ export default function Home() {
           }}
           sidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
-          sortBy={sortBy}
-          onSortChange={setSortBy}
+          filterBy={sortBy}
+          onFilterChange={setSortBy}
+          highlightDifficulty={highlightDifficulty}
+          onHighlightDifficultyChange={setHighlightDifficulty}
+          getReadProgress={getProgress}
         />
       }
       header={
@@ -309,7 +326,7 @@ export default function Home() {
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full rounded-lg border border-input bg-background/70 py-2 pl-10 pr-3 text-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="w-full rounded-lg border border-input bg-input/80 py-2 pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
               <DropdownMenu>

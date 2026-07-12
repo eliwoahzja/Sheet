@@ -17,8 +17,8 @@ export default function DocsLayout({ sidebar, header, children }: DocsLayoutProp
         {/* Sidebar manages its own responsive behavior:
             fixed slide-in drawer on mobile, static column on desktop */}
         {sidebar}
-        <main className="min-w-0 flex-1 overflow-y-auto scroll-smooth">
-          <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+        <main className="min-w-0 flex-1 overflow-y-auto scroll-smooth transition-colors duration-300">
+          <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8 lg:px-10 animate-in fade-in duration-300">
             {children}
           </div>
         </main>

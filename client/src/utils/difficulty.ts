@@ -4,6 +4,22 @@ export interface DifficultyRating {
   color: string;
 }
 
+export type DifficultyFilter = "alphabetical" | "easy" | "medium" | "hard";
+
+export function getDifficultyTextColor(label: DifficultyRating["label"]): string {
+  if (label === "Easy") return "text-emerald-500";
+  if (label === "Medium") return "text-orange-500";
+  return "text-rose-500";
+}
+
+export function matchesDifficultyFilter(
+  label: DifficultyRating["label"],
+  filter: DifficultyFilter
+): boolean {
+  if (filter === "alphabetical") return true;
+  return label.toLowerCase() === filter;
+}
+
 export function getDifficultyRating(item: { lang: string; cat: string; shortcut: string }): DifficultyRating {
   const lang = item.lang.toLowerCase();
   const cat = item.cat.toLowerCase();

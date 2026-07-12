@@ -1,6 +1,29 @@
-import { ChevronDown, SlidersHorizontal, ArrowUpDown, TrendingUp, Flame, Folder, FolderOpen } from "lucide-react";
+import {
+  ChevronDown,
+  Filter,
+  Folder,
+  FolderOpen,
+  Code2,
+  Palette,
+  Braces,
+  LayoutTemplate,
+  Eye,
+} from "lucide-react";
 import { useState, useEffect } from "react";
-import { getDifficultyRating } from "@/utils/difficulty";
+import {
+  getDifficultyRating,
+  getDifficultyTextColor,
+  type DifficultyFilter,
+} from "@/utils/difficulty";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 interface SidebarProps {
   currentLang: "html" | "css" | "js" | "templates";
@@ -10,16 +33,26 @@ interface SidebarProps {
   onSelectItem: (id: string) => void;
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
-  sortBy: "alphabetical" | "easiest" | "hardest";
-  onSortChange: (sortBy: "alphabetical" | "easiest" | "hardest") => void;
+  filterBy: DifficultyFilter;
+  onFilterChange: (filter: DifficultyFilter) => void;
+  highlightDifficulty: boolean;
+  onHighlightDifficultyChange: (value: boolean) => void;
+  getReadProgress: (id: string) => number;
 }
 
-const LANG_LABELS = {
-  html: "HTML",
-  css: "CSS",
-  js: "JavaScript",
-  templates: "Templates",
-};
+const LANG_OPTIONS = [
+  { value: "html", label: "HTML", icon: Code2 },
+  { value: "css", label: "CSS", icon: Palette },
+  { value: "js", label: "JavaScript", icon: Braces },
+  { value: "templates", label: "Templates", icon: LayoutTemplate },
+] as const;
+
+const FILTER_OPTIONS: { value: DifficultyFilter; label: string }[] = [
+  { value: "alphabetical", label: "Alphabetical" },
+  { value: "easy", label: "Easy" },
+  { value: "medium", label: "Medium" },
+  { value: "hard", label: "Hard" },
+];
 
 export default function Sidebar({
   currentLang,
@@ -29,16 +62,18 @@ export default function Sidebar({
   onSelectItem,
   sidebarOpen,
   onToggleSidebar,
-  sortBy,
-  onSortChange,
+  filterBy,
+  onFilterChange,
+  highlightDifficulty,
+  onHighlightDifficultyChange,
+  getReadProgress,
 }: SidebarProps) {
-  const ObjectKeys = Object.keys(groupedContent);
+  const objectKeys = Object.keys(groupedContent);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    new Set(ObjectKeys.length > 0 ? [ObjectKeys[0]] : [])
+    new Set(objectKeys.length > 0 ? [objectKeys[0]] : [])
   );
 
   useEffect(() => {
-    // Automatically expand the category that contains the selected item
     if (selectedItem) {
       for (const [cat, items] of Object.entries(groupedContent)) {
         if (items.some((item) => `${item.lang}-${item.cat}-${item.shortcut}` === selectedItem)) {
@@ -53,19 +88,28 @@ export default function Sidebar({
     }
   }, [selectedItem, groupedContent]);
 
-  const toggleCategory = (cat: string) => {
-    const newExpanded = new Set(expandedCategories);
-    if (newExpanded.has(cat)) {
-      newExpanded.delete(cat);
-    } else {
-      newExpanded.add(cat);
+  useEffect(() => {
+    if (objectKeys.length > 0 && expandedCategories.size === 0) {
+      setExpandedCategories(new Set([objectKeys[0]]));
     }
-    setExpandedCategories(newExpanded);
+  }, [objectKeys, expandedCategories.size]);
+
+  const toggleCategory = (cat: string) => {
+    setExpandedCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(cat)) next.delete(cat);
+      else next.add(cat);
+      return next;
+    });
   };
+
+  const showColoredNames = highlightDifficulty || filterBy !== "alphabetical";
+  const showDots = filterBy === "alphabetical" && !highlightDifficulty;
+  const currentLangMeta = LANG_OPTIONS.find((l) => l.value === currentLang);
+  const LangIcon = currentLangMeta?.icon ?? Code2;
 
   return (
     <>
-      {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 z-30 bg-background/80 backdrop-blur-sm md:hidden animate-in fade-in duration-300"
@@ -73,99 +117,107 @@ export default function Sidebar({
         />
       )}
 
-      {/* Sidebar */}
       <div
         className={`fixed inset-y-0 left-0 z-40 flex w-72 max-w-[85vw] flex-col border-r border-border bg-card transition-transform duration-300 ease-out md:relative md:z-0 md:w-72 md:max-w-none md:flex-shrink-0 md:translate-x-0 ${
           sidebarOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
         }`}
       >
         <div className="flex-1 overflow-y-auto py-6 px-4 no-scrollbar">
-          {/* Language tabs */}
-          <div className="mb-6 flex gap-1 rounded-xl bg-secondary/80 p-1.5 shadow-inner">
-            {(["html", "css", "js", "templates"] as const).map((lang) => (
-              <button
-                key={lang}
-                onClick={() => onLangChange(lang)}
-                className={`flex-1 rounded-lg py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
-                  currentLang === lang
-                    ? "bg-background text-foreground shadow-sm ring-1 ring-border"
-                    : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
-                }`}
-              >
-                {lang}
-              </button>
-            ))}
+          {/* Language dropdown */}
+          <div className="mb-5">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Language
+            </label>
+            <Select value={currentLang} onValueChange={(v) => onLangChange(v as typeof currentLang)}>
+              <SelectTrigger className="w-full bg-secondary/40 border-border text-foreground transition-colors hover:bg-secondary/60">
+                <SelectValue>
+                  <span className="flex items-center gap-2">
+                    <LangIcon size={16} className="text-accent" />
+                    {currentLangMeta?.label}
+                  </span>
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent className="bg-popover text-popover-foreground border-border">
+                {LANG_OPTIONS.map(({ value, label, icon: Icon }) => (
+                  <SelectItem key={value} value={value} className="cursor-pointer">
+                    <span className="flex items-center gap-2">
+                      <Icon size={16} />
+                      {label}
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
-          {/* Sort Selection Custom Segment Controller */}
-          <div className="mb-8">
-            <label className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-              <SlidersHorizontal size={14} className="text-accent" />
-              <span>Sort sequence</span>
+          {/* Filter dropdown */}
+          <div className="mb-5">
+            <label className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              <Filter size={14} className="text-accent" />
+              Filter
             </label>
-            <div className="grid grid-cols-3 gap-2">
-              <button
-                type="button"
-                onClick={() => onSortChange("alphabetical")}
-                className={`flex flex-col items-center justify-center gap-1.5 rounded-xl py-3 px-1 text-[10px] font-bold tracking-wider uppercase transition-all duration-200 border ${
-                  sortBy === "alphabetical"
-                    ? "border-accent bg-accent/10 text-accent shadow-sm"
-                    : "border-border bg-secondary/30 text-muted-foreground hover:bg-secondary/60 hover:text-foreground"
-                }`}
-                title="Sort alphabetically A to Z"
+            <Select value={filterBy} onValueChange={(v) => onFilterChange(v as DifficultyFilter)}>
+              <SelectTrigger className="w-full bg-secondary/40 border-border text-foreground transition-colors hover:bg-secondary/60">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="bg-popover text-popover-foreground border-border">
+                {FILTER_OPTIONS.map(({ value, label }) => (
+                  <SelectItem key={value} value={value} className="cursor-pointer">
+                    {label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Highlight difficulty toggle */}
+          <div className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-border bg-secondary/30 px-3 py-2.5 transition-colors hover:bg-secondary/50">
+            <div className="flex items-center gap-2 min-w-0">
+              <Eye size={15} className="flex-shrink-0 text-accent" />
+              <Label
+                htmlFor="highlight-difficulty"
+                className="cursor-pointer text-xs font-semibold leading-tight text-foreground"
               >
-                <ArrowUpDown size={16} />
-                <span>A - Z</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => onSortChange("easiest")}
-                className={`flex flex-col items-center justify-center gap-1.5 rounded-xl py-3 px-1 text-[10px] font-bold tracking-wider uppercase transition-all duration-200 border ${
-                  sortBy === "easiest"
-                    ? "border-emerald-500 bg-emerald-500/10 text-emerald-500 shadow-sm"
-                    : "border-border bg-secondary/30 text-muted-foreground hover:bg-secondary/60 hover:text-foreground"
-                }`}
-                title="Sort from easiest to hardest"
-              >
-                <TrendingUp size={16} />
-                <span>Easy</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => onSortChange("hardest")}
-                className={`flex flex-col items-center justify-center gap-1.5 rounded-xl py-3 px-1 text-[10px] font-bold tracking-wider uppercase transition-all duration-200 border ${
-                  sortBy === "hardest"
-                    ? "border-rose-500 bg-rose-500/10 text-rose-500 shadow-sm"
-                    : "border-border bg-secondary/30 text-muted-foreground hover:bg-secondary/60 hover:text-foreground"
-                }`}
-                title="Sort from hardest to easiest"
-              >
-                <Flame size={16} />
-                <span>Hard</span>
-              </button>
+                Highlight difficulty
+              </Label>
             </div>
+            <Switch
+              id="highlight-difficulty"
+              checked={highlightDifficulty}
+              onCheckedChange={onHighlightDifficultyChange}
+            />
           </div>
 
           <div className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-foreground">
-            <span className="h-4 w-1 rounded-full bg-accent"></span>
-            {LANG_LABELS[currentLang]} Reference
+            <span className="h-4 w-1 rounded-full bg-accent" />
+            {currentLangMeta?.label} Reference
           </div>
 
-          {/* Categories */}
           <div className="space-y-2">
             {Object.entries(groupedContent).map(([cat, items]) => {
+              if (items.length === 0) return null;
               const isExpanded = expandedCategories.has(cat);
               return (
-                <div key={cat} className="rounded-xl border border-border/50 bg-secondary/10 overflow-hidden">
+                <div
+                  key={cat}
+                  className="rounded-xl border border-border/60 bg-secondary/20 overflow-hidden transition-colors duration-200"
+                >
                   <button
                     onClick={() => toggleCategory(cat)}
-                    className={`flex w-full items-center justify-between px-4 py-3 text-sm font-semibold transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_15px_rgba(var(--accent),0.2)] ${
-                      isExpanded ? "bg-accent/5 text-foreground border-b border-accent/20" : "text-muted-foreground hover:text-foreground"
+                    className={`flex w-full items-center justify-between px-4 py-3 text-sm font-semibold transition-all duration-300 hover:bg-accent/10 ${
+                      isExpanded
+                        ? "bg-accent/5 text-foreground border-b border-border/60"
+                        : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     <div className="flex items-center gap-2.5 truncate">
-                      {isExpanded ? <FolderOpen size={16} className="text-accent" /> : <Folder size={16} />}
+                      {isExpanded ? (
+                        <FolderOpen size={16} className="text-accent flex-shrink-0" />
+                      ) : (
+                        <Folder size={16} className="flex-shrink-0 text-muted-foreground" />
+                      )}
                       <span className="truncate">{cat}</span>
+                      <span className="text-[10px] font-bold text-muted-foreground">{items.length}</span>
                     </div>
                     <ChevronDown
                       size={16}
@@ -175,32 +227,64 @@ export default function Sidebar({
                     />
                   </button>
                   {isExpanded && (
-                    <div className="bg-background/50 px-2 py-2 space-y-0.5 animate-in slide-in-from-top-2 fade-in duration-200">
+                    <div className="bg-background/60 dark:bg-background/40 px-2 py-2 space-y-0.5 animate-in slide-in-from-top-2 fade-in duration-200">
                       {items.map((item) => {
                         const itemId = `${item.lang}-${item.cat}-${item.shortcut}`;
                         const isActive = selectedItem === itemId;
                         const rating = getDifficultyRating(item);
+                        const readPercent = getReadProgress(itemId);
+                        const isRead = readPercent >= 100;
+
+                        const nameClass = isActive
+                          ? "text-accent-foreground font-semibold"
+                          : showColoredNames
+                            ? `${getDifficultyTextColor(rating.label)} font-medium`
+                            : "text-muted-foreground group-hover:text-foreground";
+
                         return (
                           <button
                             key={itemId}
                             onClick={() => onSelectItem(itemId)}
-                            className={`group flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-left text-sm transition-all duration-200 ${
+                            className={`group flex w-full flex-col gap-1 rounded-lg px-3 py-2 text-left text-sm transition-all duration-200 ${
                               isActive
-                                ? "bg-accent text-accent-foreground font-semibold shadow-sm"
-                                : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                                ? "bg-accent shadow-sm"
+                                : "hover:bg-secondary/80"
                             }`}
                           >
-                            <span className="truncate font-mono text-[13px] tracking-tight">{item.shortcut}</span>
-                            <span
-                              title={`Difficulty: ${rating.label}`}
-                              className={`flex h-2 w-2 flex-shrink-0 rounded-full transition-transform duration-200 ${isActive ? "scale-110" : "group-hover:scale-125"} ${
-                                rating.label === "Easy"
-                                  ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
-                                  : rating.label === "Medium"
-                                    ? "bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"
-                                    : "bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.5)]"
-                              }`}
-                            />
+                            <div className="flex items-center justify-between gap-2">
+                              <span className={`truncate font-mono text-[13px] tracking-tight transition-colors duration-200 ${nameClass}`}>
+                                {item.shortcut}
+                              </span>
+                              {showDots && (
+                                <span
+                                  title={`Difficulty: ${rating.label}`}
+                                  className={`flex h-2 w-2 flex-shrink-0 rounded-full transition-transform duration-200 ${
+                                    isActive ? "scale-110" : "group-hover:scale-125"
+                                  } ${
+                                    rating.label === "Easy"
+                                      ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                                      : rating.label === "Medium"
+                                        ? "bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.5)]"
+                                        : "bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.5)]"
+                                  }`}
+                                />
+                              )}
+                            </div>
+                            <div
+                              className="read-progress-track h-0.5 w-full overflow-hidden rounded-full bg-border/80"
+                              role="progressbar"
+                              aria-valuenow={readPercent}
+                              aria-valuemin={0}
+                              aria-valuemax={100}
+                              aria-label={`Read progress for ${item.shortcut}`}
+                            >
+                              <div
+                                className={`read-progress-fill h-full rounded-full transition-all duration-500 ease-out ${
+                                  isRead ? "bg-emerald-500" : "bg-accent/70"
+                                }`}
+                                style={{ width: `${readPercent}%` }}
+                              />
+                            </div>
                           </button>
                         );
                       })}
