@@ -22,6 +22,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import DocsLayout from "@/components/DocsLayout";
 import Sidebar from "@/components/Sidebar";
 import DocPage from "@/components/DocPage";
+import TemplatesDashboard from "@/components/TemplatesDashboard";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import {
   DropdownMenu,
@@ -154,7 +155,7 @@ export default function Home() {
     html: true,
     css: true,
     js: true,
-    templates: false,
+    templates: true,
   });
   const [location, setLocation] = useLocation();
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
@@ -426,6 +427,15 @@ export default function Home() {
         )
       ) : selectedContent ? (
         <DocPage content={selectedContent} />
+      ) : currentLang === "templates" ? (
+        <TemplatesDashboard
+          templates={langContent}
+          onSelectTemplate={(item) => {
+            const catSlug = getCategorySlug(item.cat);
+            const shortcutSlug = getShortcutSlug(item.shortcut);
+            setLocation(`/templates/${catSlug}/${shortcutSlug}`);
+          }}
+        />
       ) : (
         <div className="space-y-14">
           {/* Hero */}
@@ -448,8 +458,8 @@ export default function Home() {
           </div>
 
           {/* Language cards */}
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
-            {(["html", "css", "js"] as const).map((lang, i) => {
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {(["html", "css", "js", "templates"] as const).map((lang, i) => {
               const meta = LANG_META[lang];
               const Icon = meta.icon;
               const count = structuredContent.filter(

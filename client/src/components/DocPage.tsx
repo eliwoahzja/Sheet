@@ -1,6 +1,7 @@
 import { Copy, Sparkles, Check, Terminal, AlertTriangle, Info, HelpCircle, FileCode, CheckCircle2, ChevronRight, Chrome, Compass, Link2 } from "lucide-react";
 import { useState, useMemo } from "react";
 import { trpc } from "@/lib/trpc";
+import { motion } from "framer-motion";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -135,12 +136,14 @@ function Section({
   className?: string;
 }) {
   return (
-    <div
-      className={`space-y-3 animate-in fade-in slide-in-from-bottom-3 duration-500 fill-mode-both ${className}`}
-      style={{ animationDelay: `${delay}ms` }}
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: delay / 1000, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className={`space-y-3 ${className}`}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 
