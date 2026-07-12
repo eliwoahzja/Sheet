@@ -8,6 +8,12 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import OnThisPageNav from "@/components/OnThisPageNav";
 import { getDifficultyRating } from "@/utils/difficulty";
 import LivePreview from "@/components/LivePreview";
+import CodeMirror from "@uiw/react-codemirror";
+import { html } from "@codemirror/lang-html";
+import { css } from "@codemirror/lang-css";
+import { javascript } from "@codemirror/lang-javascript";
+import { vscodeDark, vscodeLight } from "@uiw/codemirror-theme-vscode";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface DocPageProps {
   content: {
@@ -597,7 +603,7 @@ export default function DocPage({ content }: DocPageProps) {
             <p className="text-sm text-muted-foreground">
               Write code below to practice <strong>{content.shortcut}</strong>. Our AI will evaluate it!
             </p>
-            <PracticeArea shortcut={content.shortcut} desc={content.desc} />
+            <PracticeArea shortcut={content.shortcut} desc={content.desc} lang={content.lang} />
           </div>
         </Section>
 
@@ -631,9 +637,19 @@ export default function DocPage({ content }: DocPageProps) {
 
 
 
-function PracticeArea({ shortcut, desc }: { shortcut: string, desc: string }) {
+function PracticeArea({ shortcut, desc, lang }: { shortcut: string, desc: string, lang: string }) {
   const [code, setCode] = useState("");
+  const { theme } = useTheme();
+  const dark = theme === "dark";
   const evaluateMutation = trpc.docs.evaluate.useMutation();
+
+  const langKey = (lang || "html").toLowerCase();
+  const ext = langKey === "js" ? "js" : langKey === "css" ? "css" : "html";
+  const cmExtensions = useMemo(() => {
+    if (ext === "js") return [javascript()];
+    if (ext === "css") return [css()];
+    return [html()];
+  }, [ext]);
 
   const handleCheck = () => {
     if (!code.trim()) return;
@@ -645,19 +661,65 @@ function PracticeArea({ shortcut, desc }: { shortcut: string, desc: string }) {
 
   return (
     <div className="space-y-4">
-      <textarea
-        value={code}
-        onChange={(e) => setCode(e.target.value)}
-        className="w-full h-32 p-3 font-mono text-sm bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
-        placeholder="Type your code here..."
-        spellCheck={false}
-      />
+      {/* VS Code-style editor */}
+      <div
+        className="overflow-hidden rounded-xl border shadow-sm ring-1 ring-black/5"
+        style={{ borderColor: dark ? "#3a3a3a" : "#e0e0e0" }}
+      >
+        {/* Title bar with traffic-light dots + filename tab */}
+        <div
+          className="flex items-center gap-3 px-3 py-2"
+          style={{
+            backgroundColor: dark ? "#323233" : "#f3f3f3",
+            borderBottom: `1px solid ${dark ? "#252526" : "#e0e0e0"}`,
+          }}
+        >
+          <div className="flex gap-1.5">
+            <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+            <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+            <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+          </div>
+          <div
+            className="flex items-center gap-1.5 rounded-t-md px-3 py-1 font-mono text-[11px]"
+            style={{
+              backgroundColor: dark ? "#1e1e1e" : "#ffffff",
+              color: dark ? "#cccccc" : "#333333",
+              marginBottom: "-8px",
+            }}
+          >
+            <FileCode size={12} className="text-accent" />
+            practice.{ext}
+          </div>
+        </div>
+        {/* Editor surface */}
+        <div style={{ backgroundColor: dark ? "#1e1e1e" : "#ffffff" }}>
+          <CodeMirror
+            value={code}
+            onChange={(value) => setCode(value)}
+            extensions={cmExtensions}
+            theme={dark ? vscodeDark : vscodeLight}
+            basicSetup={{
+              lineNumbers: true,
+              foldGutter: false,
+              highlightActiveLine: true,
+              autocompletion: true,
+              bracketMatching: true,
+              closeBrackets: true,
+            }}
+            placeholder={`Write your ${ext.toUpperCase()} here…`}
+            style={{ fontSize: "0.8rem" }}
+            minHeight="160px"
+            maxHeight="360px"
+          />
+        </div>
+      </div>
       <div className="flex items-center gap-4">
         <button
           onClick={handleCheck}
           disabled={evaluateMutation.isPending || !code.trim()}
-          className="px-4 py-2 bg-accent text-accent-foreground font-semibold rounded-md hover:opacity-90 disabled:opacity-50 transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground font-semibold rounded-md hover:opacity-90 disabled:opacity-50 transition-colors"
         >
+          <Sparkles size={15} />
           {evaluateMutation.isPending ? "Checking..." : "Check with AI"}
         </button>
       </div>

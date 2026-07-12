@@ -325,10 +325,17 @@ export function Chatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full shadow-xl transition-all hover:scale-110 hover:shadow-2xl active:scale-95 border-2 border-border"
+          className="group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-xl transition-all hover:scale-110 hover:shadow-2xl active:scale-95"
           aria-label="Open chat"
         >
-          <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
+          <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-border">
+            <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
+          </span>
+          {/* Online status dot */}
+          <span className="absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-background">
+            <span className="absolute h-3 w-3 animate-ping rounded-full bg-emerald-500 opacity-75" />
+            <span className="h-3 w-3 rounded-full border-2 border-background bg-emerald-500" />
+          </span>
         </button>
       )}
 
@@ -339,13 +346,27 @@ export function Chatbot() {
           {/* Header */}
           <div className="flex flex-shrink-0 items-center justify-between border-b border-border bg-card px-4 py-3">
             <div className="flex min-w-0 items-center gap-3">
-              <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-full border border-border">
-                <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
+              <div className="relative h-9 w-9 flex-shrink-0">
+                <div className="h-9 w-9 overflow-hidden rounded-full border border-border">
+                  <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
+                </div>
+                {/* Online status dot */}
+                <span className="absolute bottom-0 right-0 flex h-3 w-3 items-center justify-center">
+                  <span className="absolute h-3 w-3 animate-ping rounded-full bg-emerald-500 opacity-60" />
+                  <span className="h-2.5 w-2.5 rounded-full border-2 border-card bg-emerald-500" />
+                </span>
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-semibold leading-none">ELI</p>
-                <p className="mt-0.5 text-[10px] text-muted-foreground">
-                  {chatMutation.isPending ? "Typing…" : "Online"}
+                <p className="mt-1 flex items-center gap-1 text-[10px] text-muted-foreground">
+                  {chatMutation.isPending ? (
+                    "Typing…"
+                  ) : (
+                    <>
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      Active now
+                    </>
+                  )}
                 </p>
               </div>
             </div>
@@ -381,7 +402,7 @@ export function Chatbot() {
                     className={
                       msg.role === "user"
                         ? "min-w-0 flex flex-col items-end gap-1.5 max-w-[80%]"
-                        : "min-w-0 flex max-w-full flex-1 flex-col gap-1.5 overflow-hidden"
+                        : "min-w-0 flex max-w-[88%] flex-1 flex-col items-start gap-1.5 overflow-hidden"
                     }
                   >
                     {/* Image attachment preview */}
@@ -402,19 +423,23 @@ export function Chatbot() {
                     {/* Text / markdown */}
                     {msg.content && (
                       msg.role === "user" ? (
-                        <div className="rounded-2xl rounded-tr-sm bg-foreground px-4 py-2.5 text-sm text-background">
+                        // Sent bubble — Instagram-style blue→purple gradient.
+                        <div className="rounded-3xl rounded-br-md bg-gradient-to-br from-[#4f5bd5] via-[#7b3fc4] to-[#b02fb0] px-4 py-2.5 text-sm text-white shadow-sm">
                           <p className="whitespace-pre-wrap break-words">{msg.content}</p>
                         </div>
-                      ) : msg.isTyping ? (
-                        // Bot (streaming): typewriter reveal, full width, no bubble.
-                        <TypingMessage
-                          content={msg.content}
-                          onProgress={scrollToBottom}
-                          onDone={() => markTypingDone(msg.id)}
-                        />
                       ) : (
-                        // Bot (final): identical rendering to the typing state.
-                        <MarkdownMessage content={msg.content} />
+                        // Received bubble — Instagram-style grey bubble.
+                        <div className="w-full min-w-0 max-w-full overflow-hidden rounded-3xl rounded-bl-md bg-secondary px-3.5 py-2.5 text-foreground shadow-sm">
+                          {msg.isTyping ? (
+                            <TypingMessage
+                              content={msg.content}
+                              onProgress={scrollToBottom}
+                              onDone={() => markTypingDone(msg.id)}
+                            />
+                          ) : (
+                            <MarkdownMessage content={msg.content} />
+                          )}
+                        </div>
                       )
                     )}
                   </div>
@@ -427,7 +452,7 @@ export function Chatbot() {
                   <div className="h-7 w-7 flex-shrink-0 overflow-hidden rounded-full border border-border">
                     <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-sm bg-secondary/50 px-4 py-3">
+                  <div className="flex items-center gap-1.5 rounded-3xl rounded-bl-md bg-secondary px-4 py-3.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground animate-bounce [animation-delay:-0.3s]" />
                     <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground animate-bounce [animation-delay:-0.15s]" />
                     <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground animate-bounce" />
