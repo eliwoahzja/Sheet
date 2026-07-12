@@ -19,6 +19,8 @@ type Message = {
   role: "user" | "bot";
   content: string;
   attachment?: Attachment;
+  /** When true, the bot message is revealed with a typewriter animation. */
+  isTyping?: boolean;
 };
 
 function CodeBlock({ language, code }: { language: string; code: string }) {
@@ -86,6 +88,137 @@ function CodeBlock({ language, code }: { language: string; code: string }) {
   );
 }
 
+// Shared markdown component map so the live "typing" state and the final
+// rendered state look identical — no layout shift when typing completes.
+const markdownComponents = {
+  code({ node, inline, className, children, ...props }: any) {
+    const match = /language-(\w+)/.exec(className || "");
+    const codeStr = String(children).replace(/\n$/, "");
+    return !inline && match ? (
+      <CodeBlock language={match[1]} code={codeStr} />
+    ) : (
+      <code
+        {...props}
+        className="rounded bg-secondary px-1 py-0.5 font-mono text-[12px] break-words"
+      >
+        {children}
+      </code>
+    );
+  },
+  // Pass `<pre>` children through untouched — CodeBlock constrains overflow itself.
+  pre({ children }: any) {
+    return <>{children}</>;
+  },
+  p: ({ children }: any) => <p className="mb-2 break-words last:mb-0">{children}</p>,
+  ul: ({ children }: any) => <ul className="mb-2 list-disc pl-4 space-y-0.5">{children}</ul>,
+  ol: ({ children }: any) => <ol className="mb-2 list-decimal pl-4 space-y-0.5">{children}</ol>,
+  li: ({ children }: any) => <li className="text-sm">{children}</li>,
+  h1: ({ children }: any) => <h1 className="mb-2 mt-1 text-base font-semibold">{children}</h1>,
+  h2: ({ children }: any) => <h2 className="mb-2 mt-1 text-[15px] font-semibold">{children}</h2>,
+  h3: ({ children }: any) => <h3 className="mb-1.5 mt-1 text-sm font-semibold">{children}</h3>,
+  a: ({ children, href }: any) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-medium text-blue-500 underline underline-offset-2 hover:text-blue-400"
+    >
+      {children}
+    </a>
+  ),
+  blockquote: ({ children }: any) => (
+    <blockquote className="my-2 border-l-2 border-border pl-3 italic text-muted-foreground">
+      {children}
+    </blockquote>
+  ),
+  strong: ({ children }: any) => <strong className="font-semibold">{children}</strong>,
+  hr: () => <hr className="my-3 border-border" />,
+  table: ({ children }: any) => (
+    <div className="my-2 w-full overflow-x-auto">
+      <table className="w-full border-collapse text-[12px]">{children}</table>
+    </div>
+  ),
+  th: ({ children }: any) => (
+    <th className="border border-border bg-secondary/50 px-2 py-1 text-left font-semibold">
+      {children}
+    </th>
+  ),
+  td: ({ children }: any) => (
+    <td className="border border-border px-2 py-1 align-top">{children}</td>
+  ),
+};
+
+function MarkdownMessage({ content }: { content: string }) {
+  return (
+    <div
+      className="w-full min-w-0 max-w-full overflow-hidden text-sm prose prose-sm dark:prose-invert max-w-none"
+      style={{ overflowWrap: "anywhere", wordBreak: "break-word" }}
+    >
+      <Markdown components={markdownComponents}>{content}</Markdown>
+    </div>
+  );
+}
+
+/**
+ * Reveals the bot reply with a typewriter animation instead of showing it
+ * all at once. Speed scales with length so long answers don't drag, and any
+ * unclosed ``` fence is temporarily balanced so code blocks never flash broken
+ * while mid-type.
+ */
+function TypingMessage({
+  content,
+  onDone,
+  onProgress,
+}: {
+  content: string;
+  onDone: () => void;
+  onProgress: () => void;
+}) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    let start = 0;
+    // Characters/second — fast but readable, scaled up for long replies.
+    const rate = Math.min(1400, Math.max(220, content.length / 4));
+
+    const tick = (now: number) => {
+      if (!start) start = now;
+      const elapsed = (now - start) / 1000;
+      const next = Math.min(content.length, Math.floor(elapsed * rate));
+      setCount(next);
+      onProgress();
+      if (next < content.length) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        onDone();
+      }
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+    // Intentionally run once per message content.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [content]);
+
+  let visible = content.slice(0, count);
+  // Balance an odd number of ``` fences so a half-typed code block renders cleanly.
+  if ((visible.match(/```/g) || []).length % 2 === 1) {
+    visible += "\n```";
+  }
+
+  const typing = count < content.length;
+
+  return (
+    <div className="relative">
+      <MarkdownMessage content={visible} />
+      {typing && (
+        <span className="ml-0.5 inline-block h-3.5 w-[2px] translate-y-0.5 animate-pulse bg-foreground align-baseline" />
+      )}
+    </div>
+  );
+}
+
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -105,7 +238,7 @@ export function Chatbot() {
     onSuccess: (data) => {
       setMessages((prev) => [
         ...prev,
-        { id: Date.now().toString(), role: "bot", content: data.reply },
+        { id: Date.now().toString(), role: "bot", content: data.reply, isTyping: true },
       ]);
     },
     onError: (error) => {
@@ -170,10 +303,20 @@ export function Chatbot() {
     }
   };
 
-  useEffect(() => {
+  const scrollToBottom = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
+  };
+
+  const markTypingDone = (id: string) => {
+    setMessages((prev) =>
+      prev.map((m) => (m.id === id ? { ...m, isTyping: false } : m)),
+    );
+  };
+
+  useEffect(() => {
+    scrollToBottom();
   }, [messages, chatMutation.isPending]);
 
   return (
@@ -262,49 +405,16 @@ export function Chatbot() {
                         <div className="rounded-2xl rounded-tr-sm bg-foreground px-4 py-2.5 text-sm text-background">
                           <p className="whitespace-pre-wrap break-words">{msg.content}</p>
                         </div>
+                      ) : msg.isTyping ? (
+                        // Bot (streaming): typewriter reveal, full width, no bubble.
+                        <TypingMessage
+                          content={msg.content}
+                          onProgress={scrollToBottom}
+                          onDone={() => markTypingDone(msg.id)}
+                        />
                       ) : (
-                        // Bot: no bubble wrapper — just prose + code blocks inline, full width.
-                        // overflow-wrap-anywhere makes very long tokens/URLs wrap instead of
-                        // forcing a horizontal scrollbar on the chatbox.
-                        <div
-                          className="w-full min-w-0 max-w-full overflow-hidden text-sm prose prose-sm dark:prose-invert max-w-none"
-                          style={{ overflowWrap: "anywhere", wordBreak: "break-word" }}
-                        >
-                          <Markdown
-                            components={{
-                              code({ node, inline, className, children, ...props }: any) {
-                                const match = /language-(\w+)/.exec(className || "");
-                                const codeStr = String(children).replace(/\n$/, "");
-                                return !inline && match ? (
-                                  <CodeBlock language={match[1]} code={codeStr} />
-                                ) : (
-                                  <code
-                                    {...props}
-                                    className="rounded bg-secondary px-1 py-0.5 font-mono text-[12px] break-words"
-                                  >
-                                    {children}
-                                  </code>
-                                );
-                              },
-                              // Pass `<pre>` children through untouched — CodeBlock already
-                              // constrains overflow on its own, and adding another wrapper
-                              // here would double the `my-2` margin around code blocks.
-                              pre({ children }: any) {
-                                return <>{children}</>;
-                              },
-                              p: ({ children }) => (
-                                <p className="mb-2 break-words last:mb-0">
-                                  {children}
-                                </p>
-                              ),
-                              ul: ({ children }) => <ul className="mb-2 list-disc pl-4 space-y-0.5">{children}</ul>,
-                              ol: ({ children }) => <ol className="mb-2 list-decimal pl-4 space-y-0.5">{children}</ol>,
-                              li: ({ children }) => <li className="text-sm">{children}</li>,
-                            }}
-                          >
-                            {msg.content}
-                          </Markdown>
-                        </div>
+                        // Bot (final): identical rendering to the typing state.
+                        <MarkdownMessage content={msg.content} />
                       )
                     )}
                   </div>
