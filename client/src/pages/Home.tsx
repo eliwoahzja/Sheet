@@ -313,6 +313,7 @@ export default function Home() {
       header={
         <header className="z-40 flex-shrink-0 border-b border-border/40 bg-background">
           <div className="flex items-center gap-3 px-4 py-3 sm:px-6">
+            {/* Left: hamburger + logo */}
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="md:hidden flex-shrink-0 rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
@@ -332,15 +333,31 @@ export default function Home() {
               </span>
             </button>
 
-            <div className="flex flex-1 items-center justify-end gap-2">
-              <div className="relative min-w-0 flex-1 sm:max-w-xs">
+            {/* Center: search */}
+            <div className="mx-auto hidden w-full max-w-md sm:block">
+              <div className="relative">
+                <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
+                <input
+                  type="text"
+                  placeholder="Search shortcuts, properties, elements…"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full rounded-lg border border-border/60 bg-input/50 py-2 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-border"
+                />
+              </div>
+            </div>
+
+            {/* Right: actions */}
+            <div className="flex items-center gap-1">
+              {/* Mobile search (visible on small screens) */}
+              <div className="relative flex-1 sm:hidden">
                 <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
                 <input
                   type="text"
                   placeholder="Search…"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full rounded-md border border-border/60 bg-input/50 py-2 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-border"
+                  className="w-full rounded-lg border border-border/60 bg-input/50 py-2 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-border"
                 />
               </div>
               <DropdownMenu>
@@ -449,73 +466,90 @@ export default function Home() {
           }}
         />
       ) : (
-        <div className="mx-auto max-w-4xl space-y-20 py-6">
+        <div className="mx-auto max-w-4xl space-y-10 py-6">
           {/* ───────────────── Hero ───────────────── */}
-          <section className="relative space-y-7 overflow-hidden">
-            <div className="absolute -top-10 left-0 h-40 w-40 rounded-full bg-primary/10 blur-3xl opacity-60 dark:opacity-30 pointer-events-none" />
-            <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-chart-2/10 blur-3xl opacity-50 dark:opacity-25 pointer-events-none" />
-
-            <div className="relative inline-flex items-center rounded-full border border-border/60 bg-secondary/40 px-3 py-1 text-[11px] font-medium tracking-wide text-secondary-foreground backdrop-blur-sm">
-              <span className="relative mr-2 flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
-              </span>
-              Reference Documentation · v2.0
+          <section className="relative overflow-hidden rounded-3xl border border-border/60 bg-card">
+            {/* Gradient header band — echoes the popup */}
+            <div className="relative h-28 sm:h-32 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-accent/40 to-primary/10" />
+              <div
+                className="pointer-events-none absolute inset-0 opacity-50 dark:opacity-30"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 20% 40%, color-mix(in oklch, var(--primary) 20%, transparent) 0, transparent 40%), radial-gradient(circle at 80% 55%, color-mix(in oklch, var(--primary) 12%, transparent) 0, transparent 45%)",
+                }}
+              />
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card to-transparent" />
             </div>
 
-            <h2 className="relative text-4xl font-bold tracking-tight text-foreground sm:text-[3.4rem] sm:leading-[1.05]">
-              Eli Shh Docs
-              <span className="block mt-2 text-base font-medium text-muted-foreground tracking-normal sm:text-lg">
-                Minimal, high-quality docs for the modern web.
-              </span>
-            </h2>
+            <div className="relative px-7 pb-7 -mt-8 sm:px-9 sm:pb-8">
+              {/* Avatar + title row */}
+              <div className="mb-5 flex items-end gap-4">
+                <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl border-4 border-card bg-secondary text-2xl font-bold text-foreground shadow-md">
+                  E
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-0.5">
+                    Reference Documentation
+                  </p>
+                  <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                    Eli Shh Docs
+                  </h2>
+                </div>
+              </div>
 
-            <p className="relative max-w-2xl text-base text-muted-foreground leading-relaxed">
-              Coverage for HTML, CSS, and JavaScript — plus{" "}
-              <strong className="text-foreground">
-                {structuredContent.filter((i) => i.lang === "templates").length.toLocaleString()}+
-              </strong>{" "}
-              ready-to-use templates. Search anything, or pick a track below to start.
-            </p>
+              <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                Minimal, high-quality documentation for HTML, CSS, and JavaScript — plus{" "}
+                <strong className="text-foreground">
+                  {structuredContent.filter((i) => i.lang === "templates").length.toLocaleString()}+
+                </strong>{" "}
+                ready-to-use templates. Search anything, or pick a track below.
+              </p>
 
-            {/* Stat row */}
-            <div className="relative grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-3">
-              {[
-                { label: "Languages", value: "3", icon: BookOpen },
-                { label: "Templates", value: `${Math.round(structuredContent.filter((i) => i.lang === "templates").length / 100) / 10}k+`, icon: Layers },
-                { label: "Live previews", value: "on", icon: Zap },
-                { label: "Offline search", value: "on", icon: Sparkles },
-              ].map((s) => {
-                const Icon = s.icon;
-                return (
-                  <div
-                    key={s.label}
-                    className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-card/60 px-3.5 py-2.5"
-                  >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                      <Icon size={15} />
-                    </span>
-                    <div className="leading-tight">
-                      <div className="text-sm font-semibold text-foreground">{s.value}</div>
-                      <div className="text-[11px] text-muted-foreground">{s.label}</div>
+              {/* Stat row — styled like the popup's social links */}
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {[
+                  { label: "Languages", value: "3", icon: BookOpen, color: "#e34f26" },
+                  { label: "Templates", value: `${Math.round(structuredContent.filter((i) => i.lang === "templates").length / 100) / 10}k+`, icon: Layers, color: "#a1a1aa" },
+                  { label: "Live preview", value: "on", icon: Zap, color: "#22c55e" },
+                  { label: "Search", value: "on", icon: Sparkles, color: "#8b5cf6" },
+                ].map((s) => {
+                  const Icon = s.icon;
+                  return (
+                    <div
+                      key={s.label}
+                      className="group flex items-center gap-2.5 rounded-xl border border-border/60 bg-secondary/30 px-3 py-2.5 transition-colors hover:bg-secondary/50"
+                      style={{ borderLeftColor: s.color, borderLeftWidth: "3px" }}
+                    >
+                      <span
+                        className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg text-xs font-bold"
+                        style={{ color: s.color, backgroundColor: `color-mix(in srgb, ${s.color} 12%, transparent)` }}
+                      >
+                        <Icon size={14} />
+                      </span>
+                      <div className="leading-tight">
+                        <div className="text-sm font-semibold text-foreground">{s.value}</div>
+                        <div className="text-[10px] text-muted-foreground">{s.label}</div>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </section>
 
           {/* ───────────────── Language cards ───────────────── */}
-          <section className="space-y-5">
-            <div className="flex items-end justify-between">
-              <h3 className="text-xl font-bold tracking-tight text-foreground">
+          <section className="space-y-4">
+            <div className="flex items-center gap-2">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
                 Browse by language
-              </h3>
+              </p>
+              <div className="h-px flex-1 bg-border/60" />
               <span className="hidden text-xs text-muted-foreground sm:inline">
-                Click a card to open →
+                Click a card →
               </span>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               {(["html", "css", "js", "templates"] as const).map((lang, index) => {
                 const meta = LANG_META[lang];
                 const Icon = meta.icon;
@@ -525,35 +559,33 @@ export default function Home() {
                     key={lang}
                     onClick={() => setLocation(`/${lang}`)}
                     style={{ animationDelay: `${index * 60}ms` }}
-                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/50"
+                    className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-border/60 bg-card p-4 text-left shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:bg-secondary/20 hover:border-border"
                   >
-                    {/* Top accent bar that grows on hover */}
+                    {/* Left accent bar — matches popup social links */}
                     <span
-                      className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                      className="h-10 w-1 flex-shrink-0 rounded-full transition-all duration-200 group-hover:h-12"
                       style={{ backgroundColor: meta.solid }}
                     />
-                    <div className="p-6">
-                      <div className="mb-6 flex items-start justify-between">
-                        <div
-                          className="flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
-                          style={{
-                            color: meta.solid,
-                            backgroundColor: `color-mix(in srgb, ${meta.solid} 14%, transparent)`,
-                          }}
-                        >
-                          <Icon size={24} />
-                        </div>
-                        <ArrowUpRight
-                          size={18}
-                          className="text-muted-foreground opacity-0 -translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-primary"
-                        />
-                      </div>
-                      <div className="mb-1 flex items-baseline gap-2">
-                        <p className="text-xl font-bold tracking-tight text-foreground">{meta.label}</p>
-                        <p className="text-xs font-medium text-muted-foreground">{count.toLocaleString()} entries</p>
-                      </div>
-                      <p className="text-sm leading-relaxed text-muted-foreground">{meta.blurb}</p>
+                    <div
+                      className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl text-base font-bold transition-all duration-200 group-hover:scale-110"
+                      style={{
+                        color: meta.solid,
+                        backgroundColor: `color-mix(in srgb, ${meta.solid} 14%, transparent)`,
+                      }}
+                    >
+                      <Icon size={20} />
                     </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-baseline gap-2">
+                        <p className="text-base font-bold tracking-tight text-foreground">{meta.label}</p>
+                        <p className="text-[11px] font-medium text-muted-foreground">{count.toLocaleString()}</p>
+                      </div>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{meta.blurb}</p>
+                    </div>
+                    <ArrowUpRight
+                      size={16}
+                      className="flex-shrink-0 text-muted-foreground opacity-0 -translate-x-1 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-primary"
+                    />
                   </button>
                 );
               })}
@@ -561,14 +593,12 @@ export default function Home() {
           </section>
 
           {/* ───────────────── Changelog ───────────────── */}
-          <section className="space-y-6 pt-6">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold tracking-tight text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold">
-                  !
-                </span>
+          <section className="space-y-4 pt-2">
+            <div className="flex items-center gap-2">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
                 Changelog
-              </h3>
+              </p>
+              <div className="h-px flex-1 bg-border/60" />
               <span className="hidden text-xs text-muted-foreground sm:inline">
                 {new Date().toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}
               </span>
