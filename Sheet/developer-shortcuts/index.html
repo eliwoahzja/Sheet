@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Shortcuts — HTML · CSS · JS Cheatsheet</title>
+  <meta name="description" content="A minimal, animated cheatsheet for HTML, CSS, and JavaScript shortcuts, snippets, and Emmet abbreviations.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Page loading animation -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-ring" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <p class="loader-text" role="status">Loading shortcuts…</p>
+  </div>
+
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-text">Developer Shortcuts</span>
+      </a>
+
+      <div class="header-controls">
+        <!-- Language dropdown -->
+        <div class="select-wrap">
+          <label for="langSelect" class="visually-hidden">Language</label>
+          <select id="langSelect" class="custom-select" aria-label="Choose language">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+          </select>
+        </div>
+
+        <!-- Filter dropdown -->
+        <div class="select-wrap">
+          <label for="filterSelect" class="visually-hidden">Filter</label>
+          <select id="filterSelect" class="custom-select" aria-label="Filter shortcuts">
+            <option value="all">All</option>
+            <option value="alphabetical">Alphabetical</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+      </div>
+
+      <a class="gh-link" href="https://github.com/galaxiawtf/Sheet" target="_blank" rel="noopener">
+        GitHub ↗
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Every shortcut you'll actually use.</h1>
+      <p>Emmet abbreviations, CSS one-liners, and JS snippets — searchable, minimal, fast.</p>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search shortcuts, e.g. flex, map, border-radius..." autocomplete="off">
+        <span class="search-count" id="count"></span>
+      </div>
+    </section>
+
+    <section class="categories" id="categories" aria-label="Categories"></section>
+
+    <section class="grid" id="grid"></section>
+
+    <p class="empty-state" id="empty" hidden>No shortcuts match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with vanilla HTML, CSS &amp; JS. Data sourced from the <a href="README.md">README</a>.</p>
+    <p><a href="https://github.com/galaxiawtf/Sheet" target="_blank" rel="noopener">galaxiawtf/Sheet</a> · MIT License</p>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
