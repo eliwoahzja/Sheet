@@ -313,9 +313,11 @@ export default function Home() {
             </button>
 
             <button onClick={() => setLocation("/")} className="flex items-center gap-2.5 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background transition-transform group-hover:scale-105">
-                <Code2 size={16} />
-              </div>
+              <img
+                src="/anime-logo.jpg"
+                alt="Eli Shh Docs"
+                className="h-8 w-8 rounded-lg object-cover transition-transform group-hover:scale-105"
+              />
               <span className="hidden text-sm font-bold tracking-tight text-foreground min-[400px]:block">
                 Eli Shh Docs
               </span>
@@ -488,35 +490,61 @@ export default function Home() {
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-secondary-foreground text-xs font-semibold">!</span>
               Changelog
             </h3>
-            <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
-              
-              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-primary text-primary-foreground shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  <div className="h-2 w-2 rounded-full bg-background" />
+            <div className="space-y-4">
+
+              <div className="flex gap-4 items-start">
+                <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                  <div className="h-2.5 w-2.5 rounded-full bg-primary mt-1" />
+                  <div className="w-px flex-1 bg-border min-h-[40px]" />
                 </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md">
-                  <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-bold text-foreground">Complete Design Overhaul</h4>
-                    <span className="text-xs font-medium text-muted-foreground">Today</span>
+                <div className="pb-4 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Latest</span>
+                    <span className="text-xs text-muted-foreground">Today</span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Introduced a minimal, high-quality aesthetic with Inter typography, fluid dark/light modes, premium components, and refined gradients.
-                  </p>
+                  <h4 className="font-bold text-foreground mb-1">AI Chatbot — Code Editor &amp; File Upload</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">AI replies now render in a styled code editor with syntax highlighting and a one-click Copy button. You can also attach images and files directly in the chat — the AI can read and analyse them.</p>
                 </div>
               </div>
 
-              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-secondary text-secondary-foreground shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  <div className="h-2 w-2 rounded-full bg-muted-foreground" />
+              <div className="flex gap-4 items-start">
+                <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                  <div className="h-2.5 w-2.5 rounded-full bg-border mt-1" />
+                  <div className="w-px flex-1 bg-border min-h-[40px]" />
                 </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md">
-                  <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-bold text-foreground">Expanded Templates</h4>
-                    <span className="text-xs font-medium text-muted-foreground">v1.2</span>
+                <div className="pb-4 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs text-muted-foreground">Today</span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Added over 2,000 new UI templates to the templates section. Live previews are now faster and more reliable!
-                  </p>
+                  <h4 className="font-bold text-foreground mb-1">Profile Popup — Brand Colors &amp; Social Links</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">The About popup now links your real Telegram (@kishshiii) and Facebook (itsurboyelifr) profiles, each styled with their official brand color and a left accent bar.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                  <div className="h-2.5 w-2.5 rounded-full bg-border mt-1" />
+                  <div className="w-px flex-1 bg-border min-h-[40px]" />
+                </div>
+                <div className="pb-4 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs text-muted-foreground">Earlier today</span>
+                  </div>
+                  <h4 className="font-bold text-foreground mb-1">Home — Premium Card Grid &amp; Dark/Light Toggle</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Language cards redesigned with hover lift, icon badges, and smooth animations. Added a working theme toggle in the header so you can switch between dark and light mode.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                  <div className="h-2.5 w-2.5 rounded-full bg-border mt-1" />
+                </div>
+                <div className="pb-2 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs text-muted-foreground">v1.2</span>
+                  </div>
+                  <h4 className="font-bold text-foreground mb-1">5,000+ Templates Added</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Expanded the Templates section with thousands of ready-to-use UI blocks. Each entry includes a live preview, difficulty rating, and read-progress tracking in the sidebar.</p>
                 </div>
               </div>
 
