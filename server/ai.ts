@@ -20,12 +20,21 @@ function getAi() {
   return ai;
 }
 
-export async function askGemini(prompt: string): Promise<string> {
+export async function askGemini(prompt: string, base64Image?: string, mimeType?: string): Promise<string> {
   try {
     const client = getAi();
+    
+    let contents: any = prompt;
+    if (base64Image && mimeType) {
+      contents = [
+        { inlineData: { data: base64Image, mimeType } },
+        prompt
+      ];
+    }
+
     const response = await client.models.generateContent({
       model: "gemini-3.5-flash",
-      contents: prompt,
+      contents,
       config: {
         systemInstruction: "You are an expert web development assistant. You provide correct code snippets and explanations for HTML, CSS, and JavaScript. Keep your answers concise, accurate, and provide code blocks when requested.",
       },

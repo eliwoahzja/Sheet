@@ -21,10 +21,14 @@ export const appRouter = router({
   }),
   chat: router({
     ask: publicProcedure
-      .input(z.object({ prompt: z.string() }))
+      .input(z.object({ 
+        prompt: z.string(),
+        base64Image: z.string().optional(),
+        mimeType: z.string().optional(),
+      }))
       .mutation(async ({ input }) => {
         try {
-          const reply = await askGemini(input.prompt);
+          const reply = await askGemini(input.prompt, input.base64Image, input.mimeType);
           return { reply };
         } catch (error: any) {
           throw new TRPCError({
