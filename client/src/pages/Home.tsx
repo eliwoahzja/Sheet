@@ -9,8 +9,13 @@ import {
   Palette,
   Braces,
   ArrowRight,
+  ArrowUpRight,
   User,
   LayoutTemplate,
+  Sparkles,
+  BookOpen,
+  Layers,
+  Zap,
 } from "lucide-react";
 import DocsLayout from "@/components/DocsLayout";
 import Sidebar from "@/components/Sidebar";
@@ -125,7 +130,7 @@ export function getShortcutSlug(shortcut: string): string {
 
 const LANG_META: Record<
   string,
-  { label: string; icon: typeof Code2; blurb: string; accent: string; ring: string }
+  { label: string; icon: typeof Code2; blurb: string; accent: string; ring: string; solid: string }
 > = {
   html: {
     label: "HTML",
@@ -133,6 +138,7 @@ const LANG_META: Record<
     blurb: "Elements, attributes, entities & Emmet",
     accent: "text-[#e34f26]",
     ring: "group-hover:border-[#e34f26]/50",
+    solid: "#e34f26",
   },
   css: {
     label: "CSS",
@@ -140,6 +146,7 @@ const LANG_META: Record<
     blurb: "Properties, selectors, tricks & layout",
     accent: "text-[#2965f1]",
     ring: "group-hover:border-[#2965f1]/50",
+    solid: "#2965f1",
   },
   js: {
     label: "JavaScript",
@@ -147,6 +154,7 @@ const LANG_META: Record<
     blurb: "Methods, ES6+, DOM & control flow",
     accent: "text-[#f7df1e]",
     ring: "group-hover:border-[#d9c400]/50",
+    solid: "#d9c400",
   },
   templates: {
     label: "Templates",
@@ -154,6 +162,7 @@ const LANG_META: Record<
     blurb: "5,000+ ready-to-use blocks",
     accent: "text-zinc-300",
     ring: "hover:border-zinc-600",
+    solid: "#a1a1aa",
   },
 };
 
@@ -440,113 +449,177 @@ export default function Home() {
           }}
         />
       ) : (
-        <div className="mx-auto max-w-3xl space-y-16 py-4">
-          <section className="space-y-6">
-            <div className="inline-flex items-center rounded-full border border-border/50 bg-secondary/50 px-3 py-1 text-[11px] font-medium tracking-wide text-secondary-foreground backdrop-blur-sm">
+        <div className="mx-auto max-w-4xl space-y-20 py-6">
+          {/* ───────────────── Hero ───────────────── */}
+          <section className="relative space-y-7 overflow-hidden">
+            <div className="absolute -top-10 left-0 h-40 w-40 rounded-full bg-primary/10 blur-3xl opacity-60 dark:opacity-30 pointer-events-none" />
+            <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-chart-2/10 blur-3xl opacity-50 dark:opacity-25 pointer-events-none" />
+
+            <div className="relative inline-flex items-center rounded-full border border-border/60 bg-secondary/40 px-3 py-1 text-[11px] font-medium tracking-wide text-secondary-foreground backdrop-blur-sm">
               <span className="relative mr-2 flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
               </span>
-              Reference Documentation
+              Reference Documentation · v2.0
             </div>
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+
+            <h2 className="relative text-4xl font-bold tracking-tight text-foreground sm:text-[3.4rem] sm:leading-[1.05]">
               Eli Shh Docs
+              <span className="block mt-2 text-base font-medium text-muted-foreground tracking-normal sm:text-lg">
+                Minimal, high-quality docs for the modern web.
+              </span>
             </h2>
-            <p className="max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Minimal, high-quality documentation for HTML, CSS, JavaScript, and {structuredContent.filter((i) => i.lang === "templates").length.toLocaleString()}+ templates.
-              Search for anything or select a category below to get started.
+
+            <p className="relative max-w-2xl text-base text-muted-foreground leading-relaxed">
+              Coverage for HTML, CSS, and JavaScript — plus{" "}
+              <strong className="text-foreground">
+                {structuredContent.filter((i) => i.lang === "templates").length.toLocaleString()}+
+              </strong>{" "}
+              ready-to-use templates. Search anything, or pick a track below to start.
             </p>
-          </section>
 
-          <section className="grid gap-4 sm:grid-cols-2">
-            {(["html", "css", "js", "templates"] as const).map((lang, index) => {
-              const meta = LANG_META[lang];
-              const Icon = meta.icon;
-              const count = structuredContent.filter((item) => item.lang === lang).length;
-              return (
-                <button
-                  key={lang}
-                  onClick={() => setLocation(`/${lang}`)}
-                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-6 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-accent/50"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="flex items-start justify-between mb-8">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-                      <Icon size={24} />
+            {/* Stat row */}
+            <div className="relative grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-3">
+              {[
+                { label: "Languages", value: "3", icon: BookOpen },
+                { label: "Templates", value: `${Math.round(structuredContent.filter((i) => i.lang === "templates").length / 100) / 10}k+`, icon: Layers },
+                { label: "Live previews", value: "on", icon: Zap },
+                { label: "Offline search", value: "on", icon: Sparkles },
+              ].map((s) => {
+                const Icon = s.icon;
+                return (
+                  <div
+                    key={s.label}
+                    className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-card/60 px-3.5 py-2.5"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                      <Icon size={15} />
+                    </span>
+                    <div className="leading-tight">
+                      <div className="text-sm font-semibold text-foreground">{s.value}</div>
+                      <div className="text-[11px] text-muted-foreground">{s.label}</div>
                     </div>
-                    <ArrowRight size={20} className="text-muted-foreground opacity-0 transition-all duration-300 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-primary" />
                   </div>
-                  <div>
-                    <p className="text-xl font-bold tracking-tight text-foreground mb-1">{meta.label}</p>
-                    <p className="text-sm font-medium text-muted-foreground">{count.toLocaleString()} entries</p>
-                  </div>
-                </button>
-              );
-            })}
+                );
+              })}
+            </div>
           </section>
 
-          <section className="space-y-6 pt-10">
-            <h3 className="text-2xl font-bold tracking-tight text-foreground flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-secondary-foreground text-xs font-semibold">!</span>
-              Changelog
-            </h3>
-            <div className="space-y-4">
+          {/* ───────────────── Language cards ───────────────── */}
+          <section className="space-y-5">
+            <div className="flex items-end justify-between">
+              <h3 className="text-xl font-bold tracking-tight text-foreground">
+                Browse by language
+              </h3>
+              <span className="hidden text-xs text-muted-foreground sm:inline">
+                Click a card to open →
+              </span>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {(["html", "css", "js", "templates"] as const).map((lang, index) => {
+                const meta = LANG_META[lang];
+                const Icon = meta.icon;
+                const count = structuredContent.filter((item) => item.lang === lang).length;
+                return (
+                  <button
+                    key={lang}
+                    onClick={() => setLocation(`/${lang}`)}
+                    style={{ animationDelay: `${index * 60}ms` }}
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-accent/50"
+                  >
+                    {/* Top accent bar that grows on hover */}
+                    <span
+                      className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                      style={{ backgroundColor: meta.solid }}
+                    />
+                    <div className="p-6">
+                      <div className="mb-6 flex items-start justify-between">
+                        <div
+                          className="flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
+                          style={{
+                            color: meta.solid,
+                            backgroundColor: `color-mix(in srgb, ${meta.solid} 14%, transparent)`,
+                          }}
+                        >
+                          <Icon size={24} />
+                        </div>
+                        <ArrowUpRight
+                          size={18}
+                          className="text-muted-foreground opacity-0 -translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-primary"
+                        />
+                      </div>
+                      <div className="mb-1 flex items-baseline gap-2">
+                        <p className="text-xl font-bold tracking-tight text-foreground">{meta.label}</p>
+                        <p className="text-xs font-medium text-muted-foreground">{count.toLocaleString()} entries</p>
+                      </div>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{meta.blurb}</p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
 
-              <div className="flex gap-4 items-start">
-                <div className="flex flex-col items-center gap-1 flex-shrink-0">
-                  <div className="h-2.5 w-2.5 rounded-full bg-primary mt-1" />
-                  <div className="w-px flex-1 bg-border min-h-[40px]" />
-                </div>
-                <div className="pb-4 flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Latest</span>
-                    <span className="text-xs text-muted-foreground">Today</span>
-                  </div>
-                  <h4 className="font-bold text-foreground mb-1">AI Chatbot — Code Editor &amp; File Upload</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">AI replies now render in a styled code editor with syntax highlighting and a one-click Copy button. You can also attach images and files directly in the chat — the AI can read and analyse them.</p>
-                </div>
-              </div>
+          {/* ───────────────── Changelog ───────────────── */}
+          <section className="space-y-6 pt-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-bold tracking-tight text-foreground flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold">
+                  !
+                </span>
+                Changelog
+              </h3>
+              <span className="hidden text-xs text-muted-foreground sm:inline">
+                {new Date().toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}
+              </span>
+            </div>
 
-              <div className="flex gap-4 items-start">
-                <div className="flex flex-col items-center gap-1 flex-shrink-0">
-                  <div className="h-2.5 w-2.5 rounded-full bg-border mt-1" />
-                  <div className="w-px flex-1 bg-border min-h-[40px]" />
-                </div>
-                <div className="pb-4 flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-muted-foreground">Today</span>
+            <div className="relative space-y-1 pl-3">
+              {/* vertical rail */}
+              <div className="absolute left-[5px] top-1.5 bottom-2 w-px bg-border" />
+              {[
+                {
+                  badge: "Latest",
+                  when: "Today",
+                  latest: true,
+                  title: "AI Chatbot — Code Editor & File Upload",
+                  body: "AI replies now render in a styled code editor with syntax highlighting and a one-click Copy button. You can also attach images and files directly in the chat — the AI can read and analyse them.",
+                },
+                {
+                  when: "Today",
+                  title: "Profile Popup — Brand Colors & Social Links",
+                  body: "The About popup now links your real Telegram (@kishshiii) and Facebook (itsurboyelifr) profiles, each styled with their official brand color and a left accent bar.",
+                },
+                {
+                  when: "Earlier today",
+                  title: "Home — Premium Card Grid & Dark/Light Toggle",
+                  body: "Language cards redesigned with hover lift, icon badges, and smooth animations. Added a working theme toggle in the header so you can switch between dark and light mode.",
+                },
+                {
+                  when: "v1.2",
+                  title: "5,000+ Templates Added",
+                  body: "Expanded the Templates section with thousands of ready-to-use UI blocks. Each entry includes a live preview, difficulty rating, and read-progress tracking in the sidebar.",
+                },
+              ].map((e, i) => (
+                <div key={i} className="group relative pl-6 pb-5">
+                  <span
+                    className={
+                      "absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full transition-transform duration-200 group-hover:scale-125 " +
+                      (e.latest ? "bg-primary ring-4 ring-primary/15" : "bg-border")
+                    }
+                  />
+                  <div className="mb-1 flex items-center gap-2">
+                    {e.badge && (
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                        {e.badge}
+                      </span>
+                    )}
+                    <span className="text-xs text-muted-foreground">{e.when}</span>
                   </div>
-                  <h4 className="font-bold text-foreground mb-1">Profile Popup — Brand Colors &amp; Social Links</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">The About popup now links your real Telegram (@kishshiii) and Facebook (itsurboyelifr) profiles, each styled with their official brand color and a left accent bar.</p>
+                  <h4 className="mb-1 font-semibold text-foreground">{e.title}</h4>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{e.body}</p>
                 </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="flex flex-col items-center gap-1 flex-shrink-0">
-                  <div className="h-2.5 w-2.5 rounded-full bg-border mt-1" />
-                  <div className="w-px flex-1 bg-border min-h-[40px]" />
-                </div>
-                <div className="pb-4 flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-muted-foreground">Earlier today</span>
-                  </div>
-                  <h4 className="font-bold text-foreground mb-1">Home — Premium Card Grid &amp; Dark/Light Toggle</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Language cards redesigned with hover lift, icon badges, and smooth animations. Added a working theme toggle in the header so you can switch between dark and light mode.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="flex flex-col items-center gap-1 flex-shrink-0">
-                  <div className="h-2.5 w-2.5 rounded-full bg-border mt-1" />
-                </div>
-                <div className="pb-2 flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-muted-foreground">v1.2</span>
-                  </div>
-                  <h4 className="font-bold text-foreground mb-1">5,000+ Templates Added</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Expanded the Templates section with thousands of ready-to-use UI blocks. Each entry includes a live preview, difficulty rating, and read-progress tracking in the sidebar.</p>
-                </div>
-              </div>
+              ))}
 
             </div>
           </section>
