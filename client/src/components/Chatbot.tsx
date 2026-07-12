@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import {
-  MessageCircle, X, Send, Copy, Check, Paperclip, FileText, XCircle, User,
+  X, Send, Copy, Check, Paperclip, FileText, XCircle,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -358,15 +358,8 @@ export function Chatbot() {
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-semibold leading-none">ELI</p>
-                <p className="mt-1 flex items-center gap-1 text-[10px] text-muted-foreground">
-                  {chatMutation.isPending ? (
-                    "Typing…"
-                  ) : (
-                    <>
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                      Active now
-                    </>
-                  )}
+                <p className="mt-1 text-[11px] text-muted-foreground">
+                  {chatMutation.isPending ? "Active now · typing…" : "Active now"}
                 </p>
               </div>
             </div>
@@ -380,21 +373,15 @@ export function Chatbot() {
 
           {/* Messages — key fix: overflow-hidden on outer, overflow-y-auto on inner */}
           <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
-            <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4" ref={scrollRef}>
+            <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-2" ref={scrollRef}>
               {messages.map((msg) => (
-                <div key={msg.id} className={`flex gap-2.5 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
-                  {/* Avatar */}
-                  <div className="flex-shrink-0">
-                    {msg.role === "bot" ? (
-                      <div className="h-7 w-7 overflow-hidden rounded-full border border-border">
-                        <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
-                      </div>
-                    ) : (
-                      <div className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground text-background">
-                        <User size={13} />
-                      </div>
-                    )}
-                  </div>
+                <div key={msg.id} className={`flex items-end gap-2 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
+                  {/* Avatar — Instagram only shows the OTHER person's avatar (received), never your own. */}
+                  {msg.role === "bot" && (
+                    <div className="h-7 w-7 flex-shrink-0 overflow-hidden rounded-full border border-border">
+                      <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
+                    </div>
+                  )}
 
                   {/* Content — min-w-0 + overflow-hidden prevents blowout. max-w-full lives in
                       the bot branch only so it can't fight the user branch's max-w-[80%]. */}
@@ -423,13 +410,17 @@ export function Chatbot() {
                     {/* Text / markdown */}
                     {msg.content && (
                       msg.role === "user" ? (
-                        // Sent bubble — Instagram-style blue→purple gradient.
-                        <div className="rounded-3xl rounded-br-md bg-gradient-to-br from-[#4f5bd5] via-[#7b3fc4] to-[#b02fb0] px-4 py-2.5 text-sm text-white shadow-sm">
-                          <p className="whitespace-pre-wrap break-words">{msg.content}</p>
+                        // Sent bubble — Instagram blue→purple gradient, fully rounded pill.
+                        <div className="rounded-[20px] bg-gradient-to-br from-[#5b6ef5] via-[#8a3fd0] to-[#c13584] px-3.5 py-2 text-sm text-white">
+                          <p className="whitespace-pre-wrap break-words leading-snug">{msg.content}</p>
                         </div>
                       ) : (
-                        // Received bubble — Instagram-style grey bubble.
-                        <div className="w-full min-w-0 max-w-full overflow-hidden rounded-3xl rounded-bl-md bg-secondary px-3.5 py-2.5 text-foreground shadow-sm">
+                        // Received bubble — Instagram grey bubble. Hugs short text;
+                        // expands to full width when the reply contains a code block
+                        // (code needs room + its own horizontal scroll).
+                        <div
+                          className={`${msg.content.includes("```") ? "w-full" : "w-fit"} min-w-0 max-w-full overflow-hidden rounded-[20px] bg-secondary px-3.5 py-2 text-foreground`}
+                        >
                           {msg.isTyping ? (
                             <TypingMessage
                               content={msg.content}
@@ -448,11 +439,11 @@ export function Chatbot() {
 
               {/* Typing indicator */}
               {chatMutation.isPending && (
-                <div className="flex gap-2.5">
+                <div className="flex items-end gap-2">
                   <div className="h-7 w-7 flex-shrink-0 overflow-hidden rounded-full border border-border">
                     <img src="/logo.jpg" alt="ELI" className="h-full w-full object-cover" />
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-3xl rounded-bl-md bg-secondary px-4 py-3.5">
+                  <div className="flex items-center gap-1.5 rounded-[20px] bg-secondary px-4 py-3">
                     <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground animate-bounce [animation-delay:-0.3s]" />
                     <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground animate-bounce [animation-delay:-0.15s]" />
                     <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground animate-bounce" />
@@ -485,13 +476,13 @@ export function Chatbot() {
             </div>
           )}
 
-          {/* Input */}
-          <div className="flex-shrink-0 border-t border-border bg-card p-3">
-            <div className="flex items-end gap-2 rounded-xl border border-border bg-background px-3 py-2 focus-within:border-foreground/30 transition-colors">
+          {/* Input — Instagram-style rounded pill */}
+          <div className="flex-shrink-0 bg-card px-3 pb-3 pt-2">
+            <div className="flex items-end gap-2 rounded-full border border-border bg-secondary/40 py-1.5 pl-3.5 pr-1.5 focus-within:border-foreground/30 transition-colors">
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="mb-0.5 flex-shrink-0 text-muted-foreground transition-colors hover:text-foreground"
+                className="mb-1 flex-shrink-0 text-muted-foreground transition-colors hover:text-foreground"
                 aria-label="Attach file"
               >
                 <Paperclip size={18} />
@@ -508,22 +499,19 @@ export function Chatbot() {
                 value={input}
                 onChange={handleTextareaInput}
                 onKeyDown={handleKeyDown}
-                placeholder="Ask me anything…"
+                placeholder="Message…"
                 rows={1}
-                className="flex-1 resize-none bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none leading-relaxed min-h-[24px] max-h-[120px]"
+                className="flex-1 resize-none bg-transparent py-1 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none leading-relaxed min-h-[24px] max-h-[120px]"
               />
               <button
                 type="button"
                 onClick={handleSend}
                 disabled={(!input.trim() && !attachment) || chatMutation.isPending}
-                className="mb-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-foreground text-background transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30 active:scale-95"
+                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#5b6ef5] to-[#c13584] text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30 active:scale-95"
               >
                 <Send size={14} />
               </button>
             </div>
-            <p className="mt-1.5 text-center text-[10px] text-muted-foreground">
-              Enter to send · Shift+Enter for newline
-            </p>
           </div>
         </div>
       )}
