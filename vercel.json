@@ -1,9 +1,5 @@
 {
-  "buildCommand": "npx vite build",
-  "outputDirectory": "dist/public",
-  "installCommand": "pnpm install --no-frozen-lockfile",
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "buildCommand": "echo 'Skipping build for static site'",
+  "outputDirectory": "developer-shortcuts",
+  "installCommand": "echo 'Skipping install for static site'"
 }
