@@ -1,5 +1,7 @@
 {
-  "buildCommand": "echo 'Skipping build for static site'",
-  "outputDirectory": "developer-shortcuts",
-  "installCommand": "echo 'Skipping install for static site'"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": "developer-shortcuts"
 }
