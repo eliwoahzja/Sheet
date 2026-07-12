@@ -25,6 +25,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu";
+import { useTheme } from "@/contexts/ThemeContext";
+import { Moon, Sun } from "lucide-react";
 import rawStructuredContent from "@/data/structured_content.json";
 import templatesCatalog from "@/data/templates_catalog.json";
 import { getDifficultyRating, matchesDifficultyFilter, type DifficultyFilter } from "@/utils/difficulty";
@@ -174,6 +176,8 @@ export default function Home() {
   const [showDisclaimer, setShowDisclaimer] = useState(true);
   const { getProgress, setProgress } = useReadProgress();
 
+  const { theme, toggleTheme } = useTheme();
+
   useEffect(() => {
     const timer = setTimeout(() => setPageLoading(false), 450);
     return () => clearTimeout(timer);
@@ -308,9 +312,11 @@ export default function Home() {
               {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
 
-            <button onClick={() => setLocation("/")} className="flex items-center gap-2.5">
-              <img src="/anime-logo.jpg" alt="Logo" className="h-8 w-8 rounded-lg object-cover opacity-90" />
-              <span className="hidden text-sm font-medium tracking-tight text-foreground min-[400px]:block">
+            <button onClick={() => setLocation("/")} className="flex items-center gap-2.5 group">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background transition-transform group-hover:scale-105">
+                <Code2 size={16} />
+              </div>
+              <span className="hidden text-sm font-bold tracking-tight text-foreground min-[400px]:block">
                 Eli Shh Docs
               </span>
             </button>
@@ -341,6 +347,15 @@ export default function Home() {
                   <DropdownMenuCheckboxItem checked={searchFilters.templates} onCheckedChange={(c) => setSearchFilters((p) => ({ ...p, templates: c }))}>Templates</DropdownMenuCheckboxItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+              {toggleTheme && (
+                <button
+                  onClick={toggleTheme}
+                  className="rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                </button>
+              )}
               <button
                 onClick={() => setShowDisclaimer(true)}
                 className="rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
@@ -424,16 +439,20 @@ export default function Home() {
         />
       ) : (
         <div className="mx-auto max-w-3xl space-y-16 py-4">
-          <section className="space-y-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
-              Reference
-            </p>
-            <h2 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
+          <section className="space-y-6">
+            <div className="inline-flex items-center rounded-full border border-border/50 bg-secondary/50 px-3 py-1 text-[11px] font-medium tracking-wide text-secondary-foreground backdrop-blur-sm">
+              <span className="relative mr-2 flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+              </span>
+              Reference Documentation
+            </div>
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Eli Shh Docs
             </h2>
-            <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Minimal docs for HTML, CSS, JavaScript, and {structuredContent.filter((i) => i.lang === "templates").length.toLocaleString()}+ templates.
-              Search or pick a section from the sidebar.
+            <p className="max-w-xl text-lg text-muted-foreground leading-relaxed">
+              Minimal, high-quality documentation for HTML, CSS, JavaScript, and {structuredContent.filter((i) => i.lang === "templates").length.toLocaleString()}+ templates.
+              Search for anything or select a category below to get started.
             </p>
           </section>
 
