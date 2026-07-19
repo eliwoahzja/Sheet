@@ -486,7 +486,7 @@ export default function DocPage({
           </Section>
         )}
 
-        {(content.lang === "css" || (content.lang === "html" && content.cat.startsWith("Elements"))) && (
+        {((content.lang === "css" && content.cat !== "Emmet" && /^-{0,2}[a-z][a-z0-9-]*$/i.test(content.shortcut.replace(/`/g, "").trim())) || (content.lang === "html" && content.cat.startsWith("Elements"))) && (
           <Section delay={120}>
             <PropertyReference
               lang={content.lang}
